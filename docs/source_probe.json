@@ -1,0 +1,82 @@
+[
+  {
+    "name": "busi_university",
+    "url": "https://scholar.cu.edu.eg/?q=afahmy/pages/dataset",
+    "resolved_url": "https://scholar.cu.edu.eg/challenge",
+    "status": 200,
+    "content_type": "text/html",
+    "content_length": null,
+    "links": []
+  },
+  {
+    "name": "busi_archive",
+    "url": "https://scholar.cu.edu.eg/Dataset_BUSI.zip",
+    "resolved_url": "https://scholar.cu.edu.eg/challenge?next=%2FDataset_BUSI.zip",
+    "status": 200,
+    "content_type": "text/html",
+    "content_length": null,
+    "links": []
+  },
+  {
+    "name": "breast_tcia",
+    "url": "https://www.cancerimagingarchive.net/collection/breast-lesions-usg/",
+    "resolved_url": "https://www.cancerimagingarchive.net/collection/breast-lesions-usg/",
+    "status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "content_length": null,
+    "links": [
+      "https://www.cancerimagingarchive.net/wp-content/uploads/BrEaST-Lesions_USG-images_and_masks-Dec-15-2023.zip",
+      "https://creativecommons.org/licenses/by/4.0/",
+      "https://www.cancerimagingarchive.net/wp-content/uploads/BrEaST-Lesions-USG-clinical-data-Dec-15-2023.xlsx",
+      "https://creativecommons.org/licenses/by/4.0/",
+      "https://creativecommons.org/licenses/by/3.0/"
+    ]
+  },
+  {
+    "name": "busi_mirror_metadata",
+    "url": "https://www.kaggle.com/api/v1/datasets/view/aryashah2k/breast-ultrasound-images-dataset",
+    "resolved_url": "https://www.kaggle.com/api/v1/datasets/view/aryashah2k/breast-ultrasound-images-dataset",
+    "status": 200,
+    "content_type": "application/json",
+    "content_length": null,
+    "metadata": {
+      "subtitleNullable": "Breast ultrasound images for classification, detection & segmentation",
+      "licenseNameNullable": "CC0: Public Domain",
+      "titleNullable": "Breast Ultrasound Images Dataset",
+      "currentVersionNumberNullable": 1,
+      "thumbnailImageUrlNullable": "https://storage.googleapis.com/kaggle-datasets-images/1209633/2021025/67b9223181141133207afc36e35e3c5d/dataset-thumbnail.jpg?t=2021-03-14-15-48-53",
+      "subtitle": "Breast ultrasound images for classification, detection & segmentation",
+      "hasSubtitle": true,
+      "creatorUrl": "",
+      "hasCreatorUrl": false,
+      "url": "",
+      "hasUrl": false,
+      "licenseName": "CC0: Public Domain",
+      "hasLicenseName": true,
+      "title": "Breast Ultrasound Images Dataset",
+      "hasTitle": true,
+      "currentVersionNumber": 1,
+      "hasCurrentVersionNumber": true,
+      "versions": [
+        {
+          "creatorNameNullable": "Arya Shah",
+          "creatorRefNullable": "breast-ultrasound-images-dataset",
+          "versionNotesNullable": "Initial release",
+          "statusNullable": "Ready",
+          "versionNumber": 1,
+          "creationDate": "2021-03-14T04:29:54.023Z",
+          "creatorName": "Arya Shah",
+          "hasCreatorName": true,
+          "creatorRef": "breast-ultrasound-images-dataset",
+          "hasCreatorRef": true,
+          "versionNotes": "Initial release",
+          "hasVersionNotes": true,
+          "status": "Ready",
+          "hasStatus": true
+        }
+      ],
+      "thumbnailImageUrl": "https://storage.googleapis.com/kaggle-datasets-images/1209633/2021025/67b9223181141133207afc36e35e3c5d/dataset-thumbnail.jpg?t=2021-03-14-15-48-53",
+      "hasThumbnailImageUrl": true
+    }
+  }
+]

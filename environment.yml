@@ -1,0 +1,9 @@
+name: san1
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pip
+  - pip:
+      - -r requirements-data.txt
+# Phase 0 only. Full experiment dependencies/lock follow installed-version checks.

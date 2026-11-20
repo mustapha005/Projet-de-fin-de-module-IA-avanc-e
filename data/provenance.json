@@ -1,0 +1,10 @@
+{
+  "breast_metadata": {
+    "source_url": "https://www.cancerimagingarchive.net/wp-content/uploads/BrEaST-Lesions-USG-clinical-data-Dec-15-2023.xlsx",
+    "filename": "BrEaST-Lesions-USG-clinical-data-Dec-15-2023.xlsx",
+    "sha256": "89a8874496a6f1f93960390b963f7369b90f7e72ee08a738f2d17e37f5eff8bf",
+    "bytes": 40173,
+    "downloaded_at_utc": "2026-11-20T10:28:08.793524+00:00",
+    "failed_sources": []
+  }
+}
