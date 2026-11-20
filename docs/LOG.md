@@ -117,3 +117,25 @@ citations and licenses. Commit before Phase 2. Risks: treating a non-significant
 difference as noninferiority; unfair cache accounting; separate HF query/key/value
 layers versus fused qkv; very small internal test and unverified patient groups.
 T_MAX and the hardware thread count remain pending real CPU benchmarking.
+
+### Phase 1 completed; Phase 2 plan
+
+Saved the completed literature synthesis and 24-entry verified bibliography;
+15 entries are dated 2024–2026. Root read the synthesis, verified the ResNet
+technical report, and checked versioned PEFT/bootstrap documentation plus
+installed library license evidence. `scripts/audit_references.py` passes.
+
+The full protocol now specifies architecture/gradients, preprocessing and LP
+views, search ties, validation-only F1 threshold, class-stratified paired
+bootstrap, conservative H1–H3 clause decisions, cap accounting, interrupted-run
+policy, ablations and error analysis. D008–D011 document clarifications before
+results. Phase 1 audit passes; no protocol freeze or main/tuning results exist.
+
+Phase 2 plan: implement shared development-only datasets and four model paths;
+check gradient masks and augmentation reproducibility; measure one epoch per
+method/fraction and LP cold extraction with actual CPU/RSS tracking; project the
+complete workload and set T_MAX; implement/train the two-epoch development smoke
+and test the metric/deadline/provenance paths. Risks: laptop thermal slowdown,
+LoRA backward cost despite few trainable weights, incomplete-cap checkpoints,
+cache costs, and accidental test access. Test images remain inaccessible to
+benchmark/training interfaces. Do not tag until all Phase 2 gates pass.

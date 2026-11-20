@@ -1,0 +1,100 @@
+[
+  {
+    "key": "ramollari2026shift",
+    "title": "Breast Ultrasound Classification Under Cross-Dataset Shift: A Multi-Seed Benchmark of Convolutional Networks, a Vision Transformer, and a Self-Supervised Foundation Model",
+    "authors": ["Ervin Ramollari", "Narasimha Rao Vajjhala", "Rajesh Kumar", "Komal Ramchandani", "Ranjeeta Mahraj", "Khalid Hussain"],
+    "year": 2026,
+    "date": "2026-11-18",
+    "venue": "Algorithms",
+    "volume": "19", "issue": "11", "article": "1011",
+    "doi": "10.3390/a19111011",
+    "url": "https://www.mdpi.com/1999-4893/19/11/1011",
+    "verified_on": "2026-11-20",
+    "verification": "Opened publisher identity and abstract; indexed publisher methods excerpts inspected; PDF fetch failed.",
+    "relevance": "Closest DINOv2 external multi-seed benchmark; different backbone, source/target and adaptation design.",
+    "limits": "Reported failure is configuration-specific; no independent reproduction. Do not equate lesion-crop exploration with full-frame performance."
+  },
+  {
+    "key": "wang2026datasetshift",
+    "title": "Breast Ultrasound AI Under Dataset Shift: A Patient-Leakage-Aware Benchmark",
+    "authors": ["Lulu Wang"],
+    "year": 2026, "date": "2026-05-19",
+    "venue": "Diagnostics", "volume": "16", "issue": "10", "article": "1537",
+    "doi": "10.3390/diagnostics16101537",
+    "url": "https://www.mdpi.com/2075-4418/16/10/1537",
+    "verified_on": "2026-11-20", "verification": "Publisher full text and PubMed identity inspected.",
+    "relevance": "Four-cohort external testing, including BUSI and BrEaST, ROI comparisons and calibration.",
+    "limits": "Reported identifier granularity is not proof of independent BUSI patients; no dedicated duplicate screening; architectures differ in resolution; published data-availability statement still promises a future code repository."
+  },
+  {
+    "key": "yu2026busgen",
+    "title": "A foundation generative model for breast ultrasound image analysis",
+    "authors": ["Haojun Yu", "Youcheng Li", "Nan Zhang", "Zihan Niu", "Xuantong Gong", "Yanwen Luo", "Haotian Ye", "Siyu He", "Quanlin Wu", "Wangyan Qin", "Mengyuan Zhou", "Jie Han", "Jia Tao", "Ziwei Zhao", "Di Dai", "Di He", "Dong Wang", "Binghui Tang", "Ling Huo", "James Zou", "Qingli Zhu", "Yong Wang", "Liwei Wang"],
+    "year": 2026, "date": "2026-04-07", "venue": "Nature Biomedical Engineering",
+    "doi": "10.1038/s41551-026-01639-1",
+    "url": "https://www.nature.com/articles/s41551-026-01639-1",
+    "opened_urls": ["https://pubmed.ncbi.nlm.nih.gov/41946926/", "https://www.nature.com/articles/s41551-026-01639-1?error=cookies_not_supported&code=1", "https://arxiv.org/abs/2501.06869"],
+    "verified_on": "2026-11-20", "verification": "Published title/authors/date/DOI matched PubMed and publisher; author preprint opened.",
+    "relevance": "Few-shot generative breast-ultrasound foundation model.",
+    "limits": "Different supervision, pretraining scale and downstream data generation; not a matched CPU adaptation baseline. Do not double-count preprint."
+  },
+  {
+    "key": "pawlowska2024breast",
+    "title": "Curated benchmark dataset for ultrasound based breast lesion analysis",
+    "authors": ["Anna Pawłowska", "Anna Ćwierz-Pieńkowska", "Agnieszka Domalik", "Dominika Jaguś", "Piotr Kasprzak", "Rafał Matkowski", "Łukasz Fura", "Andrzej Nowicki", "Norbert Żołek"],
+    "year": 2024, "date": "2024-01-31", "venue": "Scientific Data", "volume": "11", "article": "148",
+    "doi": "10.1038/s41597-024-02984-z",
+    "url": "https://www.nature.com/articles/s41597-024-02984-z",
+    "opened_urls": ["https://www.nature.com/articles/s41597-024-02984-z?error=cookies_not_supported&code=1"],
+    "verified_on": "2026-11-20", "verification": "Publisher full text, data records and de-identification details inspected.",
+    "relevance": "External dataset identity, target labels, verification procedures and license.",
+    "limits": "Cases, scans and segmented lesions are different units; center linkage removed; not every case has biopsy."
+  },
+  {
+    "key": "megahed2025usfmae",
+    "title": "USF-MAE: Ultrasound Self-Supervised Foundation Model with Masked Autoencoding",
+    "authors": ["Youssef Megahed", "Robin Ducharme", "Aylin Erman", "Mark Walker", "Steven Hawken", "Adrian D. C. Chan"],
+    "year": 2025, "date": "2025-11-07", "venue": "arXiv preprint", "eprint": "2510.22990", "version": "v2",
+    "doi": "10.48550/arXiv.2510.22990",
+    "url": "https://arxiv.org/abs/2510.22990",
+    "opened_urls": ["https://arxiv.org/abs/2510.22990", "https://arxiv.org/html/2510.22990v2"],
+    "verified_on": "2026-11-20", "verification": "arXiv identity and full-text pretraining dataset table inspected.",
+    "relevance": "Ultrasound-specific masked autoencoding with classification transfer.",
+    "limits": "OpenUS-46 pretraining includes BrEaST and BUS-BRA; unsuitable as an assumed unseen-BrEaST substitute without exposure audit. Journal status not verified."
+  },
+  {
+    "key": "ma2026tinyusfm",
+    "title": "TinyUSFM: Towards Compact and Efficient Ultrasound Foundation Models",
+    "authors": ["Chen Ma", "Jing Jiao", "Shuyu Liang", "Junhu Fu", "Qin Wang", "Zeju Li", "Yuanyuan Wang", "Yi Guo"],
+    "year": 2026, "date": "2026-03-27", "version_date": "2026-04-14", "venue": "IEEE Journal of Biomedical and Health Informatics", "pages": "1-14", "eprint": "2510.19239", "preprint_version": "v2",
+    "doi": "10.1109/JBHI.2026.3678309",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/41894218/",
+    "opened_urls": ["https://github.com/MacDunno/TinyUSFM", "https://arxiv.org/abs/2510.19239", "https://arxiv.org/html/2510.19239v2"],
+    "verified_on": "2026-11-20", "verification": "Published identity confirmed through the opened official author repository and indexed PubMed record; direct PubMed open returned a nearly empty page. arXiv identity and full-text benchmark table inspected.",
+    "relevance": "Compression/distillation for efficient ultrasound models and broad benchmark.",
+    "limits": "BUSI evaluation is three-class; model compression differs from adaptation cost. Do not double-count the 2025 preprint."
+  },
+  {
+    "key": "jin2026ultrasoundclip",
+    "title": "Ultrasound-CLIP: Semantic-Aware Contrastive Pre-training for Ultrasound Image-Text Understanding",
+    "authors": ["Jiayun Jin", "Haolong Chai", "Xueying Huang", "Xiaoqing Guo", "Zengwei Zheng", "Zhan Zhou", "Junmei Wang", "Xinyu Wang", "Jie Liu", "Binbin Zhou"],
+    "year": 2026, "venue": "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition", "pages": "6962-6971",
+    "eprint": "2604.01749", "url": "https://arxiv.org/abs/2604.01749",
+    "opened_urls": ["https://arxiv.org/abs/2604.01749"],
+    "verified_on": "2026-11-20", "verification": "arXiv title/authors/abstract and explicit CVPR2026 acceptance comment opened; proceedings BibTeX found in indexed official proceedings; direct CVF PDF/HTML returned 403.",
+    "relevance": "Modality-specific vision-language representation with linear probing and fine-tuning.",
+    "limits": "Text supervision and pretraining differ; full evaluation protocol not yet inspected."
+  },
+  {
+    "key": "jiao2024usfm",
+    "title": "USFM: A universal ultrasound foundation model generalized to tasks and organs towards label efficient image analysis",
+    "authors": ["Jing Jiao", "Jin Zhou", "Xiaokang Li", "Menghua Xia", "Yi Huang", "Lihong Huang", "Na Wang", "Xiaofan Zhang", "Shichong Zhou", "Yuanyuan Wang", "Yi Guo"],
+    "year": 2024, "venue": "Medical Image Analysis", "volume": "96", "article": "103202",
+    "doi": "10.1016/j.media.2024.103202", "eprint": "2401.00153",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/38788326/",
+    "opened_urls": ["https://pubmed.ncbi.nlm.nih.gov/38788326/", "https://arxiv.org/abs/2401.00153", "https://github.com/openmedlab/USFM/blob/master/README.md"],
+    "verified_on": "2026-11-20", "verification": "Journal title/authors/year/DOI confirmed through opened PubMed and author repository; author arXiv opened; publisher full text returned 403.",
+    "relevance": "Ultrasound-specific foundation model focused on label efficiency.",
+    "limits": "Pretraining scale and data exposure differ from SAN-1; does not alone establish a CPU-capped adaptation ranking."
+  }
+]

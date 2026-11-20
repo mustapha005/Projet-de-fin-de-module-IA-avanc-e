@@ -17,8 +17,9 @@ that ranking preserved on an unseen acquisition center?
 
 Data preparation is validated with pHash and published-duplicate checks. The
 cleaned BUSI cohort has 341/73/74 training/validation/test images; external BrEaST
-has 252 binary cases. The literature review has 23 verified references.
-Protocol completion and CPU benchmarking are next. No scientific training or
+has 252 binary cases. The bibliography has 24 verified references (15 recent).
+The experiment protocol is specified; CPU benchmarking and smoke testing are
+next before freeze. No scientific training or
 test-set evaluation has been performed; H1–H3 remain untested.
 See [docs/LOG.md](docs/LOG.md) for the current checkpoint and next action.
 

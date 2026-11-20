@@ -1,0 +1,11 @@
+{
+  "selection_fraction": 0.1,
+  "selection_seed": 0,
+  "criterion": "validation_roc_auc",
+  "tie_tolerance": 1e-12,
+  "tie_policy": "first_in_list",
+  "LP": [{"C": 0.01}, {"C": 0.1}, {"C": 1}, {"C": 10}, {"C": 100}],
+  "PFT": [{"lr": 0.0001, "weight_decay": 0.01}, {"lr": 0.0001, "weight_decay": 0.05}, {"lr": 0.0003, "weight_decay": 0.01}, {"lr": 0.0003, "weight_decay": 0.05}, {"lr": 0.001, "weight_decay": 0.01}, {"lr": 0.001, "weight_decay": 0.05}],
+  "LoRA": [{"lr": 0.0001, "weight_decay": 0.01}, {"lr": 0.0001, "weight_decay": 0.05}, {"lr": 0.0003, "weight_decay": 0.01}, {"lr": 0.0003, "weight_decay": 0.05}, {"lr": 0.001, "weight_decay": 0.01}, {"lr": 0.001, "weight_decay": 0.05}],
+  "CNN": [{"lr": 0.0003, "weight_decay": 0.0001}, {"lr": 0.0003, "weight_decay": 0.01}, {"lr": 0.001, "weight_decay": 0.0001}, {"lr": 0.001, "weight_decay": 0.01}, {"lr": 0.003, "weight_decay": 0.0001}, {"lr": 0.003, "weight_decay": 0.01}]
+}
