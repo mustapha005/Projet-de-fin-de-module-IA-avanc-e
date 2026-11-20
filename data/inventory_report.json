@@ -1,0 +1,53 @@
+{
+  "busi": {
+    "benign": 437,
+    "mask_files": 798,
+    "malignant": 210,
+    "normal": 133
+  },
+  "breast": {
+    "class_counts": {
+      "benign": 154,
+      "malignant": 98,
+      "normal": 4
+    },
+    "metadata_rows": 256,
+    "sheet": "BrEaST-Lesions-USG clinical dat",
+    "columns": [
+      "CaseID",
+      "Image_filename",
+      "Mask_tumor_filename",
+      "Mask_other_filename",
+      "Pixel_size",
+      "Age",
+      "Tissue_composition",
+      "Signs",
+      "Symptoms",
+      "Shape",
+      "Margin",
+      "Echogenicity",
+      "Posterior_features",
+      "Halo",
+      "Calcifications",
+      "Skin_thickening",
+      "Interpretation",
+      "BIRADS",
+      "Verification",
+      "Diagnosis",
+      "Classification"
+    ],
+    "label_source": "Classification",
+    "normal_excluded": 4,
+    "raw_png_files_including_masks": 522
+  },
+  "busi_retained_class_counts": {
+    "0": 311,
+    "1": 177
+  },
+  "busi_image_sizes": {
+    "min_width": 190,
+    "max_width": 1048,
+    "min_height": 324,
+    "max_height": 719
+  }
+}

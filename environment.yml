@@ -2,8 +2,8 @@ name: san1
 channels:
   - conda-forge
 dependencies:
-  - python=3.12
+  - python=3.12.0
   - pip
   - pip:
-      - -r requirements-data.txt
-# Phase 0 only. Full experiment dependencies/lock follow installed-version checks.
+      - -r requirements.lock
+# CPU environment. The lock includes the official PyTorch CPU wheel index.

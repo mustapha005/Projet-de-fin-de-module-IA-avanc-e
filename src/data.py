@@ -1,6 +1,8 @@
 """Deterministic, label-aware data cleaning and disjoint split construction."""
 from collections import defaultdict
+import json
 import math
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
@@ -27,12 +29,62 @@ def near_pairs(records: pd.DataFrame, other: pd.DataFrame | None = None,
     return pairs
 
 
-def deduplicate(records: pd.DataFrame, distance: int = 4) -> tuple[pd.DataFrame, dict]:
-    """Collapse single-label components; exclude every mixed-label component."""
+def article_image_id(number: int) -> str:
+    """Map the critique's continuous IDs to original BUSI filenames."""
+    if not 1 <= number <= 780:
+        raise ValueError("Published BUSI ID must be in 1..780")
+    if number <= 437:
+        return f"busi/benign ({number})"
+    if number <= 647:
+        return f"busi/malignant ({number - 437})"
+    return f"busi/normal ({number - 647})"
+
+
+def published_constraints(path: Path) -> tuple[list[tuple[str, str]], set[str]]:
+    """Read verified published duplicate links and binary/normal label conflicts."""
+    source = json.loads(path.read_text(encoding="utf-8"))
+    if source["pair_count"] != len(source["pairs"]):
+        raise ValueError("Published pair-count mismatch")
+    pairs = [(article_image_id(a), article_image_id(b)) for a, b in source["pairs"] if b <= 647]
+    forbidden = {article_image_id(a) for a, b in source["pairs"] if a <= 647 < b}
+    return pairs, forbidden
+
+
+def audit_known_groups(records: pd.DataFrame, known_pairs=(), forbidden_ids=()) -> dict:
+    """Independently traverse the published graph, including removed intermediates."""
+    graph = defaultdict(set)
+    for a, b in known_pairs:
+        graph[a].add(b)
+        graph[b].add(a)
+    retained = set(records.image_id)
+    visited = set()
+    for start in graph:
+        if start in visited:
+            continue
+        pending, members = [start], set()
+        while pending:
+            node = pending.pop()
+            if node in members:
+                continue
+            members.add(node)
+            pending.extend(graph[node] - members)
+        visited.update(members)
+        if len(retained & members) > 1:
+            raise ValueError(f"Published duplicate component survives: {sorted(retained & members)}")
+    if retained & set(forbidden_ids):
+        raise ValueError("Published normal/lesion label conflict retained")
+    return {"published_duplicate_groups_remaining": 0, "published_normal_conflicts_remaining": 0}
+
+
+def deduplicate(records: pd.DataFrame, distance: int = 4, known_pairs=(), forbidden_ids=()) -> tuple[pd.DataFrame, dict]:
+    """Collapse pHash/published components and quarantine all label conflicts."""
     records = records.sort_values("image_id").reset_index(drop=True)
     if records.image_id.duplicated().any():
         raise ValueError("Image IDs must be unique")
     parents = {image_id: image_id for image_id in records.image_id}
+    forbidden_ids = set(forbidden_ids)
+    if forbidden_ids - set(parents) or any(a not in parents or b not in parents for a, b in known_pairs):
+        raise ValueError("Published source IDs missing from the BUSI inventory")
 
     def find(image_id):
         while parents[image_id] != image_id:
@@ -44,6 +96,9 @@ def deduplicate(records: pd.DataFrame, distance: int = 4) -> tuple[pd.DataFrame,
     for pair in pairs:
         first, second = find(pair["left"]), find(pair["right"])
         parents[max(first, second)] = min(first, second)
+    for a, b in known_pairs:
+        first, second = find(a), find(b)
+        parents[max(first, second)] = min(first, second)
     components = defaultdict(list)
     for image_id in parents:
         components[find(image_id)].append(image_id)
@@ -53,20 +108,24 @@ def deduplicate(records: pd.DataFrame, distance: int = 4) -> tuple[pd.DataFrame,
     for members in sorted(components.values()):
         members.sort()
         labels = sorted(set(int(lookup.loc[item, "label"]) for item in members))
-        representative = members[0] if len(labels) == 1 else None
+        external_conflict = bool(forbidden_ids & set(members))
+        representative = members[0] if len(labels) == 1 and not external_conflict else None
         if representative:
             keep.append(representative)
-        if len(members) > 1:
+        if len(members) > 1 or external_conflict:
             clusters.append({"members": members, "labels": labels,
                              "representative": representative,
+                             "conflicts_with_excluded_normal": external_conflict,
                              "action": "keep_one" if representative else "quarantine_conflict"})
     clean = records[records.image_id.isin(keep)].copy()
     report = {
-        "algorithm": "imagehash.phash(hash_size=8), Hamming<=4, connected components",
+        "algorithm": f"pHash(hash_size=8), Hamming<={distance}, plus published links; connected components",
         "hamming_threshold": distance, "input_images": len(records),
         "retained_images": len(clean), "removed_images": len(records) - len(clean),
         "conflict_components": sum(c["action"] == "quarantine_conflict" for c in clusters),
         "conflict_images": sum(len(c["members"]) for c in clusters if c["action"] == "quarantine_conflict"),
+        "published_binary_pair_count": len(known_pairs),
+        "published_normal_conflict_ids": sorted(forbidden_ids),
         "clusters": clusters, "near_pairs": pairs,
     }
     return clean, report

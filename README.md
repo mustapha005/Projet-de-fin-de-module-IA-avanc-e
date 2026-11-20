@@ -15,8 +15,11 @@ that ranking preserved on an unseen acquisition center?
 
 ## Status
 
-Phase 0 is in progress. No scientific training or test-set evaluation has been
-performed. No performance result or hypothesis verdict is available.
+Data preparation is validated with pHash and published-duplicate checks. The
+cleaned BUSI cohort has 341/73/74 training/validation/test images; external BrEaST
+has 252 binary cases. The literature review has 23 verified references.
+Protocol completion and CPU benchmarking are next. No scientific training or
+test-set evaluation has been performed; H1–H3 remain untested.
 See [docs/LOG.md](docs/LOG.md) for the current checkpoint and next action.
 
 ## Environment and commands
@@ -26,9 +29,11 @@ Python 3.12 is the reference interpreter. PowerShell commands from this director
 
 ```powershell
 python -m venv .venv
-.\.venv\Scripts\python.exe -m pip install -r requirements-data.txt
+.\.venv\Scripts\python.exe -m pip install -r requirements.lock
 .\.venv\Scripts\python.exe scripts/doctor.py
 .\.venv\Scripts\python.exe scripts/data_pipeline.py
+.\.venv\Scripts\python.exe scripts/audit_published_duplicates.py
+.\.venv\Scripts\python.exe scripts/download_model.py
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
 ```
 
@@ -44,6 +49,8 @@ BUSI is the development/internal-test cohort. BrEaST-Lesions_USG is the sealed
 external-test cohort. Only benign/malignant images are included; no masks enter
 the classifier. Data, downloaded weights, caches, and credentials are excluded
 from Git and the eventual code archive. Downloads retain checksums and sources.
+The pHash-only provisional split was rejected after published duplicate groups
+revealed leakage. Only the current manifests, including those groups, are valid.
 See [data/README.md](data/README.md) and [docs/DATA_CARD.md](docs/DATA_CARD.md).
 
 The protocol must be committed and tagged `protocol-frozen` before final

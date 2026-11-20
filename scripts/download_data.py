@@ -3,6 +3,7 @@ from datetime import datetime, timezone
 import hashlib
 import json
 from pathlib import Path
+import re
 import shutil
 import stat
 import time
@@ -67,6 +68,65 @@ def safe_extract(archive: Path, target: Path) -> None:
         bundle.extractall(root)
 
 
+def transfer(url: str, temporary: Path, name: str) -> int:
+    """Resume a source-matched partial download, validating HTTP range semantics."""
+    state_path = temporary.with_suffix(temporary.suffix + ".json")
+    state = json.loads(state_path.read_text()) if state_path.exists() else {}
+    offset = temporary.stat().st_size if temporary.exists() and state.get("url") == url else 0
+    if offset and offset == state.get("total_bytes"):
+        with zipfile.ZipFile(temporary) as complete:
+            if complete.testzip():
+                raise ValueError("Complete partial archive failed CRC validation")
+        return offset
+    headers = {"User-Agent": "SAN1-academic-reproducibility/0.1", "Accept-Encoding": "identity"}
+    if offset:
+        headers["Range"] = f"bytes={offset}-"
+        validator = state.get("etag") or state.get("last_modified")
+        if validator:
+            headers["If-Range"] = validator
+    request = urllib.request.Request(url, headers=headers)
+    with urllib.request.urlopen(request, timeout=90) as response:
+        first = response.read(4096)
+        if response.status == 206:
+            matched = re.fullmatch(r"bytes (\d+)-(\d+)/(\d+)", response.headers.get("Content-Range", ""))
+            if not offset or not matched or int(matched[1]) != offset:
+                raise ValueError("Invalid Content-Range; refusing to append unrelated bytes")
+            expected_size = int(matched[3])
+            if state.get("total_bytes") and state["total_bytes"] != expected_size:
+                raise ValueError("Source size changed during resume")
+            if state.get("etag") and response.headers.get("ETag") not in (None, state["etag"]):
+                raise ValueError("Source ETag changed during resume")
+            mode = "ab"
+        elif response.status == 200:
+            if not first.startswith(b"PK"):
+                raise ValueError("Download is not a ZIP/XLSX file (possibly a challenge page)")
+            offset = 0
+            length = response.headers.get("Content-Length")
+            expected_size = int(length) if length else None
+            mode = "wb"
+        else:
+            raise ValueError(f"Unexpected HTTP status: {response.status}")
+        write_json(state_path, {"url": url, "etag": response.headers.get("ETag"),
+                                "last_modified": response.headers.get("Last-Modified"),
+                                "total_bytes": expected_size})
+        count = offset + len(first)
+        next_report = (count // (4 * 1024**2) + 1) * 4 * 1024**2
+        print(f"{name}: {'resuming' if offset else 'starting'} at {offset} bytes, total={expected_size}", flush=True)
+        with temporary.open(mode) as stream:
+            stream.write(first)
+            stream.flush()
+            while chunk := response.read1(64 * 1024):
+                stream.write(chunk)
+                stream.flush()
+                count += len(chunk)
+                if count >= next_report:
+                    print(f"{name}: {count / 1024**2:.1f} MiB downloaded", flush=True)
+                    next_report += 4 * 1024**2
+        if expected_size and count != expected_size:
+            raise OSError(f"Incomplete download: {count}/{expected_size}; partial bytes retained")
+    return count
+
+
 def fetch(name: str, specification: dict, provenance: dict) -> Path:
     """Fetch one archive; fail closed on changed cached files or non-ZIP responses."""
     target = DATA / "downloads" / specification["filename"]
@@ -80,31 +140,11 @@ def fetch(name: str, specification: dict, provenance: dict) -> Path:
         return target
     errors = []
     for url in specification["urls"]:
-        for attempt in range(2):
+        for attempt in range(6):
             temporary = target.with_suffix(target.suffix + ".part")
             try:
                 print(f"Requesting {name}, source {specification['urls'].index(url) + 1}, attempt {attempt + 1}", flush=True)
-                request = urllib.request.Request(url, headers={"User-Agent": "SAN1-academic-reproducibility/0.1"})
-                with urllib.request.urlopen(request, timeout=45) as response:
-                    first = response.read(4096)
-                    if not first.startswith(b"PK"):
-                        raise ValueError("Download is not a ZIP/XLSX file (possibly a challenge page)")
-                    expected_size = response.headers.get("Content-Length")
-                    print(f"{name}: valid ZIP header, expected bytes={expected_size}", flush=True)
-                    count = len(first)
-                    next_report = 4 * 1024 * 1024
-                    with temporary.open("wb") as stream:
-                        stream.write(first)
-                        stream.flush()
-                        while chunk := response.read1(64 * 1024):
-                            stream.write(chunk)
-                            stream.flush()
-                            count += len(chunk)
-                            if count >= next_report:
-                                print(f"{name}: {count / 1024**2:.1f} MiB downloaded", flush=True)
-                                next_report += 4 * 1024 * 1024
-                    if expected_size and count != int(expected_size):
-                        raise ValueError(f"Incomplete download: {count}/{expected_size}")
+                count = transfer(url, temporary, name)
                 with zipfile.ZipFile(temporary) as archive:
                     if archive.testzip():
                         raise ValueError("ZIP CRC validation failed")

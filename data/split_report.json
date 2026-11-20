@@ -1,0 +1,106 @@
+{
+  "status": "PASS",
+  "split_seed": 1234,
+  "near_duplicate_crossings": 0,
+  "cross_cohort_near_duplicates": 0,
+  "cross_cohort_exact_duplicates": 0,
+  "nested_subsets": true,
+  "split_counts": {
+    "test": {
+      "benign": 47,
+      "malignant": 27
+    },
+    "train": {
+      "benign": 217,
+      "malignant": 124
+    },
+    "val": {
+      "benign": 47,
+      "malignant": 26
+    }
+  },
+  "subsets": [
+    {
+      "seed": 0,
+      "nominal_fraction": 0.01,
+      "n": 8,
+      "benign": 4,
+      "malignant": 4,
+      "actual_fraction": 0.02346041055718475
+    },
+    {
+      "seed": 0,
+      "nominal_fraction": 0.1,
+      "n": 33,
+      "benign": 21,
+      "malignant": 12,
+      "actual_fraction": 0.0967741935483871
+    },
+    {
+      "seed": 0,
+      "nominal_fraction": 1.0,
+      "n": 341,
+      "benign": 217,
+      "malignant": 124,
+      "actual_fraction": 1.0
+    },
+    {
+      "seed": 1,
+      "nominal_fraction": 0.01,
+      "n": 8,
+      "benign": 4,
+      "malignant": 4,
+      "actual_fraction": 0.02346041055718475
+    },
+    {
+      "seed": 1,
+      "nominal_fraction": 0.1,
+      "n": 33,
+      "benign": 21,
+      "malignant": 12,
+      "actual_fraction": 0.0967741935483871
+    },
+    {
+      "seed": 1,
+      "nominal_fraction": 1.0,
+      "n": 341,
+      "benign": 217,
+      "malignant": 124,
+      "actual_fraction": 1.0
+    },
+    {
+      "seed": 2,
+      "nominal_fraction": 0.01,
+      "n": 8,
+      "benign": 4,
+      "malignant": 4,
+      "actual_fraction": 0.02346041055718475
+    },
+    {
+      "seed": 2,
+      "nominal_fraction": 0.1,
+      "n": 33,
+      "benign": 21,
+      "malignant": 12,
+      "actual_fraction": 0.0967741935483871
+    },
+    {
+      "seed": 2,
+      "nominal_fraction": 1.0,
+      "n": 341,
+      "benign": 217,
+      "malignant": 124,
+      "actual_fraction": 1.0
+    }
+  ],
+  "patient_independence": "UNVERIFIED: BUSI patient IDs are not available",
+  "published_duplicate_groups_remaining": 0,
+  "published_normal_conflicts_remaining": 0,
+  "manifest_sha256": {
+    "breast_external.csv": "5815eb2f57ceb183354d2781602b87795578eb8652705a56b5f507b6ce9a7ad7",
+    "busi_clean.csv": "56c60c19b7bf86a1826016304a312dacca7758e6e9cfc7f8e016a7ab58e7cf7a",
+    "busi_inventory.csv": "62cea5e79a8778ca69feaf50ab6a376c95a1217d44b7c9d63b24a08637d60abb",
+    "busi_splits.csv": "a68d2a593d31b8bb0c90fb677cdb4297ee172956867882b68cc2b236a60d8448",
+    "label_subsets.csv": "2fc85118bce2541ad9bafd646d2a14f96a24a3ae2c9ca4e73b321a4bdae460f7"
+  }
+}

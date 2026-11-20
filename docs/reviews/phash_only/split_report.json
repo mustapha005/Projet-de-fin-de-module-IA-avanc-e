@@ -1,0 +1,104 @@
+{
+  "status": "PASS",
+  "split_seed": 1234,
+  "near_duplicate_crossings": 0,
+  "cross_cohort_near_duplicates": 0,
+  "cross_cohort_exact_duplicates": 0,
+  "nested_subsets": true,
+  "split_counts": {
+    "test": {
+      "benign": 51,
+      "malignant": 29
+    },
+    "train": {
+      "benign": 233,
+      "malignant": 135
+    },
+    "val": {
+      "benign": 50,
+      "malignant": 29
+    }
+  },
+  "subsets": [
+    {
+      "seed": 0,
+      "nominal_fraction": 0.01,
+      "n": 8,
+      "benign": 4,
+      "malignant": 4,
+      "actual_fraction": 0.021739130434782608
+    },
+    {
+      "seed": 0,
+      "nominal_fraction": 0.1,
+      "n": 36,
+      "benign": 23,
+      "malignant": 13,
+      "actual_fraction": 0.09782608695652174
+    },
+    {
+      "seed": 0,
+      "nominal_fraction": 1.0,
+      "n": 368,
+      "benign": 233,
+      "malignant": 135,
+      "actual_fraction": 1.0
+    },
+    {
+      "seed": 1,
+      "nominal_fraction": 0.01,
+      "n": 8,
+      "benign": 4,
+      "malignant": 4,
+      "actual_fraction": 0.021739130434782608
+    },
+    {
+      "seed": 1,
+      "nominal_fraction": 0.1,
+      "n": 36,
+      "benign": 23,
+      "malignant": 13,
+      "actual_fraction": 0.09782608695652174
+    },
+    {
+      "seed": 1,
+      "nominal_fraction": 1.0,
+      "n": 368,
+      "benign": 233,
+      "malignant": 135,
+      "actual_fraction": 1.0
+    },
+    {
+      "seed": 2,
+      "nominal_fraction": 0.01,
+      "n": 8,
+      "benign": 4,
+      "malignant": 4,
+      "actual_fraction": 0.021739130434782608
+    },
+    {
+      "seed": 2,
+      "nominal_fraction": 0.1,
+      "n": 36,
+      "benign": 23,
+      "malignant": 13,
+      "actual_fraction": 0.09782608695652174
+    },
+    {
+      "seed": 2,
+      "nominal_fraction": 1.0,
+      "n": 368,
+      "benign": 233,
+      "malignant": 135,
+      "actual_fraction": 1.0
+    }
+  ],
+  "patient_independence": "UNVERIFIED: BUSI patient IDs are not available",
+  "manifest_sha256": {
+    "breast_external.csv": "5815eb2f57ceb183354d2781602b87795578eb8652705a56b5f507b6ce9a7ad7",
+    "busi_clean.csv": "a93646a1812c52712005ee300fff91b54a4e927437f5464dc9925ddf073722e5",
+    "busi_inventory.csv": "62cea5e79a8778ca69feaf50ab6a376c95a1217d44b7c9d63b24a08637d60abb",
+    "busi_splits.csv": "76d1fda3bd9baf292de0e5301f0cad49d5d2ba77f4d82505b3b5fd087ac492b8",
+    "label_subsets.csv": "ac8d6077af363a4e3309a25d45e74a183cbf8087716a4d4e2ff85ca8d8349357"
+  }
+}

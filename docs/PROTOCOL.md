@@ -28,10 +28,15 @@ logic. Noninferiority and compound-H2 ambiguities are open before freeze.
 
 - Benign=0, malignant=1; drop normal and mask files in both cohorts.
 - Audit all image files and record SHA-256, pHash (8x8), dimensions, source.
-- BUSI pHash Hamming distance <=4 defines an undirected near-duplicate graph.
-  Connected components are formed before splitting; keep the lexicographically
-  first path in each single-label component. Quarantine entire conflicting-label
-  components. No outcome/model metric influences this rule.
+- BUSI pHash Hamming distance <=4 and the duplicate pairs in Pawlowska et al.
+  (2023), Table B1, define the union of two undirected near-duplicate graphs.
+  Source facts and the continuous-ID mapping are versioned in
+  `configs/busi_published_pairs.json`. Connected components are formed before
+  splitting; keep the lexicographically first ID in each single-label component.
+  Quarantine entire conflicting-label components, including binary images linked
+  to a normal-class image in the published list. No model metric influences this.
+  An independent graph traversal checks the published groups after cleaning,
+  including connections through removed intermediate images. See deviation D007.
 - Split retained BUSI images stratified 70/15/15 with seed 1234. First reserve
   30%; split it equally into validation/test, both with seed 1234.
 - For each seed 0/1/2, shuffle each training class once; take prefixes for nested

@@ -1,0 +1,277 @@
+{
+  "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10293973/table/tbl0004/",
+  "published_pairs": 237,
+  "retained_duplicate_pairs": [
+    {
+      "left": "busi/benign (9)",
+      "right": "busi/benign (326)",
+      "left_split": "train",
+      "right_split": "train",
+      "crosses_split": false
+    },
+    {
+      "left": "busi/benign (21)",
+      "right": "busi/benign (154)",
+      "left_split": "val",
+      "right_split": "train",
+      "crosses_split": true
+    },
+    {
+      "left": "busi/benign (33)",
+      "right": "busi/benign (130)",
+      "left_split": "train",
+      "right_split": "train",
+      "crosses_split": false
+    },
+    {
+      "left": "busi/benign (62)",
+      "right": "busi/benign (140)",
+      "left_split": "val",
+      "right_split": "val",
+      "crosses_split": false
+    },
+    {
+      "left": "busi/benign (64)",
+      "right": "busi/benign (141)",
+      "left_split": "test",
+      "right_split": "train",
+      "crosses_split": true
+    },
+    {
+      "left": "busi/benign (96)",
+      "right": "busi/benign (155)",
+      "left_split": "train",
+      "right_split": "train",
+      "crosses_split": false
+    },
+    {
+      "left": "busi/benign (108)",
+      "right": "busi/benign (114)",
+      "left_split": "test",
+      "right_split": "train",
+      "crosses_split": true
+    },
+    {
+      "left": "busi/benign (110)",
+      "right": "busi/benign (158)",
+      "left_split": "train",
+      "right_split": "test",
+      "crosses_split": true
+    },
+    {
+      "left": "busi/benign (114)",
+      "right": "busi/benign (116)",
+      "left_split": "train",
+      "right_split": "val",
+      "crosses_split": true
+    },
+    {
+      "left": "busi/benign (116)",
+      "right": "busi/benign (119)",
+      "left_split": "val",
+      "right_split": "train",
+      "crosses_split": true
+    },
+    {
+      "left": "busi/benign (119)",
+      "right": "busi/benign (122)",
+      "left_split": "train",
+      "right_split": "val",
+      "crosses_split": true
+    },
+    {
+      "left": "busi/benign (125)",
+      "right": "busi/benign (126)",
+      "left_split": "train",
+      "right_split": "val",
+      "crosses_split": true
+    },
+    {
+      "left": "busi/benign (201)",
+      "right": "busi/benign (302)",
+      "left_split": "test",
+      "right_split": "val",
+      "crosses_split": true
+    },
+    {
+      "left": "busi/benign (220)",
+      "right": "busi/benign (271)",
+      "left_split": "val",
+      "right_split": "train",
+      "crosses_split": true
+    },
+    {
+      "left": "busi/benign (221)",
+      "right": "busi/benign (246)",
+      "left_split": "train",
+      "right_split": "train",
+      "crosses_split": false
+    },
+    {
+      "left": "busi/benign (224)",
+      "right": "busi/benign (304)",
+      "left_split": "train",
+      "right_split": "train",
+      "crosses_split": false
+    },
+    {
+      "left": "busi/benign (237)",
+      "right": "busi/benign (264)",
+      "left_split": "train",
+      "right_split": "val",
+      "crosses_split": true
+    },
+    {
+      "left": "busi/benign (242)",
+      "right": "busi/benign (288)",
+      "left_split": "test",
+      "right_split": "train",
+      "crosses_split": true
+    },
+    {
+      "left": "busi/benign (245)",
+      "right": "busi/benign (305)",
+      "left_split": "train",
+      "right_split": "test",
+      "crosses_split": true
+    },
+    {
+      "left": "busi/benign (308)",
+      "right": "busi/benign (424)",
+      "left_split": "train",
+      "right_split": "train",
+      "crosses_split": false
+    },
+    {
+      "left": "busi/malignant (4)",
+      "right": "busi/malignant (7)",
+      "left_split": "train",
+      "right_split": "train",
+      "crosses_split": false
+    },
+    {
+      "left": "busi/malignant (4)",
+      "right": "busi/malignant (8)",
+      "left_split": "train",
+      "right_split": "val",
+      "crosses_split": true
+    },
+    {
+      "left": "busi/malignant (6)",
+      "right": "busi/malignant (7)",
+      "left_split": "train",
+      "right_split": "train",
+      "crosses_split": false
+    },
+    {
+      "left": "busi/malignant (6)",
+      "right": "busi/malignant (8)",
+      "left_split": "train",
+      "right_split": "val",
+      "crosses_split": true
+    },
+    {
+      "left": "busi/malignant (7)",
+      "right": "busi/malignant (8)",
+      "left_split": "train",
+      "right_split": "val",
+      "crosses_split": true
+    },
+    {
+      "left": "busi/malignant (11)",
+      "right": "busi/malignant (113)",
+      "left_split": "val",
+      "right_split": "train",
+      "crosses_split": true
+    },
+    {
+      "left": "busi/malignant (15)",
+      "right": "busi/malignant (111)",
+      "left_split": "train",
+      "right_split": "train",
+      "crosses_split": false
+    },
+    {
+      "left": "busi/malignant (27)",
+      "right": "busi/malignant (28)",
+      "left_split": "test",
+      "right_split": "test",
+      "crosses_split": false
+    },
+    {
+      "left": "busi/malignant (34)",
+      "right": "busi/malignant (92)",
+      "left_split": "test",
+      "right_split": "train",
+      "crosses_split": true
+    },
+    {
+      "left": "busi/malignant (39)",
+      "right": "busi/malignant (42)",
+      "left_split": "train",
+      "right_split": "train",
+      "crosses_split": false
+    },
+    {
+      "left": "busi/malignant (65)",
+      "right": "busi/malignant (66)",
+      "left_split": "test",
+      "right_split": "val",
+      "crosses_split": true
+    },
+    {
+      "left": "busi/malignant (80)",
+      "right": "busi/malignant (81)",
+      "left_split": "train",
+      "right_split": "train",
+      "crosses_split": false
+    },
+    {
+      "left": "busi/malignant (85)",
+      "right": "busi/malignant (86)",
+      "left_split": "test",
+      "right_split": "train",
+      "crosses_split": true
+    },
+    {
+      "left": "busi/malignant (95)",
+      "right": "busi/malignant (96)",
+      "left_split": "train",
+      "right_split": "train",
+      "crosses_split": false
+    },
+    {
+      "left": "busi/malignant (98)",
+      "right": "busi/malignant (99)",
+      "left_split": "test",
+      "right_split": "test",
+      "crosses_split": false
+    },
+    {
+      "left": "busi/malignant (106)",
+      "right": "busi/malignant (107)",
+      "left_split": "train",
+      "right_split": "train",
+      "crosses_split": false
+    },
+    {
+      "left": "busi/malignant (128)",
+      "right": "busi/malignant (129)",
+      "left_split": "train",
+      "right_split": "train",
+      "crosses_split": false
+    }
+  ],
+  "crossing_pairs": 20,
+  "retained_normal_conflicts": [
+    {
+      "included": "busi/benign (269)",
+      "normal_duplicate": "busi/normal (1)"
+    },
+    {
+      "included": "busi/benign (437)",
+      "normal_duplicate": "busi/normal (34)"
+    }
+  ],
+  "status": "FAIL"
+}

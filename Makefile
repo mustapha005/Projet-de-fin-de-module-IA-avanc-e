@@ -1,7 +1,7 @@
 PYTHON ?= python
 .PHONY: setup data check smoke tune main ablations analysis paper slides reproduce package
 setup:
-	$(PYTHON) -m pip install -r requirements-data.txt
+	$(PYTHON) -m pip install -r requirements.lock
 data:
 	$(PYTHON) scripts/data_pipeline.py
 check:

@@ -6,5 +6,32 @@
     "bytes": 40173,
     "downloaded_at_utc": "2026-11-20T10:28:08.793524+00:00",
     "failed_sources": []
+  },
+  "breast_images": {
+    "source_url": "https://www.cancerimagingarchive.net/wp-content/uploads/BrEaST-Lesions_USG-images_and_masks-Dec-15-2023.zip",
+    "filename": "BrEaST-Lesions_USG-images_and_masks-Dec-15-2023.zip",
+    "sha256": "c32e49cdfa54042e065582d0cb35978b5fc5e5b5e461b33bf773fb50cfdad355",
+    "bytes": 69862076,
+    "downloaded_at_utc": "2026-11-20T15:19:36.717514+00:00",
+    "failed_sources": []
+  },
+  "busi": {
+    "source_url": "https://www.kaggle.com/api/v1/datasets/download/aryashah2k/breast-ultrasound-images-dataset",
+    "filename": "Dataset_BUSI.zip",
+    "sha256": "7fffc86a517934da55021f66641d81383058d26a30adb0ffab3780ca7e52d57d",
+    "bytes": 204421470,
+    "downloaded_at_utc": "2026-11-20T15:38:27.499822+00:00",
+    "failed_sources": [
+      {
+        "url": "https://scholar.cu.edu.eg/Dataset_BUSI.zip",
+        "attempt": 1,
+        "error": "ValueError: Download is not a ZIP/XLSX file (possibly a challenge page)"
+      },
+      {
+        "url": "https://www.kaggle.com/api/v1/datasets/download/aryashah2k/breast-ultrasound-images-dataset",
+        "attempt": 1,
+        "error": "TimeoutError: The read operation timed out"
+      }
+    ]
   }
 }

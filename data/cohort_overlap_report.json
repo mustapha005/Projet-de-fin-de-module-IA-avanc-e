@@ -1,0 +1,5 @@
+{
+  "cross_cohort_pairs": [],
+  "external_internal_pairs": [],
+  "external_policy": "Retain external cohort unchanged; report within-cohort similarity"
+}

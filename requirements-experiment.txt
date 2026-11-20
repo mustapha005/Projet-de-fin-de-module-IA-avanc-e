@@ -1,0 +1,13 @@
+-r requirements-data.txt
+torch==2.6.0+cpu
+torchvision==0.21.0+cpu
+transformers==4.49.0
+peft==0.14.0
+accelerate==1.4.0
+huggingface-hub==0.29.3
+safetensors==0.5.3
+timm==1.0.15
+matplotlib==3.10.1
+PyYAML==6.0.2
+# Install torch/torchvision from the official CPU index before the remaining stack.
+# All transitive versions will be recorded in requirements.lock after validation.

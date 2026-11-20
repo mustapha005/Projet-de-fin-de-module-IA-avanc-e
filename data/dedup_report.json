@@ -1,0 +1,2347 @@
+{
+  "algorithm": "pHash(hash_size=8), Hamming<=4, plus published links; connected components",
+  "hamming_threshold": 4,
+  "input_images": 647,
+  "retained_images": 488,
+  "removed_images": 159,
+  "conflict_components": 8,
+  "conflict_images": 17,
+  "published_binary_pair_count": 178,
+  "published_normal_conflict_ids": [
+    "busi/benign (269)",
+    "busi/benign (437)"
+  ],
+  "clusters": [
+    {
+      "members": [
+        "busi/benign (1)",
+        "busi/benign (318)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (1)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (10)",
+        "busi/benign (327)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (10)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (105)",
+        "busi/benign (156)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (105)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (108)",
+        "busi/benign (114)",
+        "busi/benign (116)",
+        "busi/benign (119)",
+        "busi/benign (122)",
+        "busi/benign (61)",
+        "busi/benign (94)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (108)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (11)",
+        "busi/benign (328)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (11)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (110)",
+        "busi/benign (158)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (110)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (12)",
+        "busi/benign (329)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (12)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (125)",
+        "busi/benign (126)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (125)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (127)",
+        "busi/benign (37)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (127)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (128)",
+        "busi/benign (30)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (128)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (129)",
+        "busi/benign (44)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (129)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (13)",
+        "busi/benign (330)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (13)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (130)",
+        "busi/benign (33)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (130)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (131)",
+        "busi/benign (42)",
+        "busi/malignant (51)"
+      ],
+      "labels": [
+        0,
+        1
+      ],
+      "representative": null,
+      "conflicts_with_excluded_normal": false,
+      "action": "quarantine_conflict"
+    },
+    {
+      "members": [
+        "busi/benign (132)",
+        "busi/benign (38)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (132)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (133)",
+        "busi/benign (51)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (133)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (134)",
+        "busi/benign (52)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (134)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (135)",
+        "busi/benign (58)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (135)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (136)",
+        "busi/benign (50)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (136)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (138)",
+        "busi/benign (60)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (138)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (139)",
+        "busi/benign (157)",
+        "busi/benign (65)",
+        "busi/benign (99)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (139)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (14)",
+        "busi/benign (331)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (14)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (140)",
+        "busi/benign (62)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (140)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (141)",
+        "busi/benign (64)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (141)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (15)",
+        "busi/benign (332)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (15)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (150)",
+        "busi/benign (19)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (150)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (151)",
+        "busi/benign (16)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (151)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (152)",
+        "busi/benign (18)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (152)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (153)",
+        "busi/benign (25)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (153)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (154)",
+        "busi/benign (21)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (154)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (155)",
+        "busi/benign (96)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (155)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (163)",
+        "busi/benign (86)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (163)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (164)",
+        "busi/benign (85)",
+        "busi/malignant (52)"
+      ],
+      "labels": [
+        0,
+        1
+      ],
+      "representative": null,
+      "conflicts_with_excluded_normal": false,
+      "action": "quarantine_conflict"
+    },
+    {
+      "members": [
+        "busi/benign (17)",
+        "busi/benign (425)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (17)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (177)",
+        "busi/benign (35)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (177)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (197)",
+        "busi/benign (81)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (197)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (199)",
+        "busi/benign (248)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (199)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (2)",
+        "busi/benign (319)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (2)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (200)",
+        "busi/benign (274)",
+        "busi/benign (290)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (200)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (201)",
+        "busi/benign (302)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (201)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (202)",
+        "busi/benign (301)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (202)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (203)",
+        "busi/benign (273)",
+        "busi/benign (289)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (203)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (204)",
+        "busi/benign (249)",
+        "busi/benign (282)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (204)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (205)",
+        "busi/benign (262)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (205)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (206)",
+        "busi/benign (303)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (206)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (207)",
+        "busi/benign (256)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (207)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (208)",
+        "busi/benign (291)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (208)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (209)",
+        "busi/benign (275)",
+        "busi/benign (297)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (209)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (210)",
+        "busi/benign (298)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (210)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (211)",
+        "busi/benign (254)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (211)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (213)",
+        "busi/benign (253)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (213)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (214)",
+        "busi/benign (260)",
+        "busi/benign (281)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (214)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (215)",
+        "busi/benign (270)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (215)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (216)",
+        "busi/benign (265)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (216)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (217)",
+        "busi/benign (268)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (217)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (218)",
+        "busi/benign (296)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (218)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (219)",
+        "busi/benign (272)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (219)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (220)",
+        "busi/benign (271)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (220)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (221)",
+        "busi/benign (246)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (221)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (222)",
+        "busi/benign (267)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (222)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (223)",
+        "busi/benign (257)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (223)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (224)",
+        "busi/benign (304)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (224)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (225)",
+        "busi/benign (292)",
+        "busi/benign (293)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (225)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (226)",
+        "busi/benign (263)",
+        "busi/benign (278)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (226)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (227)",
+        "busi/benign (250)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (227)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (228)",
+        "busi/benign (306)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (228)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (229)",
+        "busi/benign (259)",
+        "busi/benign (280)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (229)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (230)",
+        "busi/benign (252)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (230)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (231)",
+        "busi/benign (295)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (231)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (232)",
+        "busi/benign (276)",
+        "busi/benign (287)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (232)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (233)",
+        "busi/benign (299)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (233)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (234)",
+        "busi/benign (261)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (234)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (235)",
+        "busi/benign (294)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (235)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (236)",
+        "busi/benign (247)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (236)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (237)",
+        "busi/benign (264)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (237)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (238)",
+        "busi/benign (300)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (238)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (239)",
+        "busi/benign (258)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (239)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (240)",
+        "busi/benign (255)",
+        "busi/benign (277)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (240)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (241)",
+        "busi/benign (266)",
+        "busi/benign (279)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (241)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (242)",
+        "busi/benign (288)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (242)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (244)",
+        "busi/benign (251)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (244)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (245)",
+        "busi/benign (305)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (245)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (269)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": null,
+      "conflicts_with_excluded_normal": true,
+      "action": "quarantine_conflict"
+    },
+    {
+      "members": [
+        "busi/benign (284)",
+        "busi/benign (285)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (284)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (3)",
+        "busi/benign (320)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (3)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (307)",
+        "busi/benign (419)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (307)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (308)",
+        "busi/benign (424)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (308)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (309)",
+        "busi/benign (422)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (309)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (310)",
+        "busi/benign (423)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (310)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (312)",
+        "busi/benign (421)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (312)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (316)",
+        "busi/benign (426)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (316)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (321)",
+        "busi/benign (4)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (321)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (322)",
+        "busi/benign (5)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (322)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (323)",
+        "busi/benign (6)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (323)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (324)",
+        "busi/benign (7)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (324)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (325)",
+        "busi/benign (8)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (325)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (326)",
+        "busi/benign (9)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (326)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (333)",
+        "busi/malignant (77)",
+        "busi/malignant (78)"
+      ],
+      "labels": [
+        0,
+        1
+      ],
+      "representative": null,
+      "conflicts_with_excluded_normal": false,
+      "action": "quarantine_conflict"
+    },
+    {
+      "members": [
+        "busi/benign (395)",
+        "busi/benign (411)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (395)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (396)",
+        "busi/benign (413)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (396)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (399)",
+        "busi/malignant (93)"
+      ],
+      "labels": [
+        0,
+        1
+      ],
+      "representative": null,
+      "conflicts_with_excluded_normal": false,
+      "action": "quarantine_conflict"
+    },
+    {
+      "members": [
+        "busi/benign (400)",
+        "busi/benign (412)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (400)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (404)",
+        "busi/benign (415)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": "busi/benign (404)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/benign (406)",
+        "busi/malignant (94)"
+      ],
+      "labels": [
+        0,
+        1
+      ],
+      "representative": null,
+      "conflicts_with_excluded_normal": false,
+      "action": "quarantine_conflict"
+    },
+    {
+      "members": [
+        "busi/benign (433)",
+        "busi/malignant (145)"
+      ],
+      "labels": [
+        0,
+        1
+      ],
+      "representative": null,
+      "conflicts_with_excluded_normal": false,
+      "action": "quarantine_conflict"
+    },
+    {
+      "members": [
+        "busi/benign (437)"
+      ],
+      "labels": [
+        0
+      ],
+      "representative": null,
+      "conflicts_with_excluded_normal": true,
+      "action": "quarantine_conflict"
+    },
+    {
+      "members": [
+        "busi/malignant (10)",
+        "busi/malignant (112)"
+      ],
+      "labels": [
+        1
+      ],
+      "representative": "busi/malignant (10)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/malignant (106)",
+        "busi/malignant (107)"
+      ],
+      "labels": [
+        1
+      ],
+      "representative": "busi/malignant (106)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/malignant (109)",
+        "busi/malignant (13)"
+      ],
+      "labels": [
+        1
+      ],
+      "representative": "busi/malignant (109)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/malignant (11)",
+        "busi/malignant (113)"
+      ],
+      "labels": [
+        1
+      ],
+      "representative": "busi/malignant (11)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/malignant (110)",
+        "busi/malignant (12)"
+      ],
+      "labels": [
+        1
+      ],
+      "representative": "busi/malignant (110)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/malignant (111)",
+        "busi/malignant (15)"
+      ],
+      "labels": [
+        1
+      ],
+      "representative": "busi/malignant (111)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/malignant (114)",
+        "busi/malignant (123)",
+        "busi/malignant (14)"
+      ],
+      "labels": [
+        1
+      ],
+      "representative": "busi/malignant (114)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/malignant (116)",
+        "busi/malignant (18)"
+      ],
+      "labels": [
+        1
+      ],
+      "representative": "busi/malignant (116)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/malignant (118)",
+        "busi/malignant (119)"
+      ],
+      "labels": [
+        1
+      ],
+      "representative": "busi/malignant (118)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/malignant (128)",
+        "busi/malignant (129)"
+      ],
+      "labels": [
+        1
+      ],
+      "representative": "busi/malignant (128)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/malignant (17)",
+        "busi/malignant (88)"
+      ],
+      "labels": [
+        1
+      ],
+      "representative": "busi/malignant (17)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/malignant (27)",
+        "busi/malignant (28)"
+      ],
+      "labels": [
+        1
+      ],
+      "representative": "busi/malignant (27)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/malignant (34)",
+        "busi/malignant (92)"
+      ],
+      "labels": [
+        1
+      ],
+      "representative": "busi/malignant (34)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/malignant (39)",
+        "busi/malignant (42)"
+      ],
+      "labels": [
+        1
+      ],
+      "representative": "busi/malignant (39)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/malignant (4)",
+        "busi/malignant (5)",
+        "busi/malignant (6)",
+        "busi/malignant (7)",
+        "busi/malignant (8)",
+        "busi/malignant (9)"
+      ],
+      "labels": [
+        1
+      ],
+      "representative": "busi/malignant (4)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/malignant (65)",
+        "busi/malignant (66)"
+      ],
+      "labels": [
+        1
+      ],
+      "representative": "busi/malignant (65)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/malignant (80)",
+        "busi/malignant (81)"
+      ],
+      "labels": [
+        1
+      ],
+      "representative": "busi/malignant (80)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/malignant (85)",
+        "busi/malignant (86)"
+      ],
+      "labels": [
+        1
+      ],
+      "representative": "busi/malignant (85)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/malignant (95)",
+        "busi/malignant (96)",
+        "busi/malignant (97)"
+      ],
+      "labels": [
+        1
+      ],
+      "representative": "busi/malignant (95)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    },
+    {
+      "members": [
+        "busi/malignant (98)",
+        "busi/malignant (99)"
+      ],
+      "labels": [
+        1
+      ],
+      "representative": "busi/malignant (98)",
+      "conflicts_with_excluded_normal": false,
+      "action": "keep_one"
+    }
+  ],
+  "near_pairs": [
+    {
+      "left": "busi/benign (1)",
+      "right": "busi/benign (318)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (10)",
+      "right": "busi/benign (327)",
+      "hamming": 0,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (105)",
+      "right": "busi/benign (156)",
+      "hamming": 0,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (11)",
+      "right": "busi/benign (328)",
+      "hamming": 4,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (12)",
+      "right": "busi/benign (329)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (127)",
+      "right": "busi/benign (37)",
+      "hamming": 0,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (128)",
+      "right": "busi/benign (30)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (129)",
+      "right": "busi/benign (44)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (13)",
+      "right": "busi/benign (330)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (131)",
+      "right": "busi/benign (42)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (131)",
+      "right": "busi/malignant (51)",
+      "hamming": 2,
+      "label_conflict": true
+    },
+    {
+      "left": "busi/benign (132)",
+      "right": "busi/benign (38)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (133)",
+      "right": "busi/benign (51)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (134)",
+      "right": "busi/benign (52)",
+      "hamming": 4,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (135)",
+      "right": "busi/benign (58)",
+      "hamming": 0,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (136)",
+      "right": "busi/benign (50)",
+      "hamming": 4,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (138)",
+      "right": "busi/benign (60)",
+      "hamming": 4,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (139)",
+      "right": "busi/benign (157)",
+      "hamming": 0,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (139)",
+      "right": "busi/benign (65)",
+      "hamming": 0,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (139)",
+      "right": "busi/benign (99)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (14)",
+      "right": "busi/benign (331)",
+      "hamming": 0,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (15)",
+      "right": "busi/benign (332)",
+      "hamming": 0,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (150)",
+      "right": "busi/benign (19)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (151)",
+      "right": "busi/benign (16)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (152)",
+      "right": "busi/benign (18)",
+      "hamming": 0,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (153)",
+      "right": "busi/benign (25)",
+      "hamming": 4,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (157)",
+      "right": "busi/benign (65)",
+      "hamming": 0,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (157)",
+      "right": "busi/benign (99)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (163)",
+      "right": "busi/benign (86)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (164)",
+      "right": "busi/benign (85)",
+      "hamming": 0,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (164)",
+      "right": "busi/malignant (52)",
+      "hamming": 2,
+      "label_conflict": true
+    },
+    {
+      "left": "busi/benign (17)",
+      "right": "busi/benign (425)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (177)",
+      "right": "busi/benign (35)",
+      "hamming": 0,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (197)",
+      "right": "busi/benign (81)",
+      "hamming": 4,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (199)",
+      "right": "busi/benign (248)",
+      "hamming": 4,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (2)",
+      "right": "busi/benign (319)",
+      "hamming": 4,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (200)",
+      "right": "busi/benign (274)",
+      "hamming": 4,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (200)",
+      "right": "busi/benign (290)",
+      "hamming": 4,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (202)",
+      "right": "busi/benign (301)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (203)",
+      "right": "busi/benign (273)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (203)",
+      "right": "busi/benign (289)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (204)",
+      "right": "busi/benign (249)",
+      "hamming": 0,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (204)",
+      "right": "busi/benign (282)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (205)",
+      "right": "busi/benign (262)",
+      "hamming": 4,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (206)",
+      "right": "busi/benign (303)",
+      "hamming": 4,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (207)",
+      "right": "busi/benign (256)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (208)",
+      "right": "busi/benign (291)",
+      "hamming": 4,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (209)",
+      "right": "busi/benign (275)",
+      "hamming": 4,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (209)",
+      "right": "busi/benign (297)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (210)",
+      "right": "busi/benign (298)",
+      "hamming": 0,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (211)",
+      "right": "busi/benign (254)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (213)",
+      "right": "busi/benign (253)",
+      "hamming": 4,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (214)",
+      "right": "busi/benign (260)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (214)",
+      "right": "busi/benign (281)",
+      "hamming": 4,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (215)",
+      "right": "busi/benign (270)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (216)",
+      "right": "busi/benign (265)",
+      "hamming": 0,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (217)",
+      "right": "busi/benign (268)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (218)",
+      "right": "busi/benign (296)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (219)",
+      "right": "busi/benign (272)",
+      "hamming": 4,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (222)",
+      "right": "busi/benign (267)",
+      "hamming": 0,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (223)",
+      "right": "busi/benign (257)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (225)",
+      "right": "busi/benign (292)",
+      "hamming": 0,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (225)",
+      "right": "busi/benign (293)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (226)",
+      "right": "busi/benign (263)",
+      "hamming": 0,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (226)",
+      "right": "busi/benign (278)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (227)",
+      "right": "busi/benign (250)",
+      "hamming": 4,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (228)",
+      "right": "busi/benign (306)",
+      "hamming": 0,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (229)",
+      "right": "busi/benign (259)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (229)",
+      "right": "busi/benign (280)",
+      "hamming": 4,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (230)",
+      "right": "busi/benign (252)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (231)",
+      "right": "busi/benign (295)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (232)",
+      "right": "busi/benign (276)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (232)",
+      "right": "busi/benign (287)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (233)",
+      "right": "busi/benign (299)",
+      "hamming": 0,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (234)",
+      "right": "busi/benign (261)",
+      "hamming": 0,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (235)",
+      "right": "busi/benign (294)",
+      "hamming": 0,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (236)",
+      "right": "busi/benign (247)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (238)",
+      "right": "busi/benign (300)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (239)",
+      "right": "busi/benign (258)",
+      "hamming": 0,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (240)",
+      "right": "busi/benign (255)",
+      "hamming": 4,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (240)",
+      "right": "busi/benign (277)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (241)",
+      "right": "busi/benign (266)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (241)",
+      "right": "busi/benign (279)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (244)",
+      "right": "busi/benign (251)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (249)",
+      "right": "busi/benign (282)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (255)",
+      "right": "busi/benign (277)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (259)",
+      "right": "busi/benign (280)",
+      "hamming": 4,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (260)",
+      "right": "busi/benign (281)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (263)",
+      "right": "busi/benign (278)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (266)",
+      "right": "busi/benign (279)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (273)",
+      "right": "busi/benign (289)",
+      "hamming": 0,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (274)",
+      "right": "busi/benign (290)",
+      "hamming": 0,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (275)",
+      "right": "busi/benign (297)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (276)",
+      "right": "busi/benign (287)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (284)",
+      "right": "busi/benign (285)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (292)",
+      "right": "busi/benign (293)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (3)",
+      "right": "busi/benign (320)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (307)",
+      "right": "busi/benign (419)",
+      "hamming": 4,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (309)",
+      "right": "busi/benign (422)",
+      "hamming": 0,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (310)",
+      "right": "busi/benign (423)",
+      "hamming": 4,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (312)",
+      "right": "busi/benign (421)",
+      "hamming": 0,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (316)",
+      "right": "busi/benign (426)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (321)",
+      "right": "busi/benign (4)",
+      "hamming": 4,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (322)",
+      "right": "busi/benign (5)",
+      "hamming": 0,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (323)",
+      "right": "busi/benign (6)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (324)",
+      "right": "busi/benign (7)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (325)",
+      "right": "busi/benign (8)",
+      "hamming": 0,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (333)",
+      "right": "busi/malignant (77)",
+      "hamming": 4,
+      "label_conflict": true
+    },
+    {
+      "left": "busi/benign (395)",
+      "right": "busi/benign (411)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (396)",
+      "right": "busi/benign (413)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (399)",
+      "right": "busi/malignant (93)",
+      "hamming": 0,
+      "label_conflict": true
+    },
+    {
+      "left": "busi/benign (400)",
+      "right": "busi/benign (412)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (404)",
+      "right": "busi/benign (415)",
+      "hamming": 4,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (406)",
+      "right": "busi/malignant (94)",
+      "hamming": 2,
+      "label_conflict": true
+    },
+    {
+      "left": "busi/benign (42)",
+      "right": "busi/malignant (51)",
+      "hamming": 0,
+      "label_conflict": true
+    },
+    {
+      "left": "busi/benign (433)",
+      "right": "busi/malignant (145)",
+      "hamming": 0,
+      "label_conflict": true
+    },
+    {
+      "left": "busi/benign (61)",
+      "right": "busi/benign (94)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (65)",
+      "right": "busi/benign (99)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/benign (85)",
+      "right": "busi/malignant (52)",
+      "hamming": 2,
+      "label_conflict": true
+    },
+    {
+      "left": "busi/malignant (10)",
+      "right": "busi/malignant (112)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/malignant (109)",
+      "right": "busi/malignant (13)",
+      "hamming": 4,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/malignant (110)",
+      "right": "busi/malignant (12)",
+      "hamming": 4,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/malignant (114)",
+      "right": "busi/malignant (123)",
+      "hamming": 4,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/malignant (114)",
+      "right": "busi/malignant (14)",
+      "hamming": 4,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/malignant (116)",
+      "right": "busi/malignant (18)",
+      "hamming": 0,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/malignant (118)",
+      "right": "busi/malignant (119)",
+      "hamming": 4,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/malignant (123)",
+      "right": "busi/malignant (14)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/malignant (17)",
+      "right": "busi/malignant (88)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/malignant (4)",
+      "right": "busi/malignant (5)",
+      "hamming": 2,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/malignant (8)",
+      "right": "busi/malignant (9)",
+      "hamming": 0,
+      "label_conflict": false
+    },
+    {
+      "left": "busi/malignant (96)",
+      "right": "busi/malignant (97)",
+      "hamming": 2,
+      "label_conflict": false
+    }
+  ]
+}

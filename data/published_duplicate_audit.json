@@ -1,0 +1,10 @@
+{
+  "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10293973/table/tbl0004/",
+  "published_pairs": 237,
+  "retained_duplicate_pairs": [],
+  "crossing_pairs": 0,
+  "retained_normal_conflicts": [],
+  "status": "PASS",
+  "published_duplicate_groups_remaining": 0,
+  "published_normal_conflicts_remaining": 0
+}

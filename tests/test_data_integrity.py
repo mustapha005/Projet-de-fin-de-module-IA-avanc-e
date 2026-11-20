@@ -7,7 +7,7 @@ from zipfile import ZipFile
 import pandas as pd
 
 from scripts.download_data import safe_extract
-from src.data import audit_splits, deduplicate, label_subsets, split_busi
+from src.data import article_image_id, audit_known_groups, audit_splits, deduplicate, label_subsets, split_busi
 
 
 def fixture(n=100):
@@ -19,6 +19,26 @@ def fixture(n=100):
 
 
 class DataIntegrityTests(unittest.TestCase):
+    def test_published_links_cover_dissimilar_hashes_and_normal_conflicts(self):
+        frame = pd.DataFrame([{"image_id": "a", "label": 0, "phash": "0000000000000000"},
+                              {"image_id": "b", "label": 0, "phash": "ffffffffffffffff"},
+                              {"image_id": "c", "label": 1, "phash": "aaaaaaaaaaaaaaaa"}])
+        clean, report = deduplicate(frame, known_pairs=[("a", "b")], forbidden_ids={"c"})
+        self.assertEqual(clean.image_id.tolist(), ["a"])
+        self.assertEqual(report["conflict_images"], 1)
+
+    def test_published_graph_audit_traverses_removed_intermediate(self):
+        retained = pd.DataFrame({"image_id": ["a", "c"]})
+        with self.assertRaisesRegex(ValueError, "component survives"):
+            audit_known_groups(retained, [("a", "b"), ("b", "c")])
+
+    def test_published_id_mapping_respects_class_boundaries(self):
+        self.assertEqual(article_image_id(437), "busi/benign (437)")
+        self.assertEqual(article_image_id(438), "busi/malignant (1)")
+        self.assertEqual(article_image_id(647), "busi/malignant (210)")
+        self.assertEqual(article_image_id(648), "busi/normal (1)")
+        self.assertEqual(article_image_id(780), "busi/normal (133)")
+
     def test_transitive_duplicates_cannot_survive_as_separate_samples(self):
         # A~B and B~C, while A and C have distance 8: collapse the whole component.
         frame = pd.DataFrame([{"image_id": c, "label": 0, "phash": h}

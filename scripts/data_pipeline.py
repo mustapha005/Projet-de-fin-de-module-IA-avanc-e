@@ -15,7 +15,7 @@ import pandas as pd
 from PIL import Image
 
 from scripts.download_data import DATA, main as download, sha256_file, write_json
-from src.data import audit_splits, deduplicate, label_subsets, near_pairs, split_busi
+from src.data import audit_known_groups, audit_splits, deduplicate, label_subsets, near_pairs, published_constraints, split_busi
 
 
 def image_record(path: Path, cohort: str, label: int) -> dict:
@@ -129,7 +129,9 @@ def run(offline: bool = False) -> dict:
             verify_manifest_files(pd.read_csv(path, dtype={"phash": str}))
     busi, busi_counts = inventory_busi()
     external, external_counts = inventory_breast()
-    clean, dedup = deduplicate(busi)
+    known_pairs, forbidden_ids = published_constraints(ROOT / "configs" / "busi_published_pairs.json")
+    clean, dedup = deduplicate(busi, known_pairs=known_pairs, forbidden_ids=forbidden_ids)
+    published_audit = audit_known_groups(clean, known_pairs, forbidden_ids)
     cross_pairs = near_pairs(clean, external)
     external_internal_pairs = near_pairs(external)
     write_json(DATA / "dedup_report.json", dedup)
@@ -140,6 +142,7 @@ def run(offline: bool = False) -> dict:
     splits = split_busi(clean)
     subsets = label_subsets(splits)
     report = audit_splits(splits, subsets, external)
+    report.update(published_audit)
     for name, frame in [("busi_inventory", busi), ("busi_clean", clean),
                         ("breast_external", external.assign(split="external")),
                         ("busi_splits", splits), ("label_subsets", subsets)]:
