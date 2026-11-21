@@ -58,5 +58,6 @@
     "tzdata": "2026.6",
     "urllib3": "2.8.0"
   },
-  "reference_machine_frozen": false
+  "reference_machine_frozen": true,
+  "freeze_authority": "protocol-frozen at befa5ba"
 }
