@@ -17,3 +17,5 @@ logs/
 .env.*
 deliverables/*
 !deliverables/.gitkeep
+.venv-paper/
+paper/build/
