@@ -193,3 +193,18 @@ hashes, exact reference hardware, 24-minute cap, 50 epochs and all three seeds.
 No tag or scientific result exists yet. Next: commit the implementation, verify
 all protected bytes from a clean Git checkout, record the Phase 2 audit, then
 create protocol-frozen and begin the registered tuning grid.
+
+### Phase 2 exit gate and Phase 3 plan
+
+Final pre-freeze suite: 31 tests PASS. The clean clone of commit 917c094 matches
+all 21 protected SHA-256s and regenerates the same 414-row development view.
+Phase 2 verdict is PASS WITH FIXES; see `docs/reviews/AUDIT_2026-11-21_phase2.md`.
+Results/ is empty before tagging. No test prediction has been made.
+
+Phase 3 plan: create the protocol-frozen tag on the audited commit; run exactly
+the registered seed-0 10% candidates, save selection ledgers, then execute the
+36 final method/fraction/seed cells with one selected-checkpoint evaluation each.
+Start with LP tuning to exercise the frozen contract and cache accounting. All
+jobs remain serial, bounded and supervised. Failures retain their attempt logs;
+do not silently add candidates or extend caps. Keep tests sealed during tuning.
+Milestone J5 still has no main results or ablations; completion is not claimed.
