@@ -4,6 +4,7 @@ import json
 import os
 from pathlib import Path
 import platform
+import subprocess
 import sys
 
 import psutil
@@ -24,7 +25,8 @@ def main() -> None:
         "logical_cores": os.cpu_count(), "ram_bytes": psutil.virtual_memory().total,
         "packages": dict(sorted((d.metadata["Name"], d.version)
                                 for d in importlib.metadata.distributions())),
-        "reference_machine_frozen": False,
+        "reference_machine_frozen": bool(subprocess.check_output(
+            ["git", "tag", "--list", "protocol-frozen"], cwd=ROOT, text=True).strip()),
     }
     target = ROOT / "docs" / "machine.json"
     target.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8", newline="\n")
