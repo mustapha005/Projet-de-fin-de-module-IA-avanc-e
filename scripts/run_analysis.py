@@ -8,7 +8,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from src.analysis import error_analysis, figures, make_tables
+from src.analysis import error_analysis, figures, make_tables, protocol_numbers
 
 
 def main():
@@ -17,6 +17,7 @@ def main():
     args = parser.parse_args()
     # The grid audit recomputes saved metrics and fails on hash/threshold/deadline problems.
     subprocess.run([sys.executable, str(ROOT / 'scripts/audit_experiments.py')], cwd=ROOT, check=True)
+    protocol_numbers.write(ROOT)
     verdicts = make_tables.build(ROOT, ROOT / 'tables', ROOT / 'paper/numbers.json')
     written = [p.name for p in figures.build(ROOT, ROOT / 'figures')]
     errors = error_analysis.build(ROOT, ROOT / 'tables', ROOT / 'figures', saliency=not args.no_saliency)
