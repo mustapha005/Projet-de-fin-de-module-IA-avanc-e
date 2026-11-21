@@ -243,3 +243,29 @@ LoRA history separately. Plan: restart LoRA candidate 0 from initialization as
 attempt 2, using the unchanged cap and settings, then continue its remaining
 candidates and CNN. This follows the frozen restart rule; no extra optimizer
 steps are carried forward from attempt 1. Remain present while costly work runs.
+
+## 2026-11-21 — Claude Code (Opus 5.5) — resume audit and Phase 4 tooling plan
+
+Took over from Codex after its session ran out of tokens. Read README, LOG,
+PROTOCOL, DEVIATIONS, REQUIREMENTS and the last 30 commits. Found the Codex-launched
+tuning controller (`--phase tune --methods LoRA CNN`) still live under the Codex
+app's shell; LoRA candidate 0 attempt 2 completed at the cap (35 epochs, val AUC
+0.5507) and candidate 1 started. Attempt 2 reproduced attempt 1's validation AUCs
+for all 35 shared epochs, but its median epoch was 33% slower (concurrent load).
+Audit: `docs/reviews/AUDIT_2026-11-21_phase3_claude_resume.md` (PASS WITH FIXES).
+A request to stop the Codex-owned controller at a candidate boundary was blocked by
+tool permissions; it keeps running and must not be closed with the Codex app.
+
+Phase 4 plan (implemented now, while tuning runs; exercised only on synthetic
+fixtures outside `results/`, never on real test predictions): `src/analysis/`
+modules to collect run records with hash checks, generate the main/cost/ablation
+tables with mean ± SD and class-stratified paired bootstrap CIs, compute every
+planned contrast and the H1–H3 clause verdicts exactly as frozen, draw the learning
+curve, cost–performance, reliability and ablation figures, run the external error
+typology (BIRADS, Verification, Diagnosis, resolution, luminance, contrast), error
+overlap, deterministic failure selection, attention rollout/Grad-CAM, and emit
+`paper/numbers.json`. Risks: a verdict-code bug silently flipping a hypothesis
+(mitigate with unit tests built from hand-computable contrasts); analysis choices
+the protocol leaves open being made after seeing results (mitigate by recording
+them as a pre-result clarification now); my own CPU use slowing capped runs (keep
+tests short and infrequent).
