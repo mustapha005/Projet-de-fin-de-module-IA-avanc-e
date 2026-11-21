@@ -269,3 +269,30 @@ overlap, deterministic failure selection, attention rollout/Grad-CAM, and emit
 the protocol leaves open being made after seeing results (mitigate by recording
 them as a pre-result clarification now); my own CPU use slowing capped runs (keep
 tests short and infrequent).
+
+### 2026-11-21 11:20 — Claude Code checkpoint
+
+Done this session (all exercised only on synthetic fixtures or development data;
+no real test prediction exists): `src/analysis/` (tables, contrasts, H1–H3 verdicts,
+figures, error typology, gallery, rollout/Grad-CAM), `scripts/run_analysis.py`
+(`make analysis`), `scripts/spot_check_tables.py` (Phase 4 gate), 8 new tests (39
+total pass); article draft (intro, related work, methods, limitations) with every
+number a generated placeholder; `paper/build.py` (pandoc + IEEE CSL + generated
+two-column template → DOCX → Word PDF → page PNGs, D014); `scripts/audit_numbers.py`
+(0 orphans apart from the draft abstract placeholder); `slides/build_slides.py`
+(15 editable slides, notes, presenter split). D013 fixes analysis-presentation
+choices before results.
+
+Tuning status: LP 5/5, PFT 6/6, LoRA 2/6 (candidate 2 running), CNN 0/6. Validation
+AUC so far: LoRA lr=1e-4 wd=.01 0.5507, wd=.05 0.5565 (both capped while still rising).
+
+Open problems: (1) the laptop runs on battery (44%, Balanced plan, ~1.5 GHz), which slows
+capped runs and risks killing them; it needs AC power and a fixed plan. (2) The tuning
+controller is still owned by the Codex app, which must stay open until it exits.
+(3) My own builds slowed epochs; avoid heavy work while a capped run is active.
+
+Exact next step: when `scripts/status.py` shows LoRA 6/6 and CNN 6/6 with selections saved,
+run `scripts/archive_run_evidence.py`, commit configs/frozen + results/tuning + run_evidence,
+then launch `.venv/Scripts/python.exe scripts/run_experiments.py --phase main` (supervised,
+estimated 7–8 h), then `--phase ablation` (~6–7 h), then `make analysis`, the spot check,
+Results/Discussion writing, `paper/build.py --final`, `audit_numbers.py`, and slides.

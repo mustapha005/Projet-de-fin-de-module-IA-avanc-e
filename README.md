@@ -48,6 +48,11 @@ wrap these steps (`PYTHON` can be overridden). After the frozen tag, `make tune`
 equivalent is `scripts/run_experiments.py --phase tune|main|ablation`; use
 `--methods LP` to limit a phase to one method. An unavailable phase target fails
 explicitly. Each invocation stays in the foreground and logs every attempt.
+After the main grid, `make analysis` (`scripts/run_analysis.py`) regenerates every
+table, figure, H1–H3 verdict and `paper/numbers.json` from `results/`. The article
+and slides use a separate environment (`.venv-paper`, `requirements-paper.lock`):
+`.venv-paper/Scripts/python.exe paper/build.py [--final]`, then
+`scripts/audit_numbers.py` and `slides/build_slides.py [--final]`.
 The eventual main reproduction command is `make reproduce`; it is **not ready**.
 The full projection and its assumptions are in `docs/benchmark/compute_projection.json`.
 
