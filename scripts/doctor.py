@@ -27,7 +27,7 @@ def main() -> None:
         "reference_machine_frozen": False,
     }
     target = ROOT / "docs" / "machine.json"
-    target.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+    target.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8", newline="\n")
     print(json.dumps(report, indent=2))
 
 

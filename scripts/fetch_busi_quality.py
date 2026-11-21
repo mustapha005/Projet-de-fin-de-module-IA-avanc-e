@@ -50,7 +50,7 @@ def main():
               "id_mapping": "1..437 benign; 438..647 malignant (subtract 437); 648..780 normal (subtract 647)",
               "pair_count": len(pairs), "pairs": pairs}
     path = ROOT / "configs" / "busi_published_pairs.json"
-    path.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+    path.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8", newline="\n")
     print(f"Saved {len(pairs)} published duplicate pairs to {path}")
 
 

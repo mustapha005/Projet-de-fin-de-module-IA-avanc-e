@@ -41,7 +41,7 @@ def main():
               "patch_size": architecture["patch_size"],
               "image_mean": preprocessing["image_mean"], "image_std": preprocessing["image_std"],
               "experiment_image_size": 224, "trust_remote_code": False}
-    config_path.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+    config_path.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8", newline="\n")
     print(json.dumps(report, indent=2))
 
 

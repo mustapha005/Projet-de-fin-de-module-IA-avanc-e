@@ -1,0 +1,230 @@
+{
+  "status": "PROJECTION_ONLY",
+  "benchmark_sha256": "debe42aeb8916c7ae530c04e7b06868814f654bbdac4b141a6026de52c307afa",
+  "proposed_t_max_seconds": 1440,
+  "threads": 4,
+  "epochs": 50,
+  "tuning_runs": 23,
+  "main_runs": 36,
+  "ablation_runs": 21,
+  "estimated_elapsed_cpu_hours": 21.635078183626405,
+  "with_20_percent_headroom_hours": 25.962093820351683,
+  "fallback_required_at_60_hours": false,
+  "rows": [
+    {
+      "phase": "tuning",
+      "method": "LP",
+      "fraction": 0.1,
+      "runs": 5,
+      "estimated_fit_seconds_per_run": 41.05019799998263,
+      "estimated_final_inference_seconds_per_run": 0.0,
+      "estimated_seconds": 205.25098999991314
+    },
+    {
+      "phase": "main",
+      "method": "LP",
+      "fraction": 0.01,
+      "runs": 3,
+      "estimated_fit_seconds_per_run": 17.583841999876313,
+      "estimated_final_inference_seconds_per_run": 49.82253980803724,
+      "estimated_seconds": 202.21914542374068
+    },
+    {
+      "phase": "main",
+      "method": "LP",
+      "fraction": 0.1,
+      "runs": 3,
+      "estimated_fit_seconds_per_run": 41.05019799998263,
+      "estimated_final_inference_seconds_per_run": 80.15147554506676,
+      "estimated_seconds": 363.60502063514815
+    },
+    {
+      "phase": "main",
+      "method": "LP",
+      "fraction": 1.0,
+      "runs": 3,
+      "estimated_fit_seconds_per_run": 265.3029819999938,
+      "estimated_final_inference_seconds_per_run": 46.866082427225855,
+      "estimated_seconds": 936.507193281659
+    },
+    {
+      "phase": "tuning",
+      "method": "PFT",
+      "fraction": 0.1,
+      "runs": 6,
+      "estimated_fit_seconds_per_run": 1080.4473098987946,
+      "estimated_final_inference_seconds_per_run": 0.0,
+      "estimated_seconds": 6482.683859392768
+    },
+    {
+      "phase": "main",
+      "method": "PFT",
+      "fraction": 0.01,
+      "runs": 3,
+      "estimated_fit_seconds_per_run": 601.7741919994587,
+      "estimated_final_inference_seconds_per_run": 47.265849975288575,
+      "estimated_seconds": 1947.1201259242418
+    },
+    {
+      "phase": "main",
+      "method": "PFT",
+      "fraction": 0.1,
+      "runs": 3,
+      "estimated_fit_seconds_per_run": 1080.4473098987946,
+      "estimated_final_inference_seconds_per_run": 67.34950734780183,
+      "estimated_seconds": 3443.3904517397896
+    },
+    {
+      "phase": "main",
+      "method": "PFT",
+      "fraction": 1.0,
+      "runs": 3,
+      "estimated_fit_seconds_per_run": 1440,
+      "estimated_final_inference_seconds_per_run": 64.35814027941933,
+      "estimated_seconds": 4513.074420838258
+    },
+    {
+      "phase": "tuning",
+      "method": "LoRA",
+      "fraction": 0.1,
+      "runs": 6,
+      "estimated_fit_seconds_per_run": 1431.8693341977196,
+      "estimated_final_inference_seconds_per_run": 0.0,
+      "estimated_seconds": 8591.216005186317
+    },
+    {
+      "phase": "main",
+      "method": "LoRA",
+      "fraction": 0.01,
+      "runs": 3,
+      "estimated_fit_seconds_per_run": 900.5823637969443,
+      "estimated_final_inference_seconds_per_run": 63.638563605272594,
+      "estimated_seconds": 2892.6627822066503
+    },
+    {
+      "phase": "main",
+      "method": "LoRA",
+      "fraction": 0.1,
+      "runs": 3,
+      "estimated_fit_seconds_per_run": 1431.8693341977196,
+      "estimated_final_inference_seconds_per_run": 64.28174508219642,
+      "estimated_seconds": 4488.453237839748
+    },
+    {
+      "phase": "main",
+      "method": "LoRA",
+      "fraction": 1.0,
+      "runs": 3,
+      "estimated_fit_seconds_per_run": 1440,
+      "estimated_final_inference_seconds_per_run": 49.93275460295781,
+      "estimated_seconds": 4469.798263808873
+    },
+    {
+      "phase": "tuning",
+      "method": "CNN",
+      "fraction": 0.1,
+      "runs": 6,
+      "estimated_fit_seconds_per_run": 470.42707379942294,
+      "estimated_final_inference_seconds_per_run": 0.0,
+      "estimated_seconds": 2822.5624427965377
+    },
+    {
+      "phase": "main",
+      "method": "CNN",
+      "fraction": 0.01,
+      "runs": 3,
+      "estimated_fit_seconds_per_run": 276.30989060056163,
+      "estimated_final_inference_seconds_per_run": 19.194585260255774,
+      "estimated_seconds": 886.5134275824523
+    },
+    {
+      "phase": "main",
+      "method": "CNN",
+      "fraction": 0.1,
+      "runs": 3,
+      "estimated_fit_seconds_per_run": 470.42707379942294,
+      "estimated_final_inference_seconds_per_run": 20.634512969850856,
+      "estimated_seconds": 1473.1847603078213
+    },
+    {
+      "phase": "main",
+      "method": "CNN",
+      "fraction": 1.0,
+      "runs": 3,
+      "estimated_fit_seconds_per_run": 1440,
+      "estimated_final_inference_seconds_per_run": 20.528836720642214,
+      "estimated_seconds": 4381.5865101619265
+    },
+    {
+      "phase": "ablation_lora_last2",
+      "method": "LoRA",
+      "fraction": 0.01,
+      "runs": 3,
+      "estimated_fit_seconds_per_run": 900.5823637969443,
+      "estimated_final_inference_seconds_per_run": 63.638563605272594,
+      "estimated_seconds": 2892.6627822066503
+    },
+    {
+      "phase": "ablation_lora_last2",
+      "method": "LoRA",
+      "fraction": 0.1,
+      "runs": 3,
+      "estimated_fit_seconds_per_run": 1431.8693341977196,
+      "estimated_final_inference_seconds_per_run": 64.28174508219642,
+      "estimated_seconds": 4488.453237839748
+    },
+    {
+      "phase": "ablation_lora_last2",
+      "method": "LoRA",
+      "fraction": 1.0,
+      "runs": 3,
+      "estimated_fit_seconds_per_run": 1440,
+      "estimated_final_inference_seconds_per_run": 49.93275460295781,
+      "estimated_seconds": 4469.798263808873
+    },
+    {
+      "phase": "ablation_lora_rank4",
+      "method": "LoRA",
+      "fraction": 0.1,
+      "runs": 3,
+      "estimated_fit_seconds_per_run": 1440,
+      "estimated_final_inference_seconds_per_run": 64.28174508219642,
+      "estimated_seconds": 4512.845235246589
+    },
+    {
+      "phase": "ablation_lora_rank16",
+      "method": "LoRA",
+      "fraction": 0.1,
+      "runs": 3,
+      "estimated_fit_seconds_per_run": 1440,
+      "estimated_final_inference_seconds_per_run": 64.28174508219642,
+      "estimated_seconds": 4512.845235246589
+    },
+    {
+      "phase": "ablation_pft_depth4",
+      "method": "PFT",
+      "fraction": 0.1,
+      "runs": 3,
+      "estimated_fit_seconds_per_run": 1406.4487698992016,
+      "estimated_final_inference_seconds_per_run": 67.34950734780183,
+      "estimated_seconds": 4421.39483174101
+    },
+    {
+      "phase": "ablation_no_augmentation",
+      "method": "LoRA",
+      "fraction": 0.1,
+      "runs": 3,
+      "estimated_fit_seconds_per_run": 1431.8693341977196,
+      "estimated_final_inference_seconds_per_run": 64.28174508219642,
+      "estimated_seconds": 4488.453237839748
+    }
+  ],
+  "assumptions": [
+    "No early stopping benefit assumed.",
+    "Every isolated LP run pays its cold feature setup, even cache hits.",
+    "Ablation costs are proxies; last2 LoRA uses all12 cost; ranks add 10% train time; PFT4 doubles train time.",
+    "Held-out inference estimated by validation seconds/image; no held-out prediction was made.",
+    "20% covers setup, checkpoint I/O and timing variation; prolonged throttling can exceed this estimate.",
+    "Hours are elapsed on this CPU, not aggregate thread/core-hours."
+  ]
+}

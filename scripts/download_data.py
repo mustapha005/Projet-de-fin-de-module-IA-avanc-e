@@ -45,7 +45,7 @@ def write_json(path: Path, value) -> None:
     """Atomically replace a JSON record after serializing successfully."""
     path.parent.mkdir(parents=True, exist_ok=True)
     temporary = path.with_suffix(path.suffix + ".part")
-    temporary.write_text(json.dumps(value, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    temporary.write_text(json.dumps(value, indent=2, ensure_ascii=False) + "\n", encoding="utf-8", newline="\n")
     temporary.replace(path)
 
 

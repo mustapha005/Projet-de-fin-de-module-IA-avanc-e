@@ -103,7 +103,7 @@ def write_frame(path: Path, frame: pd.DataFrame) -> None:
         raise RuntimeError(f"Frozen manifest would change: {path}; user review required")
     path.parent.mkdir(parents=True, exist_ok=True)
     temporary = path.with_suffix(".csv.part")
-    temporary.write_text(content, encoding="utf-8")
+    temporary.write_text(content, encoding="utf-8", newline="\n")
     temporary.replace(path)
 
 

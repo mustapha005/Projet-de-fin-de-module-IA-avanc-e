@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "source_manifest_sha256": "1db2607b3f4ec75c3d211efc9d949d1954cf07bdb82683aba7fe429700402597",
+  "development_sha256": "7f99834c66141a74e581b54ba49a22b6abcc953439bc2effa19d62c0daa743a3",
+  "path": "data/cache/development.csv",
+  "rows": 414,
+  "counts": {
+    "train": 341,
+    "val": 73
+  },
+  "policy": "Derived at preparation; training opens this view only, never held-out manifests."
+}

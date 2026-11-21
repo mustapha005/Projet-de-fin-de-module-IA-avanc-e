@@ -97,10 +97,10 @@
   "published_duplicate_groups_remaining": 0,
   "published_normal_conflicts_remaining": 0,
   "manifest_sha256": {
-    "breast_external.csv": "5815eb2f57ceb183354d2781602b87795578eb8652705a56b5f507b6ce9a7ad7",
-    "busi_clean.csv": "56c60c19b7bf86a1826016304a312dacca7758e6e9cfc7f8e016a7ab58e7cf7a",
-    "busi_inventory.csv": "62cea5e79a8778ca69feaf50ab6a376c95a1217d44b7c9d63b24a08637d60abb",
-    "busi_splits.csv": "a68d2a593d31b8bb0c90fb677cdb4297ee172956867882b68cc2b236a60d8448",
-    "label_subsets.csv": "2fc85118bce2541ad9bafd646d2a14f96a24a3ae2c9ca4e73b321a4bdae460f7"
+    "breast_external.csv": "d1350b761eea83864646036b4c017c993c424fd8cfd05fd77397e080c2093cc7",
+    "busi_clean.csv": "ab133168ab3c4169ddd020a727acee8c1be2c24ec2c013e6b4b720afc779ef83",
+    "busi_inventory.csv": "390a4d65502e3ada2a935b391f15addc92c8e15c82c988715d84759684e7eb48",
+    "busi_splits.csv": "1db2607b3f4ec75c3d211efc9d949d1954cf07bdb82683aba7fe429700402597",
+    "label_subsets.csv": "a07a1fe4e264c2ae13d851aa4fc826d09fb966e9d1e7dc8fa3969c88556a957a"
   }
 }

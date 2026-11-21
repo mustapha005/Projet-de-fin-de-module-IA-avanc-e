@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "scope": "Development-only intentionally capped CNN smoke",
+  "selected_epoch": 1,
+  "selected_before_cap_seconds": 8.180837099964265,
+  "cap_seconds": 11.0,
+  "deadline_overshoot_seconds": 0.07796899997629225,
+  "parameters": {
+    "total": 11177538,
+    "trainable": 11177538
+  },
+  "peak_rss_bytes": 916209664,
+  "attempt_path": "data/cache/smoke/capped_20261121T022008Z"
+}

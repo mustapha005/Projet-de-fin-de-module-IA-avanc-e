@@ -18,9 +18,11 @@ that ranking preserved on an unseen acquisition center?
 Data preparation is validated with pHash and published-duplicate checks. The
 cleaned BUSI cohort has 341/73/74 training/validation/test images; external BrEaST
 has 252 binary cases. The bibliography has 24 verified references (15 recent).
-The experiment protocol is specified; CPU benchmarking and smoke testing are
-next before freeze. No scientific training or
-test-set evaluation has been performed; H1–H3 remain untested.
+The CPU benchmark and development smoke pass. The common run cap is 24 minutes
+on four CPU threads; the complete workload projects to about 26 elapsed hours
+including headroom. The `protocol-frozen` tag controls permission to start tuning
+and final runs. No scientific test-set evaluation has been performed; H1–H3
+remain untested. Check the log for the precise completed-run count.
 See [docs/LOG.md](docs/LOG.md) for the current checkpoint and next action.
 
 ## Environment and commands
@@ -33,16 +35,21 @@ python -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.lock
 .\.venv\Scripts\python.exe scripts/doctor.py
 .\.venv\Scripts\python.exe scripts/data_pipeline.py
+.\.venv\Scripts\python.exe scripts/prepare_development.py
 .\.venv\Scripts\python.exe scripts/audit_published_duplicates.py
 .\.venv\Scripts\python.exe scripts/download_model.py
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
+.\.venv\Scripts\python.exe scripts/smoke.py
 ```
 
-On systems with GNU Make, `make setup`, `make data` and `make check` wrap these
-steps (`PYTHON` can be overridden). Other phase targets will be implemented
-and verified in phase order; an unavailable target fails explicitly.
+On systems with GNU Make, `make setup`, `make data`, `make check` and `make smoke`
+wrap these steps (`PYTHON` can be overridden). After the frozen tag, `make tune`,
+`make main`, and `make ablations` invoke the serial resumable grid. The Python
+equivalent is `scripts/run_experiments.py --phase tune|main|ablation`; use
+`--methods LP` to limit a phase to one method. An unavailable phase target fails
+explicitly. Each invocation stays in the foreground and logs every attempt.
 The eventual main reproduction command is `make reproduce`; it is **not ready**.
-Its runtime and compute cap remain unset pending the CPU benchmark.
+The full projection and its assumptions are in `docs/benchmark/compute_projection.json`.
 
 ## Data and integrity
 

@@ -30,7 +30,7 @@ def main():
                         'license_files': evidence})
     path = ROOT / 'docs' / 'software_license_evidence.json'
     path.write_text(json.dumps({'source': 'Installed pinned wheel metadata and license files',
-                               'packages': entries}, indent=2) + '\n', encoding='utf-8')
+                               'packages': entries}, indent=2) + '\n', encoding='utf-8', newline='\n')
     for entry in entries:
         value = entry['license_metadata'] or ''
         print(entry['name'], entry['version'], repr(value[:100]),

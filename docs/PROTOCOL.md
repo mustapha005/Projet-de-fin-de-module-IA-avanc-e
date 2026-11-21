@@ -1,8 +1,9 @@
-# SAN-1 experimental protocol — draft, not frozen
+# SAN-1 experimental protocol — freeze candidate
 
-Status: Phase 1 specification; no main-run result or protocol-frozen tag exists.
-Data preparation passed. The measured CPU cap and reference thread count must
-be added in Phase 2 before the frozen tag. All rules below precede model results.
+Status is determined by the `protocol-frozen` Git tag, not this document's title.
+Data preparation passed. Phase 2 measured the CPU cap, fixed the reference thread
+count and passed the development smoke. A clean-checkout audit is required before
+tagging. This version of every rule precedes scientific model results.
 
 ## Research question
 
@@ -132,19 +133,26 @@ temperature scaling or externally selected threshold is permitted.
 
 ## Compute, deadlines and access controls
 
-One run at a time on the reference laptop; torch intra-op threads provisional 4,
+One run at a time on the reference laptop; torch intra-op threads 4,
 interop 1, loader workers 0; constrain BLAS to the same intra-op thread count.
-Hardware/software fingerprint is in `docs/machine.json`; finalize in Phase 2.
+Hardware/software fingerprint is in `docs/machine.json`: Intel i5-8265U,
+4 physical / 8 logical cores, 16,915,836,928 bytes RAM, Windows 11, Python 3.12.0.
 Primary budget units are elapsed wall-clock hours on this CPU. Also log process
 CPU seconds (summed across threads); never call elapsed hours core-hours.
 
-T_MAX is **unset**. Benchmark seed-0 training and validation only, one full epoch
+T_MAX is **1,440 seconds (24 minutes)**, measured before freeze. Benchmark
+seed-0 training and validation only, one full epoch
 per method/fraction, with a warm-up step separated from measured steady-state
 work. LP additionally measures cold four-view extraction plus one C=1 fit; report
 that total instead of inventing LP epochs. Proposed cap is the larger of ten
 slowest full-data neural epochs and 1.25× full-data cold LP cost, rounded upward
 to a minute. Project tuning (23 fits), main (36), ablations (21), and final
 inference using actual method/fraction costs, with 20% runtime headroom.
+The completed 12-cell benchmark proposes 21.64 elapsed CPU hours for the entire
+specified workload, 25.96 hours with headroom. No fallback is triggered. Full-data
+epochs including validation are 83.07 s PFT, 139.38 s LoRA and 53.78 s CNN;
+LP cold setup/fit/validation is approximately 265 s. Timing is an estimate from
+short runs on a shared laptop, not a guarantee of long-run thermal behavior.
 
 If projection exceeds 60 elapsed CPU hours, apply in order: 100% neural cap of
 30 epochs for all methods; omit no-augmentation then PFT-depth ablations; use
@@ -185,7 +193,8 @@ models/thresholds based on a partially observed test result.
 
 Primary endpoint: ROC-AUC using malignant probability. Secondary: macro-F1 of
 both classes at the fixed threshold, AUC_in−AUC_out, and 15 equal-width-bin binary
-top-label ECE: confidence=max(p,1−p), correctness of argmax at 0.5, weighted
+top-label ECE: confidence=max(p,1−p), correctness of prediction p>=0.5 (ties
+predict malignant), weighted
 absolute bin accuracy/confidence difference. Include endpoints, empty bins
 contribute zero. Reliability plots also show malignant probability calibration
 against positive frequency, clearly distinguished from top-label ECE.
@@ -260,6 +269,6 @@ actual, time-to-best, test inference per image), CPU seconds, peak RSS, deadline
 status, test-prediction hashes and metrics. Preserve failed/capped runs. Figures,
 tables and manuscript numbers must be generated from these records.
 
-Only Phase 2 may fill T_MAX, final thread count and benchmark-driven fallbacks.
+Phase 2 has specified T_MAX=1,440 s, four intra-op threads and no budget fallback.
 Require model-gradient tests, metric/CI tests, development-only smoke, projected
 budget and fair-accounting audit before tagging. No main or tuning result yet.

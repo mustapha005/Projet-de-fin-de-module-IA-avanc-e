@@ -1,0 +1,59 @@
+{
+  "status": "PASS",
+  "scope": "Development-only integration plus synthetic paired-bootstrap fixture; no held-out performance",
+  "elapsed_seconds": 255.88093860005029,
+  "max_seconds": 600,
+  "smoke_nominal_fraction": 0.02,
+  "actual_unique_training_images": 8,
+  "subset_note": "2% per-class floor yields the same eight IDs as nominal 1%.",
+  "seed": 0,
+  "records": [
+    {
+      "method": "LP",
+      "status": "PASS",
+      "checkpoint_replay": "PASS",
+      "threshold": 0.8630110598871151,
+      "epochs_completed": null,
+      "fit_seconds": 18.230030499980785,
+      "peak_rss_bytes": 755793920,
+      "replay_seconds": 12.593554799968842
+    },
+    {
+      "method": "PFT",
+      "status": "PASS",
+      "checkpoint_replay": "PASS",
+      "threshold": 1.0000000000000002,
+      "epochs_completed": 2,
+      "fit_seconds": 29.722546199976932,
+      "peak_rss_bytes": 839475200,
+      "replay_seconds": 12.428145999961998
+    },
+    {
+      "method": "LoRA",
+      "status": "PASS",
+      "checkpoint_replay": "PASS",
+      "threshold": 0.7291094064712524,
+      "epochs_completed": 2,
+      "fit_seconds": 37.04662160004955,
+      "peak_rss_bytes": 1492582400,
+      "replay_seconds": 12.65348839998478
+    },
+    {
+      "method": "CNN",
+      "status": "PASS",
+      "checkpoint_replay": "PASS",
+      "threshold": 0.021769877523183823,
+      "epochs_completed": 2,
+      "fit_seconds": 15.903363700024784,
+      "peak_rss_bytes": 920002560,
+      "replay_seconds": 5.545751700003166
+    }
+  ],
+  "cache_debit_check": "PASS",
+  "deadline_failure_check": "PASS",
+  "real_test_access_guard": "PASS",
+  "manifest_immutability": "PASS",
+  "synthetic_bootstrap": "PASS",
+  "process_tree_resource_check": "PASS",
+  "attempt_path": "data/cache/smoke/20261121T021529Z"
+}

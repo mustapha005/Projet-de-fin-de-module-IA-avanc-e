@@ -139,3 +139,57 @@ and test the metric/deadline/provenance paths. Risks: laptop thermal slowdown,
 LoRA backward cost despite few trainable weights, incomplete-cap checkpoints,
 cache costs, and accidental test access. Test images remain inaccessible to
 benchmark/training interfaces. Do not tag until all Phase 2 gates pass.
+
+## 2026-11-21 — Codex — Phase 2 benchmark and integration
+
+All 12 development-only timing cells completed on the i5-8265U with four intra-op
+threads, one interop thread, FP32 and no accelerator. Full-data epoch time
+(training plus full validation): PFT 83.07 s, LoRA 139.38 s, CNN 53.78 s. LP
+full-data cold extraction/fit/validation is about 265 s. No benchmark AUC or test
+prediction was computed. The largest measured RSS is approximately 3.37 GiB.
+
+`scripts/project_compute.py` proposes T_MAX=1,440 s (24 min), using the written
+ten-slowest-epochs / 1.25×cold-LP rule. The 23 tuning fits, 36 main runs and 21
+ablations project to 21.64 elapsed CPU hours, or 25.96 h with 20% headroom. These
+are estimates, not consumed compute; no budget fallbacks are currently needed.
+Per-cell measurements and assumptions are in `docs/benchmark/`.
+
+Implemented development-only image loading, exact PFT/LoRA trainability, seeded
+augmentation, metrics/paired bootstrap, atomic checkpoint selection and a parent
+deadline supervisor. Model, statistical and training-policy tests pass (15 new
+tests in addition to 16 data/download tests). The two-epoch smoke is now running,
+including checkpoint replay, LP cache debit and intentional deadline failure.
+No main/tuning run has started and results/ is empty. Do not freeze until smoke,
+provenance and portable-line-ending checks are complete.
+
+The first smoke completed in 283.27 s with checkpoint replay, cache debit and
+synthetic statistics passing. Inspection exposed a false resource measurement:
+the supervisor saw the Windows virtualenv launcher (~4 MiB) instead of its real
+Python child. Treat its overall PASS as superseded; archived evidence is in
+`docs/reviews/smoke_before_process_tree_fix.json`. The benchmark measured memory
+inside each worker and is unaffected. The supervisor now samples and terminates
+the entire process tree, and smoke rejects implausible RSS/CPU measurements.
+
+D012 fixes another pre-freeze defect: explicit LF serialization prevents Git
+checkout from changing recorded byte hashes. All parsed CSV/JSON content stayed
+identical, then the actual pipeline regenerated current hashes and development
+views. Historic Phase 0 CRLF hashes remain only as superseded audit evidence.
+The revised integration run is in progress; 31 full-suite tests passed in 1.65 s.
+
+### Phase 2 integration passed; checkout/freeze checkpoint
+
+The corrected smoke passed in 255.88 s (under ten minutes). All four checkpoints
+reproduce their selected validation probabilities; LP cache reuse is charged,
+real-test access is rejected, manifests remain unchanged and synthetic paired
+bootstrap behaves correctly. Resource measurement now includes the actual worker
+tree. The intentional impossible deadline kills the process tree and cannot
+publish an untrained result. A separate 11-second CNN cap retained a valid
+completed checkpoint and recovered parameter/count/timing metadata after parent
+termination; see `docs/benchmark/capped_checkpoint_recovery.json`.
+
+Implemented the serial tuning/main/ablation controller and immutable-input
+validation. The prepared experiment contract pins source/data/model/environment
+hashes, exact reference hardware, 24-minute cap, 50 epochs and all three seeds.
+No tag or scientific result exists yet. Next: commit the implementation, verify
+all protected bytes from a clean Git checkout, record the Phase 2 audit, then
+create protocol-frozen and begin the registered tuning grid.
