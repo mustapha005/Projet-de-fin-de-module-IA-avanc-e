@@ -1,0 +1,79 @@
+{
+  "method": "LoRA",
+  "hyperparameters": {
+    "lr": 0.001,
+    "weight_decay": 0.01
+  },
+  "selected_index": 4,
+  "criterion": "validation_roc_auc",
+  "tie_policy": "first_in_ascending_search_list_within_1e-12",
+  "selected_utc": "2026-11-21T12:44:25.908662+00:00",
+  "ledger": [
+    {
+      "index": 0,
+      "hyperparameters": {
+        "lr": 0.0001,
+        "weight_decay": 0.01
+      },
+      "status": "PASS",
+      "best_validation_auc": 0.5507364975450082,
+      "supervised_path": "data/cache/runs/tune_LoRA_00/attempt_002/supervised.json",
+      "supervised_sha256": "4e059f2d48a36b5a25169468a1f37a37b1f8cd0c7f44388c04215345aa2840dc"
+    },
+    {
+      "index": 1,
+      "hyperparameters": {
+        "lr": 0.0001,
+        "weight_decay": 0.05
+      },
+      "status": "PASS",
+      "best_validation_auc": 0.5564648117839607,
+      "supervised_path": "data/cache/runs/tune_LoRA_01/attempt_001/supervised.json",
+      "supervised_sha256": "68a484e6d26cf4ea55a9d7e37851bd776a74baa45bac342513151c7aecdd3014"
+    },
+    {
+      "index": 2,
+      "hyperparameters": {
+        "lr": 0.0003,
+        "weight_decay": 0.01
+      },
+      "status": "PASS",
+      "best_validation_auc": 0.7962356792144026,
+      "supervised_path": "data/cache/runs/tune_LoRA_02/attempt_001/supervised.json",
+      "supervised_sha256": "85050ccffacdf341389f01321f5ec0dccd0673632a2fecba4972921e758df97c"
+    },
+    {
+      "index": 3,
+      "hyperparameters": {
+        "lr": 0.0003,
+        "weight_decay": 0.05
+      },
+      "status": "PASS",
+      "best_validation_auc": 0.795417348608838,
+      "supervised_path": "data/cache/runs/tune_LoRA_03/attempt_001/supervised.json",
+      "supervised_sha256": "41bc01e584ab23fb0542e3ebbbc1a7f42aab8dcf538b803c69fd812566107b11"
+    },
+    {
+      "index": 4,
+      "hyperparameters": {
+        "lr": 0.001,
+        "weight_decay": 0.01
+      },
+      "status": "PASS",
+      "best_validation_auc": 0.8739770867430442,
+      "supervised_path": "data/cache/runs/tune_LoRA_04/attempt_001/supervised.json",
+      "supervised_sha256": "331993516a47fc8c5e041f216247fb87068bd7e29cc70c10dfbe0ddd2c50f387"
+    },
+    {
+      "index": 5,
+      "hyperparameters": {
+        "lr": 0.001,
+        "weight_decay": 0.05
+      },
+      "status": "PASS",
+      "best_validation_auc": 0.8739770867430441,
+      "supervised_path": "data/cache/runs/tune_LoRA_05/attempt_001/supervised.json",
+      "supervised_sha256": "967dc18a2d5f87e8a096ac1951e054492445de733865d35082ccb99f63b3ea16"
+    }
+  ]
+}

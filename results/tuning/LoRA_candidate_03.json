@@ -1,0 +1,11 @@
+{
+  "index": 3,
+  "hyperparameters": {
+    "lr": 0.0003,
+    "weight_decay": 0.05
+  },
+  "status": "PASS",
+  "best_validation_auc": 0.795417348608838,
+  "supervised_path": "data/cache/runs/tune_LoRA_03/attempt_001/supervised.json",
+  "supervised_sha256": "41bc01e584ab23fb0542e3ebbbc1a7f42aab8dcf538b803c69fd812566107b11"
+}

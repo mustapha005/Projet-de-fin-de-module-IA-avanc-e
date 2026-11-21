@@ -1,0 +1,79 @@
+{
+  "method": "CNN",
+  "hyperparameters": {
+    "lr": 0.001,
+    "weight_decay": 0.01
+  },
+  "selected_index": 3,
+  "criterion": "validation_roc_auc",
+  "tie_policy": "first_in_ascending_search_list_within_1e-12",
+  "selected_utc": "2026-11-21T13:01:45.655658+00:00",
+  "ledger": [
+    {
+      "index": 0,
+      "hyperparameters": {
+        "lr": 0.0003,
+        "weight_decay": 0.0001
+      },
+      "status": "PASS",
+      "best_validation_auc": 0.6342062193126023,
+      "supervised_path": "data/cache/runs/tune_CNN_00/attempt_001/supervised.json",
+      "supervised_sha256": "d6935617a00286fc35d60d70bd0e82a3a79cd11e4910b51be25df35571c11c39"
+    },
+    {
+      "index": 1,
+      "hyperparameters": {
+        "lr": 0.0003,
+        "weight_decay": 0.01
+      },
+      "status": "PASS",
+      "best_validation_auc": 0.6342062193126023,
+      "supervised_path": "data/cache/runs/tune_CNN_01/attempt_001/supervised.json",
+      "supervised_sha256": "c531632242e6fb6d2aa8dcf119062ac2aded2b6b07541c12a2c73f2ae32b82c0"
+    },
+    {
+      "index": 2,
+      "hyperparameters": {
+        "lr": 0.001,
+        "weight_decay": 0.0001
+      },
+      "status": "PASS",
+      "best_validation_auc": 0.679214402618658,
+      "supervised_path": "data/cache/runs/tune_CNN_02/attempt_001/supervised.json",
+      "supervised_sha256": "6c68e262e67afa31921adbd23fb9c2912e024d9af47f3de49c0a6eb425eb41a4"
+    },
+    {
+      "index": 3,
+      "hyperparameters": {
+        "lr": 0.001,
+        "weight_decay": 0.01
+      },
+      "status": "PASS",
+      "best_validation_auc": 0.7193126022913257,
+      "supervised_path": "data/cache/runs/tune_CNN_03/attempt_001/supervised.json",
+      "supervised_sha256": "e8f35bcb870147ba42faa2f4d8ee613a230f405f6ad91a58bcfc4b231c8bc40b"
+    },
+    {
+      "index": 4,
+      "hyperparameters": {
+        "lr": 0.003,
+        "weight_decay": 0.0001
+      },
+      "status": "PASS",
+      "best_validation_auc": 0.5994271685761047,
+      "supervised_path": "data/cache/runs/tune_CNN_04/attempt_001/supervised.json",
+      "supervised_sha256": "79b11215d7a1701c045bb0e0c0d95a2dbae66bb600b4738ff0e6513938fa8786"
+    },
+    {
+      "index": 5,
+      "hyperparameters": {
+        "lr": 0.003,
+        "weight_decay": 0.01
+      },
+      "status": "PASS",
+      "best_validation_auc": 0.6833060556464812,
+      "supervised_path": "data/cache/runs/tune_CNN_05/attempt_001/supervised.json",
+      "supervised_sha256": "16de898f4c2b6976061f142f600b2a8e860f72132dbc7bdda27181c9ee3b3d7b"
+    }
+  ]
+}

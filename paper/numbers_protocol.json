@@ -68,6 +68,12 @@
     "tuning.LP.val_auc": "0.897",
     "tuning.PFT.lr": "0.001",
     "tuning.PFT.weight_decay": "0.01",
-    "tuning.PFT.val_auc": "0.837"
+    "tuning.PFT.val_auc": "0.837",
+    "tuning.LoRA.lr": "0.001",
+    "tuning.LoRA.weight_decay": "0.01",
+    "tuning.LoRA.val_auc": "0.874",
+    "tuning.CNN.lr": "0.001",
+    "tuning.CNN.weight_decay": "0.01",
+    "tuning.CNN.val_auc": "0.719"
   }
 }

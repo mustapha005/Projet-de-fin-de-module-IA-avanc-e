@@ -1,0 +1,11 @@
+{
+  "index": 0,
+  "hyperparameters": {
+    "lr": 0.0003,
+    "weight_decay": 0.0001
+  },
+  "status": "PASS",
+  "best_validation_auc": 0.6342062193126023,
+  "supervised_path": "data/cache/runs/tune_CNN_00/attempt_001/supervised.json",
+  "supervised_sha256": "d6935617a00286fc35d60d70bd0e82a3a79cd11e4910b51be25df35571c11c39"
+}
