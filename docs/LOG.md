@@ -320,3 +320,18 @@ then `scripts/run_analysis.py`, `scripts/spot_check_tables.py --seed <recorded>`
 sanity flags, and write Results/Discussion. If it shows `STOP`, read the phase controller
 log; an interrupted evaluation (evaluation_started.json without evaluation.json) fails
 closed and needs a logged manual decision, never a silent re-evaluation.
+
+### 2026-11-21 22:00 — Claude Code — status check of the unattended main grid
+
+At 21:55 UTC: 20/36 main results, all status PASS (LP 9/9, PFT 9/9, LoRA 1% s0–s1);
+LoRA 1% s2 training; launcher processes 12464/7244 alive; AC power throughout.
+One cap hit so far: `main_PFT_100_s2` stopped at the 1,440 s cap after 18 epochs with
+its best validation AUC at the last epoch (still improving). Its median epoch took 79.7 s
+versus 70.5 s (s0) and 68.8 s (s1). System CPU in its window (median 57.3%, max 66.5%)
+matches s0/s1 (56.8% / 56.4%), so the recorded load does not explain the slowdown. The
+`cpu_mhz` column of `logs/power_log.csv` reads a constant 1600 (the nominal clock Windows
+reports), so it cannot detect thermal or turbo throttling. This is a timing-variance
+observation for the threats-to-validity text, not a deviation: the run is final as logged
+and will not be rerun (rerunning because of an outcome would be selection).
+
+Exact next step: unchanged from the 19:36 entry.
