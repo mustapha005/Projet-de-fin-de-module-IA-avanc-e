@@ -296,3 +296,27 @@ run `scripts/archive_run_evidence.py`, commit configs/frozen + results/tuning + 
 then launch `.venv/Scripts/python.exe scripts/run_experiments.py --phase main` (supervised,
 estimated 7–8 h), then `--phase ablation` (~6–7 h), then `make analysis`, the spot check,
 Results/Discussion writing, `paper/build.py --final`, `audit_numbers.py`, and slides.
+
+### 2026-11-21 19:36 — Claude Code — tuning closed, main grid launched (user-authorized unattended)
+
+Tuning finished at 13:01 (Codex-owned controller exited normally): 23/23 candidates PASS,
+no interrupted attempts. Independent recomputation reproduces every saved selection:
+LP C=100 (val AUC 0.897); PFT, LoRA and CNN all lr=1e-3, wd=0.01 (0.837 / 0.874 / 0.719).
+LoRA candidates 4 and 5 tie within 1e-12; the first listed is kept. LoRA candidate 4 was
+capped at 43 epochs on battery power, whereas candidate 5 completed 50 epochs on AC.
+Selections, ledgers and worker evidence committed (85ea849).
+
+The user explicitly authorized running the remaining work unattended. Detached launcher
+`scripts/run_grid.py` (PID 7244) runs `--phase main` then `--phase ablation` with bounded
+retries; logs in `logs/grid_controller.log`, `logs/main_controller.log`,
+`logs/ablation_controller.log`, power samples in `logs/power_log.csv` (AC throughout so
+far; AC sleep/hibernate = never). At 20:08 UTC: 10/36 main results (all 9 LP, PFT 1% s0),
+with hashes, thresholds and image counts (74 internal / 252 external) checked; the
+checkpoint-based PFT evaluation path works. No result has been interpreted yet.
+
+Exact next step: when `logs/grid_controller.log` shows `DONE` (estimated main ~03:30 UTC,
+ablations ~10:00 UTC on 22 November), run `scripts/audit_experiments.py`, commit results/,
+then `scripts/run_analysis.py`, `scripts/spot_check_tables.py --seed <recorded>`, inspect
+sanity flags, and write Results/Discussion. If it shows `STOP`, read the phase controller
+log; an interrupted evaluation (evaluation_started.json without evaluation.json) fails
+closed and needs a logged manual decision, never a silent re-evaluation.
