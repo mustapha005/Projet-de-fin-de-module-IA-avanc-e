@@ -18,6 +18,8 @@ main:
 	$(PYTHON) scripts/run_experiments.py --phase main
 ablations:
 	$(PYTHON) scripts/run_experiments.py --phase ablation
-analysis paper slides reproduce package:
+analysis:
+	$(PYTHON) scripts/run_analysis.py
+paper slides reproduce package:
 	@echo Target $@ is not yet implemented or validated. See docs/LOG.md.
 	@exit 1
