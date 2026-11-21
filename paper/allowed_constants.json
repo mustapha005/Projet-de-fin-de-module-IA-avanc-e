@@ -1,0 +1,28 @@
+{
+  "policy": "Only fixed design constants written in docs/PROTOCOL.md or configs/ before the protocol-frozen tag. Never a measured or result value.",
+  "constants": {
+    "0": "Seed 0 (PROTOCOL: seeds 0/1/2); threshold candidate 0",
+    "1": "Nominal 1% label fraction; seed 1; one warm-up epoch; learning-rate grid 1e-4/1e-3 mantissas (configs/search.json)",
+    "2": "Seed 2; last two transformer blocks (PROTOCOL: PFT trainable components)",
+    "3": "Learning-rate grid mantissa 3e-4/3e-3 (configs/search.json); three seeds",
+    "4": "Four images per class floor (D005); four LP views (D009); r=4 ablation; last-four-block ablation",
+    "8": "LoRA rank 8; 8x8 perceptual hash; patience 8 (PROTOCOL)",
+    "10": "Nominal 10% fraction; rotation ±10 degrees; ten slowest epochs in the T_MAX rule; 10 gallery images (D013)",
+    "12": "Twelve DINOv2 blocks; LoRA on all 12 blocks (PROTOCOL)",
+    "15": "70/15/15 split proportions; 15-bin ECE (PROTOCOL)",
+    "16": "LoRA alpha=16; r=16 ablation (PROTOCOL)",
+    "18": "ResNet-18 baseline name when written without a preceding letter",
+    "32": "Batch size min(32, N) (PROTOCOL)",
+    "36": "Main grid size 4 methods x 3 fractions x 3 seeds (PROTOCOL)",
+    "70": "70/15/15 split proportions (PROTOCOL)",
+    "95": "95% paired-bootstrap interval (PROTOCOL)",
+    "100": "Nominal 100% label fraction; LP C grid value 100 (configs/search.json)",
+    "0.01": "LP C grid; weight-decay grid value (configs/search.json)",
+    "0.05": "PFT/LoRA weight-decay grid value (configs/search.json)",
+    "0.1": "LP C grid; LoRA dropout; brightness/contrast jitter (PROTOCOL)",
+    "0.8": "RandomResizedCrop lower scale (PROTOCOL)",
+    "1.0": "RandomResizedCrop upper scale (PROTOCOL)",
+    "1.25": "T_MAX rule: 1.25x cold LP cost (PROTOCOL)",
+    "0.5": "Chance-level AUC reference line; probability midpoint in the threshold tie rule (PROTOCOL)"
+  }
+}
