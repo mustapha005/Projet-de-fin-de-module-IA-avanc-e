@@ -1,0 +1,79 @@
+{
+  "method": "PFT",
+  "hyperparameters": {
+    "lr": 0.001,
+    "weight_decay": 0.01
+  },
+  "selected_index": 4,
+  "criterion": "validation_roc_auc",
+  "tie_policy": "first_in_ascending_search_list_within_1e-12",
+  "selected_utc": "2026-11-21T02:56:00.105376+00:00",
+  "ledger": [
+    {
+      "index": 0,
+      "hyperparameters": {
+        "lr": 0.0001,
+        "weight_decay": 0.01
+      },
+      "status": "PASS",
+      "best_validation_auc": 0.6841243862520459,
+      "supervised_path": "data/cache/runs/tune_PFT_00/attempt_001/supervised.json",
+      "supervised_sha256": "aa9b0d18b74ead286dcf435dbf38d1c0d8c958fdf9a373907ecddfe67bdc12df"
+    },
+    {
+      "index": 1,
+      "hyperparameters": {
+        "lr": 0.0001,
+        "weight_decay": 0.05
+      },
+      "status": "PASS",
+      "best_validation_auc": 0.6841243862520459,
+      "supervised_path": "data/cache/runs/tune_PFT_01/attempt_001/supervised.json",
+      "supervised_sha256": "8223bf102cc6602bde5a0f22733704609bbc91dc1012e920fc830667bc5fba94"
+    },
+    {
+      "index": 2,
+      "hyperparameters": {
+        "lr": 0.0003,
+        "weight_decay": 0.01
+      },
+      "status": "PASS",
+      "best_validation_auc": 0.7921440261865793,
+      "supervised_path": "data/cache/runs/tune_PFT_02/attempt_001/supervised.json",
+      "supervised_sha256": "d3b9bfa773cc82f23a2c4dc37a792c7d933cc1f76f076401451bb79a39697759"
+    },
+    {
+      "index": 3,
+      "hyperparameters": {
+        "lr": 0.0003,
+        "weight_decay": 0.05
+      },
+      "status": "PASS",
+      "best_validation_auc": 0.7921440261865793,
+      "supervised_path": "data/cache/runs/tune_PFT_03/attempt_001/supervised.json",
+      "supervised_sha256": "8ef0119badc13dc6179bfa89f1d037a45a038a5298f488a0a2fc892a7af47499"
+    },
+    {
+      "index": 4,
+      "hyperparameters": {
+        "lr": 0.001,
+        "weight_decay": 0.01
+      },
+      "status": "PASS",
+      "best_validation_auc": 0.837152209492635,
+      "supervised_path": "data/cache/runs/tune_PFT_04/attempt_001/supervised.json",
+      "supervised_sha256": "ceb14b7866ac3b8b67623507d577a2fd0a8430741d1535cd64adecabea932e1c"
+    },
+    {
+      "index": 5,
+      "hyperparameters": {
+        "lr": 0.001,
+        "weight_decay": 0.05
+      },
+      "status": "PASS",
+      "best_validation_auc": 0.837152209492635,
+      "supervised_path": "data/cache/runs/tune_PFT_05/attempt_001/supervised.json",
+      "supervised_sha256": "959cfb1d0de452692de92bd5bdfb291a62c4638ff668b424c002e8de7a74b003"
+    }
+  ]
+}
