@@ -19,3 +19,4 @@ deliverables/*
 !deliverables/.gitkeep
 .venv-paper/
 paper/build/
+slides/build/
