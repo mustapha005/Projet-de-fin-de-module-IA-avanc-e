@@ -211,7 +211,7 @@ Milestone J5 still has no main results or ablations; completion is not claimed.
 
 ### Phase 3 started — frozen protocol and LP selection
 
-Created lightweight `protocol-frozen` at befa5ba on 2026-11-21 02:23:12 UTC,
+Created lightweight `protocol-frozen` at befa5ba (commit dated 2026-11-21 02:23:12 UTC),
 before the first results file. `verify_frozen()` validates all 21 protected
 files, exact package versions and reference hardware. Saved design/data
 provenance under results/ only after tagging.
@@ -226,3 +226,20 @@ Fetched the required TCIA data citation directly over verified HTTPS (HTTP 200),
 after the web reader returned 500. Saved the citation and response hash. The
 bibliography now has 25 verified entries, 16 from 2024–2026; consistency audit
 passes. This attribution-only addition does not change the frozen experiment.
+
+### 2026-11-21 continuation — completed PFT and interrupted LoRA
+
+Re-read the project instructions/current records and checked real process state.
+The previous tool session no longer exists, and no matching experiment Python
+process is live. LP's five and PFT's six tuning candidates are complete, with
+saved selections. LoRA candidate 0 has 42 logged epochs but no fit/supervisor
+completion record; its termination cause is unknown. No CNN tuning or real test
+evaluation has occurred. The incomplete LoRA checkpoint is not a selected fit.
+
+Frozen-contract verification still passes all 21 hashes, package versions and
+hardware checks. PFT's six-entry selection ledger was recomputed against its
+validation criterion. Archived completed worker evidence and the incomplete
+LoRA history separately. Plan: restart LoRA candidate 0 from initialization as
+attempt 2, using the unchanged cap and settings, then continue its remaining
+candidates and CNN. This follows the frozen restart rule; no extra optimizer
+steps are carried forward from attempt 1. Remain present while costly work runs.

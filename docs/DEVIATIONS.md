@@ -1,6 +1,8 @@
 # Deviations and clarifications
 
-All entries are made before main experiments. No frozen protocol exists yet.
+Entries D001–D012 were recorded before the `protocol-frozen` tag at befa5ba.
+Later operational interruptions are logged separately; they do not authorize
+changing the frozen design.
 
 | ID | Date | Change / clarification | Reason and impact |
 |---|---|---|---|
