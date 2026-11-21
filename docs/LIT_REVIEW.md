@@ -28,12 +28,14 @@ Calibration must be assessed alongside discrimination, not inferred from validat
 
 The study should report actual compute consumption as well as its common ceiling. Feature extraction, cache amortization, tuning and training need explicit accounting, and LP's feature-view policy must be settled before claiming augmentation comparability. The full validation cohort also contributes labels at every nominal training fraction. These are implications of this design; the literature does not prescribe their exact implementation. A documented conditional result, including a negative or inconclusive finding, would address the stated research question more credibly than an unqualified claim of general superiority. ([CLAIM 2024](https://pmc.ncbi.nlm.nih.gov/articles/PMC11304031/), [Niu et al.](https://pubmed.ncbi.nlm.nih.gov/42616634/))
 
-The bibliography now has 24 verified identities, including 15 from 2024–2026,
-after adding the original ResNet technical report. Identity verification is not
+The bibliography now has 25 verified identities, including 16 from 2024–2026,
+after adding the original ResNet technical report and the required TCIA dataset
+citation (in addition to the BrEaST descriptor). Identity verification is not
 full methodological appraisal: abstract-only records and blocked full texts are
 identified in the ledger. Versioned implementation documentation and installed
-library licenses are recorded in SOFTWARE_LICENSES.md. The final article must
-also include TCIA's dataset citation, alongside its descriptor.
+library licenses are recorded in SOFTWARE_LICENSES.md. The official TCIA
+citation was fetched directly on 21 November; its exact text and source hash
+are retained in `docs/reviews/tcia_citation_source.json`.
 
 Project follow-through: the combined pHash/published-duplicate audit has now
 passed (DATA_CARD.md), and the view, cost and hypothesis rules are specified in

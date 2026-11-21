@@ -1,0 +1,7 @@
+{
+  "url": "https://www.cancerimagingarchive.net/collection/breast-lesions-usg/",
+  "http_status": 200,
+  "retrieved_on": "2026-11-21",
+  "response_sha256": "a00ee0f466403248e11ff497df2f79e9f4076a8c67f46d5fc16e863dd15f59af",
+  "citation": "Pawłowska, A., Ćwierz-Pieńkowska, A., Domalik, A., Jaguś, D., Kasprzak, P., Matkowski, R., Fura, Ł., Nowicki, A., & Zolek, N. (2024). A Curated Benchmark Dataset for Ultrasound Based Breast Lesion Analysis (Breast-Lesions-USG) (Version 1) [dataset]. The Cancer Imaging Archive. https://doi.org/10.7937/9WKK-Q141"
+}

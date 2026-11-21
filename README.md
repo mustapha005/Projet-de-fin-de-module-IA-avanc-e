@@ -17,7 +17,7 @@ that ranking preserved on an unseen acquisition center?
 
 Data preparation is validated with pHash and published-duplicate checks. The
 cleaned BUSI cohort has 341/73/74 training/validation/test images; external BrEaST
-has 252 binary cases. The bibliography has 24 verified references (15 recent).
+has 252 binary cases. The bibliography has 25 verified references (16 recent).
 The CPU benchmark and development smoke pass. The common run cap is 24 minutes
 on four CPU threads; the complete workload projects to about 26 elapsed hours
 including headroom. The `protocol-frozen` tag controls permission to start tuning

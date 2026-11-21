@@ -42,8 +42,9 @@ A useful final result would state the circumstances under which a method earns i
 
 This review is a pre-experiment synthesis of verified source identities and
 explicitly recorded evidence-access levels. Its 23-source synthesis has been
-supplemented with a verified original ResNet report in the project bibliography,
-which now contains 24 entries, 15 dated 2024–2026. Versioned implementation and
+supplemented with a verified original ResNet report and required TCIA dataset
+citation in the project bibliography, which now contains 25 entries, 16 dated
+2024–2026. Versioned implementation and
 license evidence is recorded in `docs/SOFTWARE_LICENSES.md`. Dataset and protocol
 follow-through is recorded separately in `docs/DATA_CARD.md` and
 `docs/PROTOCOL.md`; the benchmark and smoke gates remain open. No SAN-1

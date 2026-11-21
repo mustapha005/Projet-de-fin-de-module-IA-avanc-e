@@ -1,15 +1,15 @@
 {
   "status": "verified_identity_ledger_with_explicit_access_limits",
   "checked_on": "2026-11-20",
-  "reference_count": 24,
-  "recent_2024_2026_count": 15,
+  "reference_count": 25,
+  "recent_2024_2026_count": 16,
   "year_counts": {
     "2017": 2,
     "2020": 1,
     "2021": 1,
     "2022": 1,
     "2023": 3,
-    "2024": 6,
+    "2024": 7,
     "2025": 1,
     "2026": 8,
     "2015": 1
@@ -25,9 +25,7 @@
       "reason": "Verified author preprint but different image-text supervision; omitted from this focused bibliography."
     }
   ],
-  "remaining_verification": [
-    "Formal TCIA dataset citation metadata for the final bibliography; DOI and license already verified during acquisition. Final article must include versioned software/license attribution from docs/SOFTWARE_LICENSES.md."
-  ],
+  "remaining_verification": [],
   "references": [
     {
       "key": "hu2021lora",
@@ -668,6 +666,31 @@
       "verification": "Root opened primary arXiv page: title, four authors, 10 December 2015 submission match. CVF page returned 403, so use verified preprint metadata.",
       "source_ledger": "docs/SOFTWARE_LICENSES.md",
       "recent_2024_2026": false
+    },
+    {
+      "key": "pawlowska2024tciadata",
+      "title": "A Curated Benchmark Dataset for Ultrasound Based Breast Lesion Analysis (Breast-Lesions-USG)",
+      "authors": [
+        "A. Pawlowska",
+        "A. Cwierz-Pienkowska",
+        "A. Domalik",
+        "D. Jagus",
+        "P. Kasprzak",
+        "R. Matkowski",
+        "L. Fura",
+        "A. Nowicki",
+        "N. Zolek"
+      ],
+      "year": 2024,
+      "venue": "The Cancer Imaging Archive, dataset version 1",
+      "doi": "10.7937/9WKK-Q141",
+      "verified_url": "https://www.cancerimagingarchive.net/collection/breast-lesions-usg/",
+      "bibliography_url": "https://www.cancerimagingarchive.net/collection/breast-lesions-usg/",
+      "verified_on": "2026-11-21",
+      "evidence_access_level": "Official live HTML data citation, HTTP 200",
+      "verification": "Fetched primary TCIA collection with requests and extracted the exact nine-author required data citation; source text and response hash saved. Web open returned 500, but direct HTTPS fetch succeeded with TLS verification.",
+      "source_ledger": "docs/reviews/tcia_citation_source.json",
+      "recent_2024_2026": true
     }
   ]
 }

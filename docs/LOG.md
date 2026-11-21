@@ -208,3 +208,21 @@ Start with LP tuning to exercise the frozen contract and cache accounting. All
 jobs remain serial, bounded and supervised. Failures retain their attempt logs;
 do not silently add candidates or extend caps. Keep tests sealed during tuning.
 Milestone J5 still has no main results or ablations; completion is not claimed.
+
+### Phase 3 started — frozen protocol and LP selection
+
+Created lightweight `protocol-frozen` at befa5ba on 2026-11-21 02:23:12 UTC,
+before the first results file. `verify_frozen()` validates all 21 protected
+files, exact package versions and reference hardware. Saved design/data
+provenance under results/ only after tagging.
+
+All five LP candidates completed at seed 0 / nominal 10%; the predeclared
+validation-AUC rule selected C=100. The ledger is `configs/frozen/LP.json`;
+candidate evidence is under `results/tuning/`. This is selection evidence, not
+test performance or a hypothesis verdict. PFT/LoRA/CNN tuning is running serially
+with the frozen epoch/clock caps. Both real test cohorts remain sealed.
+
+Fetched the required TCIA data citation directly over verified HTTPS (HTTP 200),
+after the web reader returned 500. Saved the citation and response hash. The
+bibliography now has 25 verified entries, 16 from 2024–2026; consistency audit
+passes. This attribution-only addition does not change the frozen experiment.

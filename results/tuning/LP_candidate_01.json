@@ -1,0 +1,10 @@
+{
+  "index": 1,
+  "hyperparameters": {
+    "C": 0.1
+  },
+  "status": "PASS",
+  "best_validation_auc": 0.8592471358428806,
+  "supervised_path": "data/cache/runs/tune_LP_01/attempt_001/supervised.json",
+  "supervised_sha256": "8128ea6f9f564916a28ab662bac8148c89c7548922c795358277977d29be6a7f"
+}
