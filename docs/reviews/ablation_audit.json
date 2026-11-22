@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "phase": "ablation",
+  "expected_ablation_cells": 21,
+  "completed_ablation_cells": 21,
+  "missing": [],
+  "checks_applied_to_completed_cells": 21,
+  "recomputed_saved_metrics": true,
+  "paired_test_identities": true,
+  "selection_threshold_and_deadline_checks": true,
+  "sanity_flags": [
+    {
+      "run": "lora_last2_LoRA_001_s0",
+      "cohort": "external",
+      "auc": 0.4899946991783727,
+      "reason": "Near-perfect or near-chance AUC; investigate implementation before interpretation, not retuning."
+    },
+    {
+      "run": "lora_rank4_LoRA_010_s1",
+      "cohort": "external",
+      "auc": 0.5023191094619666,
+      "reason": "Near-perfect or near-chance AUC; investigate implementation before interpretation, not retuning."
+    }
+  ],
+  "flags_policy": "Flags require investigation, not deletion or performance-driven protocol changes."
+}

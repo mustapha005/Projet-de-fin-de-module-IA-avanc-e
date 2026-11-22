@@ -1,193 +1,52 @@
 {
-  "status": "INCOMPLETE",
+  "status": "PASS",
+  "phase": "main",
   "expected_main_cells": 36,
-  "completed_main_cells": 0,
-  "missing": [
-    [
-      "CNN",
-      0.01,
-      0
-    ],
-    [
-      "CNN",
-      0.01,
-      1
-    ],
-    [
-      "CNN",
-      0.01,
-      2
-    ],
-    [
-      "CNN",
-      0.1,
-      0
-    ],
-    [
-      "CNN",
-      0.1,
-      1
-    ],
-    [
-      "CNN",
-      0.1,
-      2
-    ],
-    [
-      "CNN",
-      1.0,
-      0
-    ],
-    [
-      "CNN",
-      1.0,
-      1
-    ],
-    [
-      "CNN",
-      1.0,
-      2
-    ],
-    [
-      "LP",
-      0.01,
-      0
-    ],
-    [
-      "LP",
-      0.01,
-      1
-    ],
-    [
-      "LP",
-      0.01,
-      2
-    ],
-    [
-      "LP",
-      0.1,
-      0
-    ],
-    [
-      "LP",
-      0.1,
-      1
-    ],
-    [
-      "LP",
-      0.1,
-      2
-    ],
-    [
-      "LP",
-      1.0,
-      0
-    ],
-    [
-      "LP",
-      1.0,
-      1
-    ],
-    [
-      "LP",
-      1.0,
-      2
-    ],
-    [
-      "LoRA",
-      0.01,
-      0
-    ],
-    [
-      "LoRA",
-      0.01,
-      1
-    ],
-    [
-      "LoRA",
-      0.01,
-      2
-    ],
-    [
-      "LoRA",
-      0.1,
-      0
-    ],
-    [
-      "LoRA",
-      0.1,
-      1
-    ],
-    [
-      "LoRA",
-      0.1,
-      2
-    ],
-    [
-      "LoRA",
-      1.0,
-      0
-    ],
-    [
-      "LoRA",
-      1.0,
-      1
-    ],
-    [
-      "LoRA",
-      1.0,
-      2
-    ],
-    [
-      "PFT",
-      0.01,
-      0
-    ],
-    [
-      "PFT",
-      0.01,
-      1
-    ],
-    [
-      "PFT",
-      0.01,
-      2
-    ],
-    [
-      "PFT",
-      0.1,
-      0
-    ],
-    [
-      "PFT",
-      0.1,
-      1
-    ],
-    [
-      "PFT",
-      0.1,
-      2
-    ],
-    [
-      "PFT",
-      1.0,
-      0
-    ],
-    [
-      "PFT",
-      1.0,
-      1
-    ],
-    [
-      "PFT",
-      1.0,
-      2
-    ]
+  "completed_main_cells": 36,
+  "missing": [],
+  "checks_applied_to_completed_cells": 36,
+  "recomputed_saved_metrics": true,
+  "paired_test_identities": true,
+  "selection_threshold_and_deadline_checks": true,
+  "sanity_flags": [
+    {
+      "run": "main_CNN_001_s0",
+      "reason": "External AUC exceeds internal AUC; review case mix, uncertainty and code."
+    },
+    {
+      "run": "main_CNN_001_s2",
+      "reason": "External AUC exceeds internal AUC; review case mix, uncertainty and code."
+    },
+    {
+      "run": "main_CNN_010_s0",
+      "reason": "External AUC exceeds internal AUC; review case mix, uncertainty and code."
+    },
+    {
+      "run": "main_CNN_010_s1",
+      "reason": "External AUC exceeds internal AUC; review case mix, uncertainty and code."
+    },
+    {
+      "run": "main_CNN_010_s2",
+      "cohort": "internal",
+      "auc": 0.49487785657998423,
+      "reason": "Near-perfect or near-chance AUC; investigate implementation before interpretation, not retuning."
+    },
+    {
+      "run": "main_CNN_010_s2",
+      "reason": "External AUC exceeds internal AUC; review case mix, uncertainty and code."
+    },
+    {
+      "run": "main_LoRA_001_s0",
+      "cohort": "external",
+      "auc": 0.514378478664193,
+      "reason": "Near-perfect or near-chance AUC; investigate implementation before interpretation, not retuning."
+    },
+    {
+      "run": "main_LP_001_s2",
+      "cohort": "external",
+      "auc": 0.4891333156639279,
+      "reason": "Near-perfect or near-chance AUC; investigate implementation before interpretation, not retuning."
+    }
   ],
-  "checks_applied_to_completed_cells": 0,
-  "recomputed_saved_metrics": false,
-  "paired_test_identities": false,
-  "selection_threshold_and_deadline_checks": false,
-  "sanity_flags": [],
   "flags_policy": "Flags require investigation, not deletion or performance-driven protocol changes."
 }
