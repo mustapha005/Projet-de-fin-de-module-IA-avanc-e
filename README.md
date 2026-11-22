@@ -21,8 +21,10 @@ has 252 binary cases. The bibliography has 25 verified references (16 recent).
 The CPU benchmark and development smoke pass. The common run cap is 24 minutes
 on four CPU threads; the complete workload projects to about 26 elapsed hours
 including headroom. The `protocol-frozen` tag controls permission to start tuning
-and final runs. No scientific test-set evaluation has been performed; H1–H3
-remain untested. Check the log for the precise completed-run count.
+and final runs. All 36 main runs and 21 ablations are complete and audited:
+H1 and H2 are inconclusive, H3 is supported on the internal test and inconclusive
+on the external test ([tables/hypotheses.md](tables/hypotheses.md)). The article
+and slides are unfinished drafts.
 See [docs/LOG.md](docs/LOG.md) for the current checkpoint and next action.
 
 ## Environment and commands
@@ -65,6 +67,17 @@ from Git and the eventual code archive. Downloads retain checksums and sources.
 The pHash-only provisional split was rejected after published duplicate groups
 revealed leakage. Only the current manifests, including those groups, are valid.
 See [data/README.md](data/README.md) and [docs/DATA_CARD.md](docs/DATA_CARD.md).
+
+The failure gallery (patient image pixels) and the per-image clinical-property table
+are not published. `scripts/run_analysis.py` regenerates both locally. It also needs
+the run checkpoints, which are not in Git.
+
+Manifests and aggregate tables use facts derived from BrEaST-Lesions_USG v1
+(Pawlowska et al., 2024; [dataset](https://doi.org/10.7937/9WKK-Q141),
+[descriptor](https://doi.org/10.1038/s41597-024-02984-z),
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)), obtained from The Cancer
+Imaging Archive, and from BUSI (Al-Dhabyani et al., 2020;
+[descriptor](https://doi.org/10.1016/j.dib.2019.104863)).
 
 The protocol must be committed and tagged `protocol-frozen` before final
 experiments. Tuning uses training/validation only. Test predictions are produced

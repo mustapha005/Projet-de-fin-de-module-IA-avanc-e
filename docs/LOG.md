@@ -336,7 +336,7 @@ and will not be rerun (rerunning because of an outcome would be selection).
 
 Exact next step: unchanged from the 19:36 entry.
 
-### 2026-11-22 10:20–11:40 — Claude Code — grid complete, Phase 4 audit and analysis
+### 2026-11-22 (committed by 10:47 UTC) — Claude Code — grid complete, Phase 4 audit and analysis
 
 Grid `DONE` at 04:54 UTC (main 36/36, ablation 21/21, all first attempts, AC throughout).
 Main and new ablation audits PASS; 10 sanity flags investigated (low-label CNN below
@@ -356,7 +356,7 @@ Exact next step: Phase 7 checks that do not touch the article — `scripts/rerun
 the user's go-ahead on the article (Results/Discussion/abstract, `paper/build.py --final`,
 `audit_numbers.py`) and slides; push once the repository URL and identities are confirmed.
 
-### 2026-11-22 11:55 — Claude Code — Phase 7 checks that do not depend on the article
+### 2026-11-22 (committed by 10:59 UTC) — Claude Code — Phase 7 checks that do not depend on the article
 
 `scripts/rerun_cell.py --cell main_LP_010_s1` PASS (difference 0.0); new `--cold` mode
 re-extracts LP features from the images: bit-identical arrays, test AUC difference 0.0.
@@ -374,3 +374,34 @@ the license sentences (item 11), run `paper/build.py --final` and `audit_numbers
 finish slides and QA_PREP answers 17–25, run `scripts/package.py`, and complete
 FINAL_CHECKLIST.md with rubric estimates. Push when the user sends the repository URL and
 confirms each member's GitHub identity. D013 still awaits user review.
+
+### 2026-11-22 15:20 — Claude Code — public release preparation and record corrections
+
+The user supplied https://github.com/mustapha005/Projet-de-fin-de-module-IA-avanc-e
+(public, empty) and Aya's account (Agrigah) and asked for a push. The history scan found
+no secrets, personal email, weights or archives, but two files from b2b8332 fall outside
+the DATA_CARD release policy: the failure gallery (patient image pixels) and the per-image
+clinical-property table. Branch `main` therefore starts at the unchanged 790aa8c and adds
+the later work without them. Local `master` (058deaa) is unchanged and is not pushed.
+Commits b2b8332, b8d64c1, 73c8862 and 058deaa cited in these records are local only;
+their content is in the first `main` commit after 790aa8c.
+
+Corrections to earlier records:
+* The two preceding headings carried estimated times (10:20–11:40, 11:55); they now give
+  the Git commit times.
+* "Byte-identical" data rebuild: Git showed no change after line-ending normalisation;
+  only busi_splits.csv was hash-compared directly. Network use was not monitored.
+* "Low-label CNN failure is genuine": the checks found no fault, but exclude only
+  save/reload and validation-inference faults.
+* LoRA 100%: capped 3/3, but the best epochs precede the last one.
+* Test access: two reproducibility re-evaluations and the gallery saliency are exceptions.
+* Checklist: item 3 has exceptions and item 5 fails (strata table without SD). Passing:
+  2, 4, 6, 7, 8, 10, 12, 15, 17. Failing: 5, 11.
+* The frozen tag does not independently prove timing: commit times are local and the
+  first push came after the results.
+
+No teammate authorship was assigned: who contributed which work has not been stated.
+The article was not edited.
+
+Exact next step: wait for the user's approval to start the article, their review of D013,
+their decision on the two withheld files, and a statement of each member's contribution.
