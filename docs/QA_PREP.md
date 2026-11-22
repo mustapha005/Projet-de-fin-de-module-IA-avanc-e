@@ -41,12 +41,14 @@ entries marked **[after results]** are completed once `make analysis` has run.
 ## Protocol rigor and integrity
 
 7. **How do you know the test set was used only once?**
-   (a) `src/datasets.development_rows` refuses any held-out row; tuning only sees
-   train/validation. (b) Only `src/evaluate.final_evaluation` reads the test manifests,
-   and only for purpose main/ablation. Grep evidence is in
-   docs/reviews/AUDIT_2026-11-21_phase3_claude_resume.md. (c) Each evaluation is a
-   lock-file transaction: a second evaluation of the same checkpoint is refused, and an
-   interrupted one fails closed. (d) Prediction files are hashed into each result JSON.
+   For every reported result it was: one evaluation per final run. (a)
+   `src/datasets.development_rows` refuses held-out rows, so tuning only sees
+   train/validation. (b) `src/evaluate.final_evaluation` produces the predictions, only for
+   purpose main/ablation, and within a run's output folder a different checkpoint or an
+   interrupted evaluation fails closed. (c) Prediction files are hashed into each result JSON.
+   Two post-hoc exceptions, neither used for selection: the reproducibility check retrained
+   and re-evaluated LP 10% seed 1 twice in scratch folders, and the failure gallery ran
+   saliency passes on 10 external images.
 
 8. **When was the protocol frozen, and how can we check?**
    Git tag `protocol-frozen` → befa5ba (2026-11-21T02:23:12Z). The first commit adding

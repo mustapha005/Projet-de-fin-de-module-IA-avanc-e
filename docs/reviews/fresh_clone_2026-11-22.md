@@ -18,9 +18,9 @@
 
 | Step | Outcome |
 |---|---|
-| Data pipeline | exit 0; 2,103 raw files extracted from the archives; no network request (cached archives verified) |
+| Data pipeline | exit 0; 2,103 raw files extracted from the archives; cached archives verified (network traffic was not monitored) |
 | Development manifest | exit 0; 414 development records |
-| Regenerated vs committed | `git status --porcelain --untracked-files=no` → 0 changed tracked files (all manifests, split/dedup/overlap reports, provenance); `busi_splits.csv` SHA-256 1DB2607B… identical |
+| Regenerated vs committed | `git status --porcelain --untracked-files=no` → 0 changed tracked files (all manifests, split/dedup/overlap reports, provenance; Git normalises line endings); byte identity checked directly only for `busi_splits.csv` (SHA-256 1DB2607B…) |
 | Unit tests | 39 OK |
 | Smoke | PASS: LP, PFT, LoRA, CNN fits PASS with checkpoint replay PASS; cache debit, deadline failure, real-test access guard, manifest immutability, synthetic bootstrap and process-tree resource checks PASS |
 
@@ -32,6 +32,7 @@ bit-identical and both test AUCs differ by 0.0 from the logged result.
 
 * GNU `make` is not installed on the reference Windows laptop; the commands behind each
   target were run directly.
+* The README commands were not followed literally (downloads were copied in).
 * The existing `.venv` interpreter was used, not a reinstall from `requirements.lock`.
   It is the environment whose pinned package versions `verify_frozen()` checked before
   every experiment and in today's audits, but installing from the lock file into a new

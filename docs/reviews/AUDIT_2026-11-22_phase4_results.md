@@ -1,7 +1,8 @@
 # Phase 4 audit — main grid, ablations and analysis (2026-11-22, Claude Code)
 
 **Verdict: PASS.** All 57 pre-registered final cells are complete, audited and analysed
-reproducibly. Ten sanity flags were investigated: none is an implementation fault. The
+reproducibly. Ten sanity flags were investigated: none was traced to an implementation
+fault by the checks below. The
 observations below must be carried into the article's results and threats to validity.
 
 ## Evidence (commands actually run)
@@ -35,7 +36,8 @@ H3 external (secondary) inconclusive.
   AUCs at selection were 0.54–0.73. The selected checkpoints, reloaded through the final
   evaluation loader, reproduce the logged validation probabilities exactly; CNN 100% seed 0
   reaches validation AUC 0.876 and the CNN 100% cell internal test 0.897 ± 0.019. Save/reload, eval mode and
-  preprocessing are therefore consistent; the low-label CNN failure is a genuine result
+  preprocessing are therefore consistent; no fault was found in those paths, and the
+  low-label CNN failure is reported as measured (this does not rule out every possible fault)
   (random-initialised ResNet-18 trained on 8–33 images, selected on a 73-image validation
   set). Two CNN runs produce near-constant probabilities (SD < 0.001). Interpretation of
   H3 must say that it is driven by the scratch CNN not learning at ≤33 images.
@@ -43,13 +45,17 @@ H3 external (secondary) inconclusive.
   (4 flags).** Fit evidence is normal (non-degenerate probabilities, normal epochs); they
   fall within the seed spread of 1%/10% cells. No action.
 
-No result was deleted, re-run or re-evaluated.
+No result was deleted, re-run or re-evaluated during this audit. Afterwards, the Phase 7
+reproducibility check retrained and test-evaluated `main_LP_010_s1` twice in scratch folders
+(identical AUCs; logged results unchanged).
 
 ## Observations for the article
 
 1. **Cap hits: 5/36 main, 0/21 ablation.** LoRA 100% 3/3 (12 epochs each), PFT 100% s2
-   (best epoch = last epoch, still improving), CNN 100% 1/3. LoRA 100% is therefore
-   budget-limited, which matters for any LoRA-vs-PFT conclusion at 100%.
+   (best epoch = last epoch, still improving), CNN 100% s1. LoRA 100% training was
+   cut by the budget before early stopping, which matters for any LoRA-vs-PFT conclusion at
+   100%; its best epochs (7, 11, 8) precede the last, so a higher AUC with more time is not
+   established.
 2. **Timing variance.** PFT 100% s2 epochs took a median of 79.7 s versus 70.5/68.8 s for
    s0/s1 with matching recorded load; `cpu_mhz` in the power log is a constant nominal value
    and cannot reveal throttling (LOG 2026-11-21 22:00).
