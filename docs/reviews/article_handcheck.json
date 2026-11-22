@@ -1,0 +1,98 @@
+{
+  "status": "PASS",
+  "checked": 12,
+  "mismatches": 0,
+  "capped_runs": [
+    "main_CNN_100_s1",
+    "main_LoRA_100_s0",
+    "main_LoRA_100_s1",
+    "main_LoRA_100_s2",
+    "main_PFT_100_s2"
+  ],
+  "checks": [
+    {
+      "article_key": "main.LoRA.100.auc_in",
+      "printed_in_article": "0.958 +- 0.014",
+      "recomputed": "0.958 +- 0.014",
+      "recomputed_from": "sklearn roc_auc_score over results/predictions/.../internal_predictions.csv",
+      "match": true
+    },
+    {
+      "article_key": "main.LoRA.100.auc_out",
+      "printed_in_article": "0.805 +- 0.016",
+      "recomputed": "0.805 +- 0.016",
+      "recomputed_from": "sklearn roc_auc_score over results/predictions/.../external_predictions.csv",
+      "match": true
+    },
+    {
+      "article_key": "main.LP.100.auc_in",
+      "printed_in_article": "0.867 +- 0.015",
+      "recomputed": "0.867 +- 0.015",
+      "recomputed_from": "sklearn roc_auc_score over results/predictions/.../internal_predictions.csv",
+      "match": true
+    },
+    {
+      "article_key": "main.CNN.1.auc_in",
+      "printed_in_article": "0.411 +- 0.067",
+      "recomputed": "0.411 +- 0.067",
+      "recomputed_from": "sklearn roc_auc_score over results/predictions/.../internal_predictions.csv",
+      "match": true
+    },
+    {
+      "article_key": "main.PFT.100.auc_out",
+      "printed_in_article": "0.763 +- 0.008",
+      "recomputed": "0.763 +- 0.008",
+      "recomputed_from": "sklearn roc_auc_score over results/predictions/.../external_predictions.csv",
+      "match": true
+    },
+    {
+      "article_key": "main.LP.100.gap.mean",
+      "printed_in_article": "0.230",
+      "recomputed": "0.230",
+      "recomputed_from": "per-seed internal minus external AUC, both recomputed from predictions",
+      "match": true
+    },
+    {
+      "article_key": "cost.LoRA.100.time",
+      "printed_in_article": "1440 +- 0",
+      "recomputed": "1440 +- 0",
+      "recomputed_from": "charged_wall_seconds in results/main/main_LoRA_100_s*.json",
+      "match": true
+    },
+    {
+      "article_key": "cost.LoRA.100.epochs",
+      "printed_in_article": "12.0 +- 0.0",
+      "recomputed": "12.0 +- 0.0",
+      "recomputed_from": "epochs_completed in results/main/main_LoRA_100_s*.json",
+      "match": true
+    },
+    {
+      "article_key": "params.LoRA",
+      "printed_in_article": "222,722",
+      "recomputed": "222,722",
+      "recomputed_from": "fit.parameters.trainable in results/main/main_LoRA_100_s*.json",
+      "match": true
+    },
+    {
+      "article_key": "runs.main",
+      "printed_in_article": "36",
+      "recomputed": "36",
+      "recomputed_from": "file count in results/main/",
+      "match": true
+    },
+    {
+      "article_key": "runs.cap_hits",
+      "printed_in_article": "5",
+      "recomputed": "5",
+      "recomputed_from": "stop_reason == time_cap in results/main/*.json",
+      "match": true
+    },
+    {
+      "article_key": "data.breast.total",
+      "printed_in_article": "252",
+      "recomputed": "252",
+      "recomputed_from": "row count in data/manifests/breast_external.csv",
+      "match": true
+    }
+  ]
+}

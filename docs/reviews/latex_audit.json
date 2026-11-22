@@ -1,0 +1,23 @@
+{
+  "sources_checked": 9,
+  "inputs": 7,
+  "figures": 5,
+  "references": 25,
+  "citations": 25,
+  "labels": 17,
+  "macros_defined": 377,
+  "macros_used": 96,
+  "abstract_words": 241,
+  "draft_markers": 0,
+  "numbers_checked": 142,
+  "orphan_count": 0,
+  "allowed_by_protocol_constant": {
+    "70": "70/15/15 split proportions (PROTOCOL)",
+    "0.8": "RandomResizedCrop lower scale (PROTOCOL)",
+    "32": "Batch size min(32, N) (PROTOCOL)",
+    "1.25": "T_MAX rule: 1.25x cold LP cost (PROTOCOL)"
+  },
+  "orphans": [],
+  "status": "PASS",
+  "problems": []
+}
