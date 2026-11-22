@@ -16,7 +16,8 @@ def main():
     parser.add_argument('--no-saliency', action='store_true', help='Skip checkpoint-based overlays')
     args = parser.parse_args()
     # The grid audit recomputes saved metrics and fails on hash/threshold/deadline problems.
-    subprocess.run([sys.executable, str(ROOT / 'scripts/audit_experiments.py')], cwd=ROOT, check=True)
+    for phase in ('main', 'ablation'):
+        subprocess.run([sys.executable, str(ROOT / 'scripts/audit_experiments.py'), '--phase', phase], cwd=ROOT, check=True)
     protocol_numbers.write(ROOT)
     verdicts = make_tables.build(ROOT, ROOT / 'tables', ROOT / 'paper/numbers.json')
     written = [p.name for p in figures.build(ROOT, ROOT / 'figures')]
