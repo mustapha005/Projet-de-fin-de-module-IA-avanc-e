@@ -24,3 +24,6 @@ slides/build/
 # Derived from raw patient images / the clinical workbook: regenerate locally, never publish
 figures/fig_failure_gallery.png
 tables/external_image_properties.csv
+
+# Convenience archive for uploading paper/latex/ to Overleaf; rebuild any time
+paper/latex_overleaf.zip
