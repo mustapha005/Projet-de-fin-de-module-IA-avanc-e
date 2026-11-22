@@ -1,0 +1,745 @@
+method,fraction,variable,category,n,n_malignant,error_rate_mean,error_rate_sd
+LP,0.01,BIRADS,2,30,0,0.27777777777777773,0.3150543750835072
+LP,0.01,BIRADS,3,37,0,0.16216216216216217,0.2578214057883637
+LP,0.01,BIRADS,4a,44,1,0.24242424242424243,0.3052005617952074
+LP,0.01,BIRADS,4b,46,16,0.43478260869565216,0.11503266569846043
+LP,0.01,BIRADS,4c,49,41,0.7346938775510203,0.15939285052870727
+LP,0.01,BIRADS,5,46,40,0.7391304347826088,0.1725489985476907
+LP,0.01,Verification,confirmed by biopsy,197,98,0.5262267343485617,0.04226732993839868
+LP,0.01,Verification,confirmed by follow-up care,55,0,0.20606060606060606,0.2508388131706046
+LP,0.01,Diagnosis,Atypical lobular hyperplasia (ALH),1,0,0.3333333333333333,0.5773502691896258
+LP,0.01,Diagnosis,Benign mammary dysplasia,26,0,0.3333333333333333,0.39473857226514497
+LP,0.01,Diagnosis,Benign mammary dysplasia&Usual ductal hyperplasia (UDH),1,0,0.3333333333333333,0.5773502691896258
+LP,0.01,Diagnosis,Complex sclerosing lesion,1,0,0.0,0.0
+LP,0.01,Diagnosis,Cribriform carcinoma,2,2,0.8333333333333334,0.28867513459481287
+LP,0.01,Diagnosis,Ductal carcinoma in situ (DCIS),4,4,0.75,0.4330127018922193
+LP,0.01,Diagnosis,Ductal carcinoma in situ (DCIS)&Invasive carcinoma of no special type (NST),1,1,1.0,0.0
+LP,0.01,Diagnosis,Ductal carcinoma in situ (DCIS)&Solid papillary carcinoma in situ,1,1,1.0,0.0
+LP,0.01,Diagnosis,Encapsulated papillary carcinoma&Ductal carcinoma in situ (DCIS),1,1,0.6666666666666666,0.5773502691896258
+LP,0.01,Diagnosis,Fat necrosis,1,0,0.6666666666666666,0.5773502691896258
+LP,0.01,Diagnosis,Fibroadenoma,29,0,0.2298850574712644,0.3401988180907757
+LP,0.01,Diagnosis,Fibroadenoma&Phyllodes tumor,1,0,0.3333333333333333,0.5773502691896258
+LP,0.01,Diagnosis,Fibroadenosis,1,0,0.3333333333333333,0.5773502691896258
+LP,0.01,Diagnosis,Fibrocystic change,1,0,0.0,0.0
+LP,0.01,Diagnosis,Fibrosclerosis,10,0,0.2333333333333333,0.2516611478423583
+LP,0.01,Diagnosis,Hamartoma,1,0,0.3333333333333333,0.5773502691896258
+LP,0.01,Diagnosis,Intraductal papilloma,7,0,0.2857142857142857,0.2857142857142857
+LP,0.01,Diagnosis,Intraductal papilloma&Usual ductal hyperplasia (UDH)&Adenosis,1,0,0.3333333333333333,0.5773502691896258
+LP,0.01,Diagnosis,Intramammary lymph node,1,0,0.0,0.0
+LP,0.01,Diagnosis,Invasive carcinoma of no special type (NST),54,54,0.7901234567901234,0.27300425169748127
+LP,0.01,Diagnosis,Invasive carcinoma of no special type (NST)&Apocrine carcinoma,1,1,0.6666666666666666,0.5773502691896258
+LP,0.01,Diagnosis,Invasive carcinoma of no special type (NST)&Ductal carcinoma in situ (DCIS),7,7,0.8571428571428571,0.24743582965269678
+LP,0.01,Diagnosis,Invasive carcinoma of no special type (NST)&Invasive micropapillary carcinoma,1,1,1.0,0.0
+LP,0.01,Diagnosis,Invasive carcinoma of no special type (NST)&Mucinous carcinoma,1,1,0.3333333333333333,0.5773502691896258
+LP,0.01,Diagnosis,Invasive carcinoma of no special type (NST)&Sebaceous carcinoma,1,1,0.6666666666666666,0.5773502691896258
+LP,0.01,Diagnosis,Invasive lobular carcinoma,12,12,0.7777777777777778,0.17347216662217768
+LP,0.01,Diagnosis,Invasive lobular carcinoma&Lobular carcinoma in situ (LCIS),1,1,1.0,0.0
+LP,0.01,Diagnosis,Invasive micropapillary carcinoma,3,3,0.8888888888888888,0.1924500897298753
+LP,0.01,Diagnosis,Invasive papillary carcinoma&Encapsulated papillary carcinoma,1,1,1.0,0.0
+LP,0.01,Diagnosis,Lactating adenoma,1,0,0.3333333333333333,0.5773502691896258
+LP,0.01,Diagnosis,Lobular carcinoma in situ (LCIS),1,0,0.0,0.0
+LP,0.01,Diagnosis,Lymphoma,1,1,1.0,0.0
+LP,0.01,Diagnosis,Mastitis,2,0,0.0,0.0
+LP,0.01,Diagnosis,Metaplastic carcinoma,1,1,1.0,0.0
+LP,0.01,Diagnosis,Mucinous carcinoma,3,3,0.8888888888888888,0.1924500897298753
+LP,0.01,Diagnosis,Phyllodes tumor,2,0,0.16666666666666666,0.2886751345948129
+LP,0.01,Diagnosis,Pseudoangiomatous stromal hyperplasia (PASH),5,0,0.13333333333333333,0.23094010767585033
+LP,0.01,Diagnosis,Simple cyst,1,0,0.3333333333333333,0.5773502691896258
+LP,0.01,Diagnosis,Tubular carcinoma,1,1,0.3333333333333333,0.5773502691896258
+LP,0.01,Diagnosis,Tubular carcinoma&Cribriform carcinoma,1,1,0.6666666666666666,0.5773502691896258
+LP,0.01,Diagnosis,Usual ductal hyperplasia (UDH),2,0,0.3333333333333333,0.5773502691896258
+LP,0.01,Diagnosis,Usual ductal hyperplasia (UDH)&Fibrocystic change,1,0,0.0,0.0
+LP,0.01,Diagnosis,Usual ductal hyperplasia (UDH)&Fibrosclerosis,1,0,0.3333333333333333,0.5773502691896258
+LP,0.01,Diagnosis,Usual ductal hyperplasia (UDH)&Pseudoangiomatous stromal hyperplasia (PASH),1,0,0.3333333333333333,0.5773502691896258
+LP,0.01,Diagnosis,not applicable,55,0,0.20606060606060606,0.2508388131706046
+LP,0.01,pixel_count_tertile,high,79,24,0.4261603375527426,0.1467117185714237
+LP,0.01,pixel_count_tertile,low,113,60,0.5427728613569321,0.0204371776704292
+LP,0.01,pixel_count_tertile,mid,60,14,0.3333333333333333,0.14433756729740643
+LP,0.01,luminance_tertile,high,84,22,0.3968253968253968,0.15853162186855696
+LP,0.01,luminance_tertile,low,84,37,0.48809523809523814,0.061858957413174195
+LP,0.01,luminance_tertile,mid,84,39,0.4841269841269842,0.04507070115714502
+LP,0.01,contrast_tertile,high,84,27,0.42857142857142855,0.12876968840942818
+LP,0.01,contrast_tertile,low,84,44,0.5277777777777778,0.006873217490352664
+LP,0.01,contrast_tertile,mid,84,27,0.41269841269841273,0.12840229910605902
+LP,0.1,BIRADS,2,30,0,0.5555555555555555,0.26736020923368814
+LP,0.1,BIRADS,3,37,0,0.5495495495495496,0.24374322988231859
+LP,0.1,BIRADS,4a,44,1,0.5075757575757576,0.245131661929749
+LP,0.1,BIRADS,4b,46,16,0.463768115942029,0.10941789036624273
+LP,0.1,BIRADS,4c,49,41,0.3129251700680272,0.12469593727770993
+LP,0.1,BIRADS,5,46,40,0.2826086956521739,0.09475867268566683
+LP,0.1,Verification,confirmed by biopsy,197,98,0.4060913705583757,0.051517216066457955
+LP,0.1,Verification,confirmed by follow-up care,55,0,0.5272727272727272,0.2545454545454546
+LP,0.1,Diagnosis,Atypical lobular hyperplasia (ALH),1,0,0.6666666666666666,0.5773502691896258
+LP,0.1,Diagnosis,Benign mammary dysplasia,26,0,0.5897435897435898,0.38525587695683894
+LP,0.1,Diagnosis,Benign mammary dysplasia&Usual ductal hyperplasia (UDH),1,0,1.0,0.0
+LP,0.1,Diagnosis,Complex sclerosing lesion,1,0,0.0,0.0
+LP,0.1,Diagnosis,Cribriform carcinoma,2,2,0.16666666666666666,0.2886751345948129
+LP,0.1,Diagnosis,Ductal carcinoma in situ (DCIS),4,4,0.3333333333333333,0.3818813079129867
+LP,0.1,Diagnosis,Ductal carcinoma in situ (DCIS)&Invasive carcinoma of no special type (NST),1,1,0.3333333333333333,0.5773502691896258
+LP,0.1,Diagnosis,Ductal carcinoma in situ (DCIS)&Solid papillary carcinoma in situ,1,1,0.0,0.0
+LP,0.1,Diagnosis,Encapsulated papillary carcinoma&Ductal carcinoma in situ (DCIS),1,1,0.3333333333333333,0.5773502691896258
+LP,0.1,Diagnosis,Fat necrosis,1,0,1.0,0.0
+LP,0.1,Diagnosis,Fibroadenoma,29,0,0.6436781609195402,0.28918955460710627
+LP,0.1,Diagnosis,Fibroadenoma&Phyllodes tumor,1,0,0.6666666666666666,0.5773502691896258
+LP,0.1,Diagnosis,Fibroadenosis,1,0,0.6666666666666666,0.5773502691896258
+LP,0.1,Diagnosis,Fibrocystic change,1,0,1.0,0.0
+LP,0.1,Diagnosis,Fibrosclerosis,10,0,0.3666666666666667,0.2516611478423583
+LP,0.1,Diagnosis,Hamartoma,1,0,0.6666666666666666,0.5773502691896258
+LP,0.1,Diagnosis,Intraductal papilloma,7,0,0.5714285714285715,0.14285714285714288
+LP,0.1,Diagnosis,Intraductal papilloma&Usual ductal hyperplasia (UDH)&Adenosis,1,0,0.6666666666666666,0.5773502691896258
+LP,0.1,Diagnosis,Intramammary lymph node,1,0,0.0,0.0
+LP,0.1,Diagnosis,Invasive carcinoma of no special type (NST),54,54,0.22839506172839505,0.21937476103601064
+LP,0.1,Diagnosis,Invasive carcinoma of no special type (NST)&Apocrine carcinoma,1,1,0.3333333333333333,0.5773502691896258
+LP,0.1,Diagnosis,Invasive carcinoma of no special type (NST)&Ductal carcinoma in situ (DCIS),7,7,0.38095238095238093,0.2973808570665904
+LP,0.1,Diagnosis,Invasive carcinoma of no special type (NST)&Invasive micropapillary carcinoma,1,1,0.0,0.0
+LP,0.1,Diagnosis,Invasive carcinoma of no special type (NST)&Mucinous carcinoma,1,1,0.6666666666666666,0.5773502691896258
+LP,0.1,Diagnosis,Invasive carcinoma of no special type (NST)&Sebaceous carcinoma,1,1,0.0,0.0
+LP,0.1,Diagnosis,Invasive lobular carcinoma,12,12,0.19444444444444442,0.09622504486493763
+LP,0.1,Diagnosis,Invasive lobular carcinoma&Lobular carcinoma in situ (LCIS),1,1,0.0,0.0
+LP,0.1,Diagnosis,Invasive micropapillary carcinoma,3,3,0.0,0.0
+LP,0.1,Diagnosis,Invasive papillary carcinoma&Encapsulated papillary carcinoma,1,1,0.3333333333333333,0.5773502691896258
+LP,0.1,Diagnosis,Lactating adenoma,1,0,0.6666666666666666,0.5773502691896258
+LP,0.1,Diagnosis,Lobular carcinoma in situ (LCIS),1,0,0.3333333333333333,0.5773502691896258
+LP,0.1,Diagnosis,Lymphoma,1,1,0.3333333333333333,0.5773502691896258
+LP,0.1,Diagnosis,Mastitis,2,0,0.5,0.5
+LP,0.1,Diagnosis,Metaplastic carcinoma,1,1,0.0,0.0
+LP,0.1,Diagnosis,Mucinous carcinoma,3,3,0.2222222222222222,0.19245008972987526
+LP,0.1,Diagnosis,Phyllodes tumor,2,0,0.16666666666666666,0.2886751345948129
+LP,0.1,Diagnosis,Pseudoangiomatous stromal hyperplasia (PASH),5,0,0.6666666666666666,0.11547005383792519
+LP,0.1,Diagnosis,Simple cyst,1,0,0.3333333333333333,0.5773502691896258
+LP,0.1,Diagnosis,Tubular carcinoma,1,1,0.0,0.0
+LP,0.1,Diagnosis,Tubular carcinoma&Cribriform carcinoma,1,1,0.3333333333333333,0.5773502691896258
+LP,0.1,Diagnosis,Usual ductal hyperplasia (UDH),2,0,0.8333333333333334,0.28867513459481287
+LP,0.1,Diagnosis,Usual ductal hyperplasia (UDH)&Fibrocystic change,1,0,0.3333333333333333,0.5773502691896258
+LP,0.1,Diagnosis,Usual ductal hyperplasia (UDH)&Fibrosclerosis,1,0,0.6666666666666666,0.5773502691896258
+LP,0.1,Diagnosis,Usual ductal hyperplasia (UDH)&Pseudoangiomatous stromal hyperplasia (PASH),1,0,1.0,0.0
+LP,0.1,Diagnosis,not applicable,55,0,0.5272727272727272,0.2545454545454546
+LP,0.1,pixel_count_tertile,high,79,24,0.5274261603375527,0.13943216575407855
+LP,0.1,pixel_count_tertile,low,113,60,0.3716814159292035,0.03857432693398826
+LP,0.1,pixel_count_tertile,mid,60,14,0.4222222222222222,0.16015039228221747
+LP,0.1,luminance_tertile,high,84,22,0.48809523809523814,0.16877912950902174
+LP,0.1,luminance_tertile,low,84,37,0.4246031746031746,0.0549857399228215
+LP,0.1,luminance_tertile,mid,84,39,0.3849206349206349,0.08935182737458496
+LP,0.1,contrast_tertile,high,84,27,0.4603174603174603,0.1860853029792596
+LP,0.1,contrast_tertile,low,84,44,0.3849206349206349,0.05872479597995533
+LP,0.1,contrast_tertile,mid,84,27,0.4523809523809524,0.0518916540897699
+LP,1.0,BIRADS,2,30,0,0.3666666666666667,0.057735026918962595
+LP,1.0,BIRADS,3,37,0,0.26126126126126126,0.0562612432288144
+LP,1.0,BIRADS,4a,44,1,0.25757575757575757,0.11211097414355108
+LP,1.0,BIRADS,4b,46,16,0.34782608695652173,0.0947586726856668
+LP,1.0,BIRADS,4c,49,41,0.5850340136054422,0.02356531710978067
+LP,1.0,BIRADS,5,46,40,0.47826086956521735,0.021739130434782622
+LP,1.0,Verification,confirmed by biopsy,197,98,0.42808798646362095,0.049302207391991426
+LP,1.0,Verification,confirmed by follow-up care,55,0,0.26060606060606056,0.03784847271756605
+LP,1.0,Diagnosis,Atypical lobular hyperplasia (ALH),1,0,0.3333333333333333,0.5773502691896258
+LP,1.0,Diagnosis,Benign mammary dysplasia,26,0,0.44871794871794873,0.177646236673731
+LP,1.0,Diagnosis,Benign mammary dysplasia&Usual ductal hyperplasia (UDH),1,0,0.0,0.0
+LP,1.0,Diagnosis,Complex sclerosing lesion,1,0,0.0,0.0
+LP,1.0,Diagnosis,Cribriform carcinoma,2,2,0.5,0.0
+LP,1.0,Diagnosis,Ductal carcinoma in situ (DCIS),4,4,0.5833333333333334,0.14433756729740646
+LP,1.0,Diagnosis,Ductal carcinoma in situ (DCIS)&Invasive carcinoma of no special type (NST),1,1,1.0,0.0
+LP,1.0,Diagnosis,Ductal carcinoma in situ (DCIS)&Solid papillary carcinoma in situ,1,1,1.0,0.0
+LP,1.0,Diagnosis,Encapsulated papillary carcinoma&Ductal carcinoma in situ (DCIS),1,1,0.0,0.0
+LP,1.0,Diagnosis,Fat necrosis,1,0,1.0,0.0
+LP,1.0,Diagnosis,Fibroadenoma,29,0,0.39080459770114945,0.12109946842359472
+LP,1.0,Diagnosis,Fibroadenoma&Phyllodes tumor,1,0,1.0,0.0
+LP,1.0,Diagnosis,Fibroadenosis,1,0,0.0,0.0
+LP,1.0,Diagnosis,Fibrocystic change,1,0,0.0,0.0
+LP,1.0,Diagnosis,Fibrosclerosis,10,0,0.2333333333333333,0.1527525231651947
+LP,1.0,Diagnosis,Hamartoma,1,0,0.0,0.0
+LP,1.0,Diagnosis,Intraductal papilloma,7,0,0.38095238095238093,0.08247860988423225
+LP,1.0,Diagnosis,Intraductal papilloma&Usual ductal hyperplasia (UDH)&Adenosis,1,0,0.0,0.0
+LP,1.0,Diagnosis,Intramammary lymph node,1,0,0.0,0.0
+LP,1.0,Diagnosis,Invasive carcinoma of no special type (NST),54,54,0.5123456790123456,0.03854937036048396
+LP,1.0,Diagnosis,Invasive carcinoma of no special type (NST)&Apocrine carcinoma,1,1,0.0,0.0
+LP,1.0,Diagnosis,Invasive carcinoma of no special type (NST)&Ductal carcinoma in situ (DCIS),7,7,0.4761904761904761,0.08247860988423225
+LP,1.0,Diagnosis,Invasive carcinoma of no special type (NST)&Invasive micropapillary carcinoma,1,1,0.0,0.0
+LP,1.0,Diagnosis,Invasive carcinoma of no special type (NST)&Mucinous carcinoma,1,1,0.0,0.0
+LP,1.0,Diagnosis,Invasive carcinoma of no special type (NST)&Sebaceous carcinoma,1,1,0.3333333333333333,0.5773502691896258
+LP,1.0,Diagnosis,Invasive lobular carcinoma,12,12,0.47222222222222227,0.09622504486493764
+LP,1.0,Diagnosis,Invasive lobular carcinoma&Lobular carcinoma in situ (LCIS),1,1,1.0,0.0
+LP,1.0,Diagnosis,Invasive micropapillary carcinoma,3,3,0.6666666666666666,0.0
+LP,1.0,Diagnosis,Invasive papillary carcinoma&Encapsulated papillary carcinoma,1,1,0.6666666666666666,0.5773502691896258
+LP,1.0,Diagnosis,Lactating adenoma,1,0,0.0,0.0
+LP,1.0,Diagnosis,Lobular carcinoma in situ (LCIS),1,0,0.0,0.0
+LP,1.0,Diagnosis,Lymphoma,1,1,1.0,0.0
+LP,1.0,Diagnosis,Mastitis,2,0,0.3333333333333333,0.2886751345948129
+LP,1.0,Diagnosis,Metaplastic carcinoma,1,1,0.6666666666666666,0.5773502691896258
+LP,1.0,Diagnosis,Mucinous carcinoma,3,3,0.3333333333333333,0.0
+LP,1.0,Diagnosis,Phyllodes tumor,2,0,0.3333333333333333,0.5773502691896258
+LP,1.0,Diagnosis,Pseudoangiomatous stromal hyperplasia (PASH),5,0,0.06666666666666667,0.11547005383792518
+LP,1.0,Diagnosis,Simple cyst,1,0,0.0,0.0
+LP,1.0,Diagnosis,Tubular carcinoma,1,1,0.0,0.0
+LP,1.0,Diagnosis,Tubular carcinoma&Cribriform carcinoma,1,1,1.0,0.0
+LP,1.0,Diagnosis,Usual ductal hyperplasia (UDH),2,0,0.6666666666666666,0.28867513459481287
+LP,1.0,Diagnosis,Usual ductal hyperplasia (UDH)&Fibrocystic change,1,0,0.0,0.0
+LP,1.0,Diagnosis,Usual ductal hyperplasia (UDH)&Fibrosclerosis,1,0,1.0,0.0
+LP,1.0,Diagnosis,Usual ductal hyperplasia (UDH)&Pseudoangiomatous stromal hyperplasia (PASH),1,0,0.3333333333333333,0.5773502691896258
+LP,1.0,Diagnosis,not applicable,55,0,0.26060606060606056,0.03784847271756605
+LP,1.0,pixel_count_tertile,high,79,24,0.4430379746835443,0.055175935994185764
+LP,1.0,pixel_count_tertile,low,113,60,0.4188790560471976,0.04182137722347439
+LP,1.0,pixel_count_tertile,mid,60,14,0.2722222222222222,0.058531409738070764
+LP,1.0,luminance_tertile,high,84,22,0.3055555555555556,0.09622504486493763
+LP,1.0,luminance_tertile,low,84,37,0.4166666666666667,0.031497039417435604
+LP,1.0,luminance_tertile,mid,84,39,0.4523809523809524,0.020619652471058052
+LP,1.0,contrast_tertile,high,84,27,0.42857142857142855,0.06185895741317419
+LP,1.0,contrast_tertile,low,84,44,0.4166666666666667,0.023809523809523808
+LP,1.0,contrast_tertile,mid,84,27,0.32936507936507936,0.071758497301687
+PFT,0.01,BIRADS,2,30,0,0.35555555555555557,0.20367003088692623
+PFT,0.01,BIRADS,3,37,0,0.3333333333333333,0.2568752689978965
+PFT,0.01,BIRADS,4a,44,1,0.32575757575757575,0.26144596858693026
+PFT,0.01,BIRADS,4b,46,16,0.5072463768115942,0.123613928327768
+PFT,0.01,BIRADS,4c,49,41,0.6054421768707484,0.12469593727770993
+PFT,0.01,BIRADS,5,46,40,0.5579710144927537,0.18101443473618548
+PFT,0.01,Verification,confirmed by biopsy,197,98,0.494077834179357,0.060560169773852056
+PFT,0.01,Verification,confirmed by follow-up care,55,0,0.33939393939393936,0.23729420546002294
+PFT,0.01,Diagnosis,Atypical lobular hyperplasia (ALH),1,0,0.3333333333333333,0.5773502691896258
+PFT,0.01,Diagnosis,Benign mammary dysplasia,26,0,0.4230769230769231,0.34185363143521497
+PFT,0.01,Diagnosis,Benign mammary dysplasia&Usual ductal hyperplasia (UDH),1,0,0.3333333333333333,0.5773502691896258
+PFT,0.01,Diagnosis,Complex sclerosing lesion,1,0,0.3333333333333333,0.5773502691896258
+PFT,0.01,Diagnosis,Cribriform carcinoma,2,2,0.8333333333333334,0.28867513459481287
+PFT,0.01,Diagnosis,Ductal carcinoma in situ (DCIS),4,4,0.75,0.25
+PFT,0.01,Diagnosis,Ductal carcinoma in situ (DCIS)&Invasive carcinoma of no special type (NST),1,1,1.0,0.0
+PFT,0.01,Diagnosis,Ductal carcinoma in situ (DCIS)&Solid papillary carcinoma in situ,1,1,1.0,0.0
+PFT,0.01,Diagnosis,Encapsulated papillary carcinoma&Ductal carcinoma in situ (DCIS),1,1,1.0,0.0
+PFT,0.01,Diagnosis,Fat necrosis,1,0,0.6666666666666666,0.5773502691896258
+PFT,0.01,Diagnosis,Fibroadenoma,29,0,0.367816091954023,0.32773741216973
+PFT,0.01,Diagnosis,Fibroadenoma&Phyllodes tumor,1,0,0.0,0.0
+PFT,0.01,Diagnosis,Fibroadenosis,1,0,0.3333333333333333,0.5773502691896258
+PFT,0.01,Diagnosis,Fibrocystic change,1,0,0.3333333333333333,0.5773502691896258
+PFT,0.01,Diagnosis,Fibrosclerosis,10,0,0.3333333333333333,0.15275252316519466
+PFT,0.01,Diagnosis,Hamartoma,1,0,0.3333333333333333,0.5773502691896258
+PFT,0.01,Diagnosis,Intraductal papilloma,7,0,0.14285714285714285,0.14285714285714285
+PFT,0.01,Diagnosis,Intraductal papilloma&Usual ductal hyperplasia (UDH)&Adenosis,1,0,0.3333333333333333,0.5773502691896258
+PFT,0.01,Diagnosis,Intramammary lymph node,1,0,0.3333333333333333,0.5773502691896258
+PFT,0.01,Diagnosis,Invasive carcinoma of no special type (NST),54,54,0.6419753086419754,0.19973690972053623
+PFT,0.01,Diagnosis,Invasive carcinoma of no special type (NST)&Apocrine carcinoma,1,1,1.0,0.0
+PFT,0.01,Diagnosis,Invasive carcinoma of no special type (NST)&Ductal carcinoma in situ (DCIS),7,7,0.619047619047619,0.35951592548908334
+PFT,0.01,Diagnosis,Invasive carcinoma of no special type (NST)&Invasive micropapillary carcinoma,1,1,0.6666666666666666,0.5773502691896258
+PFT,0.01,Diagnosis,Invasive carcinoma of no special type (NST)&Mucinous carcinoma,1,1,0.3333333333333333,0.5773502691896258
+PFT,0.01,Diagnosis,Invasive carcinoma of no special type (NST)&Sebaceous carcinoma,1,1,0.0,0.0
+PFT,0.01,Diagnosis,Invasive lobular carcinoma,12,12,0.5,0.16666666666666666
+PFT,0.01,Diagnosis,Invasive lobular carcinoma&Lobular carcinoma in situ (LCIS),1,1,0.6666666666666666,0.5773502691896258
+PFT,0.01,Diagnosis,Invasive micropapillary carcinoma,3,3,0.5555555555555555,0.3849001794597505
+PFT,0.01,Diagnosis,Invasive papillary carcinoma&Encapsulated papillary carcinoma,1,1,1.0,0.0
+PFT,0.01,Diagnosis,Lactating adenoma,1,0,0.3333333333333333,0.5773502691896258
+PFT,0.01,Diagnosis,Lobular carcinoma in situ (LCIS),1,0,0.3333333333333333,0.5773502691896258
+PFT,0.01,Diagnosis,Lymphoma,1,1,0.6666666666666666,0.5773502691896258
+PFT,0.01,Diagnosis,Mastitis,2,0,0.6666666666666666,0.28867513459481287
+PFT,0.01,Diagnosis,Metaplastic carcinoma,1,1,0.3333333333333333,0.5773502691896258
+PFT,0.01,Diagnosis,Mucinous carcinoma,3,3,0.8888888888888888,0.1924500897298753
+PFT,0.01,Diagnosis,Phyllodes tumor,2,0,0.0,0.0
+PFT,0.01,Diagnosis,Pseudoangiomatous stromal hyperplasia (PASH),5,0,0.3333333333333333,0.30550504633038933
+PFT,0.01,Diagnosis,Simple cyst,1,0,0.0,0.0
+PFT,0.01,Diagnosis,Tubular carcinoma,1,1,0.3333333333333333,0.5773502691896258
+PFT,0.01,Diagnosis,Tubular carcinoma&Cribriform carcinoma,1,1,0.6666666666666666,0.5773502691896258
+PFT,0.01,Diagnosis,Usual ductal hyperplasia (UDH),2,0,0.3333333333333333,0.2886751345948129
+PFT,0.01,Diagnosis,Usual ductal hyperplasia (UDH)&Fibrocystic change,1,0,0.3333333333333333,0.5773502691896258
+PFT,0.01,Diagnosis,Usual ductal hyperplasia (UDH)&Fibrosclerosis,1,0,0.0,0.0
+PFT,0.01,Diagnosis,Usual ductal hyperplasia (UDH)&Pseudoangiomatous stromal hyperplasia (PASH),1,0,0.6666666666666666,0.5773502691896258
+PFT,0.01,Diagnosis,not applicable,55,0,0.33939393939393936,0.23729420546002294
+PFT,0.01,pixel_count_tertile,high,79,24,0.4177215189873418,0.13336270573231312
+PFT,0.01,pixel_count_tertile,low,113,60,0.5014749262536874,0.058923257685658356
+PFT,0.01,pixel_count_tertile,mid,60,14,0.4388888888888889,0.1250925583244189
+PFT,0.01,luminance_tertile,high,84,22,0.4166666666666667,0.14433756729740643
+PFT,0.01,luminance_tertile,low,84,37,0.4920634920634921,0.071758497301687
+PFT,0.01,luminance_tertile,mid,84,39,0.47222222222222215,0.0792658109342785
+PFT,0.01,contrast_tertile,high,84,27,0.42063492063492064,0.08935182737458493
+PFT,0.01,contrast_tertile,low,84,44,0.503968253968254,0.09246968410897652
+PFT,0.01,contrast_tertile,mid,84,27,0.45634920634920634,0.11314743991574008
+PFT,0.1,BIRADS,2,30,0,0.45555555555555555,0.22689530951846817
+PFT,0.1,BIRADS,3,37,0,0.41441441441441446,0.1955183280559523
+PFT,0.1,BIRADS,4a,44,1,0.6287878787878788,0.2584654865035149
+PFT,0.1,BIRADS,4b,46,16,0.4855072463768116,0.1397630545071443
+PFT,0.1,BIRADS,4c,49,41,0.4829931972789116,0.17356939894113024
+PFT,0.1,BIRADS,5,46,40,0.34057971014492755,0.18488914235033438
+PFT,0.1,Verification,confirmed by biopsy,197,98,0.494077834179357,0.06929135441435966
+PFT,0.1,Verification,confirmed by follow-up care,55,0,0.3818181818181818,0.20650575802910084
+PFT,0.1,Diagnosis,Atypical lobular hyperplasia (ALH),1,0,1.0,0.0
+PFT,0.1,Diagnosis,Benign mammary dysplasia,26,0,0.7564102564102564,0.21182963643408087
+PFT,0.1,Diagnosis,Benign mammary dysplasia&Usual ductal hyperplasia (UDH),1,0,0.0,0.0
+PFT,0.1,Diagnosis,Complex sclerosing lesion,1,0,0.6666666666666666,0.5773502691896258
+PFT,0.1,Diagnosis,Cribriform carcinoma,2,2,0.16666666666666666,0.2886751345948129
+PFT,0.1,Diagnosis,Ductal carcinoma in situ (DCIS),4,4,0.25,0.0
+PFT,0.1,Diagnosis,Ductal carcinoma in situ (DCIS)&Invasive carcinoma of no special type (NST),1,1,0.6666666666666666,0.5773502691896258
+PFT,0.1,Diagnosis,Ductal carcinoma in situ (DCIS)&Solid papillary carcinoma in situ,1,1,0.6666666666666666,0.5773502691896258
+PFT,0.1,Diagnosis,Encapsulated papillary carcinoma&Ductal carcinoma in situ (DCIS),1,1,0.0,0.0
+PFT,0.1,Diagnosis,Fat necrosis,1,0,1.0,0.0
+PFT,0.1,Diagnosis,Fibroadenoma,29,0,0.6551724137931034,0.17917766974850452
+PFT,0.1,Diagnosis,Fibroadenoma&Phyllodes tumor,1,0,1.0,0.0
+PFT,0.1,Diagnosis,Fibroadenosis,1,0,0.3333333333333333,0.5773502691896258
+PFT,0.1,Diagnosis,Fibrocystic change,1,0,0.6666666666666666,0.5773502691896258
+PFT,0.1,Diagnosis,Fibrosclerosis,10,0,0.6,0.2645751311064591
+PFT,0.1,Diagnosis,Hamartoma,1,0,0.3333333333333333,0.5773502691896258
+PFT,0.1,Diagnosis,Intraductal papilloma,7,0,0.6666666666666666,0.329914439536929
+PFT,0.1,Diagnosis,Intraductal papilloma&Usual ductal hyperplasia (UDH)&Adenosis,1,0,0.6666666666666666,0.5773502691896258
+PFT,0.1,Diagnosis,Intramammary lymph node,1,0,0.3333333333333333,0.5773502691896258
+PFT,0.1,Diagnosis,Invasive carcinoma of no special type (NST),54,54,0.35185185185185186,0.18518518518518523
+PFT,0.1,Diagnosis,Invasive carcinoma of no special type (NST)&Apocrine carcinoma,1,1,0.0,0.0
+PFT,0.1,Diagnosis,Invasive carcinoma of no special type (NST)&Ductal carcinoma in situ (DCIS),7,7,0.42857142857142855,0.37796447300922725
+PFT,0.1,Diagnosis,Invasive carcinoma of no special type (NST)&Invasive micropapillary carcinoma,1,1,0.3333333333333333,0.5773502691896258
+PFT,0.1,Diagnosis,Invasive carcinoma of no special type (NST)&Mucinous carcinoma,1,1,0.0,0.0
+PFT,0.1,Diagnosis,Invasive carcinoma of no special type (NST)&Sebaceous carcinoma,1,1,0.6666666666666666,0.5773502691896258
+PFT,0.1,Diagnosis,Invasive lobular carcinoma,12,12,0.2777777777777778,0.2097176232019653
+PFT,0.1,Diagnosis,Invasive lobular carcinoma&Lobular carcinoma in situ (LCIS),1,1,0.3333333333333333,0.5773502691896258
+PFT,0.1,Diagnosis,Invasive micropapillary carcinoma,3,3,0.3333333333333333,0.3333333333333333
+PFT,0.1,Diagnosis,Invasive papillary carcinoma&Encapsulated papillary carcinoma,1,1,0.6666666666666666,0.5773502691896258
+PFT,0.1,Diagnosis,Lactating adenoma,1,0,0.0,0.0
+PFT,0.1,Diagnosis,Lobular carcinoma in situ (LCIS),1,0,0.6666666666666666,0.5773502691896258
+PFT,0.1,Diagnosis,Lymphoma,1,1,1.0,0.0
+PFT,0.1,Diagnosis,Mastitis,2,0,0.5,0.5
+PFT,0.1,Diagnosis,Metaplastic carcinoma,1,1,0.3333333333333333,0.5773502691896258
+PFT,0.1,Diagnosis,Mucinous carcinoma,3,3,0.4444444444444444,0.19245008972987526
+PFT,0.1,Diagnosis,Phyllodes tumor,2,0,0.5,0.5
+PFT,0.1,Diagnosis,Pseudoangiomatous stromal hyperplasia (PASH),5,0,0.39999999999999997,0.34641016151377546
+PFT,0.1,Diagnosis,Simple cyst,1,0,0.0,0.0
+PFT,0.1,Diagnosis,Tubular carcinoma,1,1,0.0,0.0
+PFT,0.1,Diagnosis,Tubular carcinoma&Cribriform carcinoma,1,1,0.0,0.0
+PFT,0.1,Diagnosis,Usual ductal hyperplasia (UDH),2,0,0.6666666666666666,0.28867513459481287
+PFT,0.1,Diagnosis,Usual ductal hyperplasia (UDH)&Fibrocystic change,1,0,0.6666666666666666,0.5773502691896258
+PFT,0.1,Diagnosis,Usual ductal hyperplasia (UDH)&Fibrosclerosis,1,0,1.0,0.0
+PFT,0.1,Diagnosis,Usual ductal hyperplasia (UDH)&Pseudoangiomatous stromal hyperplasia (PASH),1,0,0.6666666666666666,0.5773502691896258
+PFT,0.1,Diagnosis,not applicable,55,0,0.3818181818181818,0.20650575802910084
+PFT,0.1,pixel_count_tertile,high,79,24,0.5021097046413502,0.08616277576650691
+PFT,0.1,pixel_count_tertile,low,113,60,0.471976401179941,0.06642082742889496
+PFT,0.1,pixel_count_tertile,mid,60,14,0.4222222222222222,0.16694421334796355
+PFT,0.1,luminance_tertile,high,84,22,0.5238095238095238,0.14433756729740643
+PFT,0.1,luminance_tertile,low,84,37,0.4523809523809524,0.07241383964640737
+PFT,0.1,luminance_tertile,mid,84,39,0.4325396825396825,0.029959660457423615
+PFT,0.1,contrast_tertile,high,84,27,0.49603174603174605,0.08445951053092364
+PFT,0.1,contrast_tertile,low,84,44,0.4166666666666667,0.05952380952380951
+PFT,0.1,contrast_tertile,mid,84,27,0.49603174603174605,0.12729376930432887
+PFT,1.0,BIRADS,2,30,0,0.3666666666666667,0.06666666666666668
+PFT,1.0,BIRADS,3,37,0,0.1711711711711712,0.041284465720322884
+PFT,1.0,BIRADS,4a,44,1,0.37121212121212127,0.05719571541871781
+PFT,1.0,BIRADS,4b,46,16,0.5144927536231884,0.045253608684046334
+PFT,1.0,BIRADS,4c,49,41,0.32653061224489793,0.04081632653061226
+PFT,1.0,BIRADS,5,46,40,0.18115942028985507,0.03320707025330318
+PFT,1.0,Verification,confirmed by biopsy,197,98,0.34179357021996615,0.02051498418440294
+PFT,1.0,Verification,confirmed by follow-up care,55,0,0.26060606060606056,0.045756572334974245
+PFT,1.0,Diagnosis,Atypical lobular hyperplasia (ALH),1,0,1.0,0.0
+PFT,1.0,Diagnosis,Benign mammary dysplasia,26,0,0.5897435897435898,0.12363654821785838
+PFT,1.0,Diagnosis,Benign mammary dysplasia&Usual ductal hyperplasia (UDH),1,0,0.6666666666666666,0.5773502691896258
+PFT,1.0,Diagnosis,Complex sclerosing lesion,1,0,0.6666666666666666,0.5773502691896258
+PFT,1.0,Diagnosis,Cribriform carcinoma,2,2,0.0,0.0
+PFT,1.0,Diagnosis,Ductal carcinoma in situ (DCIS),4,4,0.3333333333333333,0.14433756729740643
+PFT,1.0,Diagnosis,Ductal carcinoma in situ (DCIS)&Invasive carcinoma of no special type (NST),1,1,1.0,0.0
+PFT,1.0,Diagnosis,Ductal carcinoma in situ (DCIS)&Solid papillary carcinoma in situ,1,1,1.0,0.0
+PFT,1.0,Diagnosis,Encapsulated papillary carcinoma&Ductal carcinoma in situ (DCIS),1,1,0.0,0.0
+PFT,1.0,Diagnosis,Fat necrosis,1,0,1.0,0.0
+PFT,1.0,Diagnosis,Fibroadenoma,29,0,0.3448275862068966,0.06896551724137931
+PFT,1.0,Diagnosis,Fibroadenoma&Phyllodes tumor,1,0,1.0,0.0
+PFT,1.0,Diagnosis,Fibroadenosis,1,0,0.0,0.0
+PFT,1.0,Diagnosis,Fibrocystic change,1,0,0.0,0.0
+PFT,1.0,Diagnosis,Fibrosclerosis,10,0,0.5333333333333333,0.05773502691896256
+PFT,1.0,Diagnosis,Hamartoma,1,0,1.0,0.0
+PFT,1.0,Diagnosis,Intraductal papilloma,7,0,0.7142857142857143,0.14285714285714285
+PFT,1.0,Diagnosis,Intraductal papilloma&Usual ductal hyperplasia (UDH)&Adenosis,1,0,0.3333333333333333,0.5773502691896258
+PFT,1.0,Diagnosis,Intramammary lymph node,1,0,0.0,0.0
+PFT,1.0,Diagnosis,Invasive carcinoma of no special type (NST),54,54,0.191358024691358,0.010691671651659736
+PFT,1.0,Diagnosis,Invasive carcinoma of no special type (NST)&Apocrine carcinoma,1,1,0.0,0.0
+PFT,1.0,Diagnosis,Invasive carcinoma of no special type (NST)&Ductal carcinoma in situ (DCIS),7,7,0.23809523809523805,0.21821789023599236
+PFT,1.0,Diagnosis,Invasive carcinoma of no special type (NST)&Invasive micropapillary carcinoma,1,1,0.3333333333333333,0.5773502691896258
+PFT,1.0,Diagnosis,Invasive carcinoma of no special type (NST)&Mucinous carcinoma,1,1,0.0,0.0
+PFT,1.0,Diagnosis,Invasive carcinoma of no special type (NST)&Sebaceous carcinoma,1,1,0.0,0.0
+PFT,1.0,Diagnosis,Invasive lobular carcinoma,12,12,0.08333333333333333,0.0
+PFT,1.0,Diagnosis,Invasive lobular carcinoma&Lobular carcinoma in situ (LCIS),1,1,0.0,0.0
+PFT,1.0,Diagnosis,Invasive micropapillary carcinoma,3,3,0.1111111111111111,0.19245008972987526
+PFT,1.0,Diagnosis,Invasive papillary carcinoma&Encapsulated papillary carcinoma,1,1,0.6666666666666666,0.5773502691896258
+PFT,1.0,Diagnosis,Lactating adenoma,1,0,0.0,0.0
+PFT,1.0,Diagnosis,Lobular carcinoma in situ (LCIS),1,0,0.0,0.0
+PFT,1.0,Diagnosis,Lymphoma,1,1,0.6666666666666666,0.5773502691896258
+PFT,1.0,Diagnosis,Mastitis,2,0,0.5,0.0
+PFT,1.0,Diagnosis,Metaplastic carcinoma,1,1,0.0,0.0
+PFT,1.0,Diagnosis,Mucinous carcinoma,3,3,0.1111111111111111,0.19245008972987526
+PFT,1.0,Diagnosis,Phyllodes tumor,2,0,0.0,0.0
+PFT,1.0,Diagnosis,Pseudoangiomatous stromal hyperplasia (PASH),5,0,0.4000000000000001,0.19999999999999998
+PFT,1.0,Diagnosis,Simple cyst,1,0,0.0,0.0
+PFT,1.0,Diagnosis,Tubular carcinoma,1,1,0.0,0.0
+PFT,1.0,Diagnosis,Tubular carcinoma&Cribriform carcinoma,1,1,1.0,0.0
+PFT,1.0,Diagnosis,Usual ductal hyperplasia (UDH),2,0,1.0,0.0
+PFT,1.0,Diagnosis,Usual ductal hyperplasia (UDH)&Fibrocystic change,1,0,0.0,0.0
+PFT,1.0,Diagnosis,Usual ductal hyperplasia (UDH)&Fibrosclerosis,1,0,1.0,0.0
+PFT,1.0,Diagnosis,Usual ductal hyperplasia (UDH)&Pseudoangiomatous stromal hyperplasia (PASH),1,0,0.3333333333333333,0.5773502691896258
+PFT,1.0,Diagnosis,not applicable,55,0,0.26060606060606056,0.045756572334974245
+PFT,1.0,pixel_count_tertile,high,79,24,0.3375527426160338,0.057079110795226505
+PFT,1.0,pixel_count_tertile,low,113,60,0.3274336283185841,0.008849557522123908
+PFT,1.0,pixel_count_tertile,mid,60,14,0.3,0.033333333333333326
+PFT,1.0,luminance_tertile,high,84,22,0.32936507936507936,0.029959660457423615
+PFT,1.0,luminance_tertile,low,84,37,0.34920634920634924,0.038268455400765684
+PFT,1.0,luminance_tertile,mid,84,39,0.29365079365079366,0.013746434980705392
+PFT,1.0,contrast_tertile,high,84,27,0.3333333333333333,0.03149703941743561
+PFT,1.0,contrast_tertile,low,84,44,0.2698412698412698,0.024781738088882527
+PFT,1.0,contrast_tertile,mid,84,27,0.36904761904761907,0.023809523809523808
+LoRA,0.01,BIRADS,2,30,0,0.43333333333333335,0.42557151116012354
+LoRA,0.01,BIRADS,3,37,0,0.32432432432432434,0.3544561364487568
+LoRA,0.01,BIRADS,4a,44,1,0.4545454545454546,0.3982139879076189
+LoRA,0.01,BIRADS,4b,46,16,0.47826086956521746,0.18573921185472894
+LoRA,0.01,BIRADS,4c,49,41,0.49659863945578225,0.26945989551480765
+LoRA,0.01,BIRADS,5,46,40,0.5072463768115942,0.3167752607883246
+LoRA,0.01,Verification,confirmed by biopsy,197,98,0.47377326565143824,0.014653560131716401
+LoRA,0.01,Verification,confirmed by follow-up care,55,0,0.3878787878787879,0.39681930993626313
+LoRA,0.01,Diagnosis,Atypical lobular hyperplasia (ALH),1,0,0.3333333333333333,0.5773502691896258
+LoRA,0.01,Diagnosis,Benign mammary dysplasia,26,0,0.48717948717948717,0.4254015390522322
+LoRA,0.01,Diagnosis,Benign mammary dysplasia&Usual ductal hyperplasia (UDH),1,0,0.3333333333333333,0.5773502691896258
+LoRA,0.01,Diagnosis,Complex sclerosing lesion,1,0,0.0,0.0
+LoRA,0.01,Diagnosis,Cribriform carcinoma,2,2,0.5,0.5
+LoRA,0.01,Diagnosis,Ductal carcinoma in situ (DCIS),4,4,0.75,0.25
+LoRA,0.01,Diagnosis,Ductal carcinoma in situ (DCIS)&Invasive carcinoma of no special type (NST),1,1,0.6666666666666666,0.5773502691896258
+LoRA,0.01,Diagnosis,Ductal carcinoma in situ (DCIS)&Solid papillary carcinoma in situ,1,1,0.6666666666666666,0.5773502691896258
+LoRA,0.01,Diagnosis,Encapsulated papillary carcinoma&Ductal carcinoma in situ (DCIS),1,1,0.6666666666666666,0.5773502691896258
+LoRA,0.01,Diagnosis,Fat necrosis,1,0,1.0,0.0
+LoRA,0.01,Diagnosis,Fibroadenoma,29,0,0.37931034482758624,0.38398374916069117
+LoRA,0.01,Diagnosis,Fibroadenoma&Phyllodes tumor,1,0,0.3333333333333333,0.5773502691896258
+LoRA,0.01,Diagnosis,Fibroadenosis,1,0,0.6666666666666666,0.5773502691896258
+LoRA,0.01,Diagnosis,Fibrocystic change,1,0,0.6666666666666666,0.5773502691896258
+LoRA,0.01,Diagnosis,Fibrosclerosis,10,0,0.5666666666666667,0.4509249752822895
+LoRA,0.01,Diagnosis,Hamartoma,1,0,0.3333333333333333,0.5773502691896258
+LoRA,0.01,Diagnosis,Intraductal papilloma,7,0,0.3333333333333333,0.4592214648091883
+LoRA,0.01,Diagnosis,Intraductal papilloma&Usual ductal hyperplasia (UDH)&Adenosis,1,0,0.3333333333333333,0.5773502691896258
+LoRA,0.01,Diagnosis,Intramammary lymph node,1,0,0.3333333333333333,0.5773502691896258
+LoRA,0.01,Diagnosis,Invasive carcinoma of no special type (NST),54,54,0.5185185185185185,0.39020939825380513
+LoRA,0.01,Diagnosis,Invasive carcinoma of no special type (NST)&Apocrine carcinoma,1,1,0.6666666666666666,0.5773502691896258
+LoRA,0.01,Diagnosis,Invasive carcinoma of no special type (NST)&Ductal carcinoma in situ (DCIS),7,7,0.5714285714285715,0.5150787536377127
+LoRA,0.01,Diagnosis,Invasive carcinoma of no special type (NST)&Invasive micropapillary carcinoma,1,1,0.3333333333333333,0.5773502691896258
+LoRA,0.01,Diagnosis,Invasive carcinoma of no special type (NST)&Mucinous carcinoma,1,1,0.3333333333333333,0.5773502691896258
+LoRA,0.01,Diagnosis,Invasive carcinoma of no special type (NST)&Sebaceous carcinoma,1,1,0.0,0.0
+LoRA,0.01,Diagnosis,Invasive lobular carcinoma,12,12,0.4444444444444444,0.3367876570272817
+LoRA,0.01,Diagnosis,Invasive lobular carcinoma&Lobular carcinoma in situ (LCIS),1,1,0.3333333333333333,0.5773502691896258
+LoRA,0.01,Diagnosis,Invasive micropapillary carcinoma,3,3,0.5555555555555555,0.5091750772173156
+LoRA,0.01,Diagnosis,Invasive papillary carcinoma&Encapsulated papillary carcinoma,1,1,0.3333333333333333,0.5773502691896258
+LoRA,0.01,Diagnosis,Lactating adenoma,1,0,0.3333333333333333,0.5773502691896258
+LoRA,0.01,Diagnosis,Lobular carcinoma in situ (LCIS),1,0,0.6666666666666666,0.5773502691896258
+LoRA,0.01,Diagnosis,Lymphoma,1,1,0.6666666666666666,0.5773502691896258
+LoRA,0.01,Diagnosis,Mastitis,2,0,0.5,0.5
+LoRA,0.01,Diagnosis,Metaplastic carcinoma,1,1,0.0,0.0
+LoRA,0.01,Diagnosis,Mucinous carcinoma,3,3,0.6666666666666666,0.5773502691896258
+LoRA,0.01,Diagnosis,Phyllodes tumor,2,0,0.0,0.0
+LoRA,0.01,Diagnosis,Pseudoangiomatous stromal hyperplasia (PASH),5,0,0.4666666666666666,0.46188021535170065
+LoRA,0.01,Diagnosis,Simple cyst,1,0,0.3333333333333333,0.5773502691896258
+LoRA,0.01,Diagnosis,Tubular carcinoma,1,1,0.0,0.0
+LoRA,0.01,Diagnosis,Tubular carcinoma&Cribriform carcinoma,1,1,0.6666666666666666,0.5773502691896258
+LoRA,0.01,Diagnosis,Usual ductal hyperplasia (UDH),2,0,0.5,0.5
+LoRA,0.01,Diagnosis,Usual ductal hyperplasia (UDH)&Fibrocystic change,1,0,0.6666666666666666,0.5773502691896258
+LoRA,0.01,Diagnosis,Usual ductal hyperplasia (UDH)&Fibrosclerosis,1,0,0.3333333333333333,0.5773502691896258
+LoRA,0.01,Diagnosis,Usual ductal hyperplasia (UDH)&Pseudoangiomatous stromal hyperplasia (PASH),1,0,0.3333333333333333,0.5773502691896258
+LoRA,0.01,Diagnosis,not applicable,55,0,0.3878787878787879,0.39681930993626313
+LoRA,0.01,pixel_count_tertile,high,79,24,0.4767932489451477,0.16520482658609195
+LoRA,0.01,pixel_count_tertile,low,113,60,0.4631268436578171,0.02043717767042923
+LoRA,0.01,pixel_count_tertile,mid,60,14,0.41111111111111115,0.2200589146704262
+LoRA,0.01,luminance_tertile,high,84,22,0.46428571428571425,0.19047619047619047
+LoRA,0.01,luminance_tertile,low,84,37,0.43253968253968256,0.049563476177765055
+LoRA,0.01,luminance_tertile,mid,84,39,0.4682539682539682,0.04956347617776509
+LoRA,0.01,contrast_tertile,high,84,27,0.46428571428571425,0.137292411841319
+LoRA,0.01,contrast_tertile,low,84,44,0.4444444444444444,0.013746434980705392
+LoRA,0.01,contrast_tertile,mid,84,27,0.45634920634920634,0.13900222133442056
+LoRA,0.1,BIRADS,2,30,0,0.3444444444444444,0.01924500897298752
+LoRA,0.1,BIRADS,3,37,0,0.38738738738738737,0.17375947317104423
+LoRA,0.1,BIRADS,4a,44,1,0.48484848484848486,0.14433756729740646
+LoRA,0.1,BIRADS,4b,46,16,0.4710144927536232,0.04525360868404636
+LoRA,0.1,BIRADS,4c,49,41,0.31292517006802717,0.042482979580941466
+LoRA,0.1,BIRADS,5,46,40,0.2318840579710145,0.08230301950435179
+LoRA,0.1,Verification,confirmed by biopsy,197,98,0.377326565143824,0.05591442179985891
+LoRA,0.1,Verification,confirmed by follow-up care,55,0,0.3515151515151515,0.11689273649688431
+LoRA,0.1,Diagnosis,Atypical lobular hyperplasia (ALH),1,0,1.0,0.0
+LoRA,0.1,Diagnosis,Benign mammary dysplasia,26,0,0.5384615384615384,0.2401922307076307
+LoRA,0.1,Diagnosis,Benign mammary dysplasia&Usual ductal hyperplasia (UDH),1,0,1.0,0.0
+LoRA,0.1,Diagnosis,Complex sclerosing lesion,1,0,0.3333333333333333,0.5773502691896258
+LoRA,0.1,Diagnosis,Cribriform carcinoma,2,2,0.0,0.0
+LoRA,0.1,Diagnosis,Ductal carcinoma in situ (DCIS),4,4,0.4166666666666667,0.2886751345948129
+LoRA,0.1,Diagnosis,Ductal carcinoma in situ (DCIS)&Invasive carcinoma of no special type (NST),1,1,0.3333333333333333,0.5773502691896258
+LoRA,0.1,Diagnosis,Ductal carcinoma in situ (DCIS)&Solid papillary carcinoma in situ,1,1,0.0,0.0
+LoRA,0.1,Diagnosis,Encapsulated papillary carcinoma&Ductal carcinoma in situ (DCIS),1,1,1.0,0.0
+LoRA,0.1,Diagnosis,Fat necrosis,1,0,0.6666666666666666,0.5773502691896258
+LoRA,0.1,Diagnosis,Fibroadenoma,29,0,0.4597701149425288,0.13054961714483387
+LoRA,0.1,Diagnosis,Fibroadenoma&Phyllodes tumor,1,0,0.6666666666666666,0.5773502691896258
+LoRA,0.1,Diagnosis,Fibroadenosis,1,0,0.6666666666666666,0.5773502691896258
+LoRA,0.1,Diagnosis,Fibrocystic change,1,0,1.0,0.0
+LoRA,0.1,Diagnosis,Fibrosclerosis,10,0,0.3666666666666667,0.2516611478423583
+LoRA,0.1,Diagnosis,Hamartoma,1,0,0.3333333333333333,0.5773502691896258
+LoRA,0.1,Diagnosis,Intraductal papilloma,7,0,0.38095238095238093,0.08247860988423225
+LoRA,0.1,Diagnosis,Intraductal papilloma&Usual ductal hyperplasia (UDH)&Adenosis,1,0,1.0,0.0
+LoRA,0.1,Diagnosis,Intramammary lymph node,1,0,0.0,0.0
+LoRA,0.1,Diagnosis,Invasive carcinoma of no special type (NST),54,54,0.22839506172839508,0.11315001715940347
+LoRA,0.1,Diagnosis,Invasive carcinoma of no special type (NST)&Apocrine carcinoma,1,1,0.3333333333333333,0.5773502691896258
+LoRA,0.1,Diagnosis,Invasive carcinoma of no special type (NST)&Ductal carcinoma in situ (DCIS),7,7,0.4761904761904762,0.21821789023599242
+LoRA,0.1,Diagnosis,Invasive carcinoma of no special type (NST)&Invasive micropapillary carcinoma,1,1,0.0,0.0
+LoRA,0.1,Diagnosis,Invasive carcinoma of no special type (NST)&Mucinous carcinoma,1,1,0.3333333333333333,0.5773502691896258
+LoRA,0.1,Diagnosis,Invasive carcinoma of no special type (NST)&Sebaceous carcinoma,1,1,0.0,0.0
+LoRA,0.1,Diagnosis,Invasive lobular carcinoma,12,12,0.24999999999999997,0.08333333333333333
+LoRA,0.1,Diagnosis,Invasive lobular carcinoma&Lobular carcinoma in situ (LCIS),1,1,0.3333333333333333,0.5773502691896258
+LoRA,0.1,Diagnosis,Invasive micropapillary carcinoma,3,3,0.1111111111111111,0.19245008972987526
+LoRA,0.1,Diagnosis,Invasive papillary carcinoma&Encapsulated papillary carcinoma,1,1,0.0,0.0
+LoRA,0.1,Diagnosis,Lactating adenoma,1,0,0.6666666666666666,0.5773502691896258
+LoRA,0.1,Diagnosis,Lobular carcinoma in situ (LCIS),1,0,0.3333333333333333,0.5773502691896258
+LoRA,0.1,Diagnosis,Lymphoma,1,1,0.3333333333333333,0.5773502691896258
+LoRA,0.1,Diagnosis,Mastitis,2,0,0.6666666666666666,0.28867513459481287
+LoRA,0.1,Diagnosis,Metaplastic carcinoma,1,1,0.0,0.0
+LoRA,0.1,Diagnosis,Mucinous carcinoma,3,3,0.2222222222222222,0.19245008972987526
+LoRA,0.1,Diagnosis,Phyllodes tumor,2,0,0.16666666666666666,0.2886751345948129
+LoRA,0.1,Diagnosis,Pseudoangiomatous stromal hyperplasia (PASH),5,0,0.6000000000000001,0.2
+LoRA,0.1,Diagnosis,Simple cyst,1,0,0.0,0.0
+LoRA,0.1,Diagnosis,Tubular carcinoma,1,1,0.3333333333333333,0.5773502691896258
+LoRA,0.1,Diagnosis,Tubular carcinoma&Cribriform carcinoma,1,1,0.6666666666666666,0.5773502691896258
+LoRA,0.1,Diagnosis,Usual ductal hyperplasia (UDH),2,0,0.8333333333333334,0.28867513459481287
+LoRA,0.1,Diagnosis,Usual ductal hyperplasia (UDH)&Fibrocystic change,1,0,1.0,0.0
+LoRA,0.1,Diagnosis,Usual ductal hyperplasia (UDH)&Fibrosclerosis,1,0,0.3333333333333333,0.5773502691896258
+LoRA,0.1,Diagnosis,Usual ductal hyperplasia (UDH)&Pseudoangiomatous stromal hyperplasia (PASH),1,0,0.3333333333333333,0.5773502691896258
+LoRA,0.1,Diagnosis,not applicable,55,0,0.3515151515151515,0.11689273649688431
+LoRA,0.1,pixel_count_tertile,high,79,24,0.36708860759493667,0.03349052292486823
+LoRA,0.1,pixel_count_tertile,low,113,60,0.3775811209439528,0.050320714186525006
+LoRA,0.1,pixel_count_tertile,mid,60,14,0.3666666666666667,0.17638342073763938
+LoRA,0.1,luminance_tertile,high,84,22,0.40079365079365076,0.08103403911373863
+LoRA,0.1,luminance_tertile,low,84,37,0.36904761904761907,0.035714285714285726
+LoRA,0.1,luminance_tertile,mid,84,39,0.3452380952380952,0.08333333333333333
+LoRA,0.1,contrast_tertile,high,84,27,0.38095238095238093,0.0629940788348712
+LoRA,0.1,contrast_tertile,low,84,44,0.3452380952380952,0.10714285714285715
+LoRA,0.1,contrast_tertile,mid,84,27,0.38888888888888884,0.13167190494473852
+LoRA,1.0,BIRADS,2,30,0,0.38888888888888884,0.16442942874387492
+LoRA,1.0,BIRADS,3,37,0,0.3333333333333333,0.22504497291525757
+LoRA,1.0,BIRADS,4a,44,1,0.393939393939394,0.1959472296420843
+LoRA,1.0,BIRADS,4b,46,16,0.4202898550724638,0.111556553031454
+LoRA,1.0,BIRADS,4c,49,41,0.31972789115646255,0.11239939892420617
+LoRA,1.0,BIRADS,5,46,40,0.17391304347826086,0.05751633284923023
+LoRA,1.0,Verification,confirmed by biopsy,197,98,0.3367174280879864,0.04930220739199143
+LoRA,1.0,Verification,confirmed by follow-up care,55,0,0.32727272727272727,0.17907014185083828
+LoRA,1.0,Diagnosis,Atypical lobular hyperplasia (ALH),1,0,1.0,0.0
+LoRA,1.0,Diagnosis,Benign mammary dysplasia,26,0,0.6153846153846154,0.21414478318577007
+LoRA,1.0,Diagnosis,Benign mammary dysplasia&Usual ductal hyperplasia (UDH),1,0,0.6666666666666666,0.5773502691896258
+LoRA,1.0,Diagnosis,Complex sclerosing lesion,1,0,0.3333333333333333,0.5773502691896258
+LoRA,1.0,Diagnosis,Cribriform carcinoma,2,2,0.16666666666666666,0.2886751345948129
+LoRA,1.0,Diagnosis,Ductal carcinoma in situ (DCIS),4,4,0.3333333333333333,0.14433756729740643
+LoRA,1.0,Diagnosis,Ductal carcinoma in situ (DCIS)&Invasive carcinoma of no special type (NST),1,1,0.6666666666666666,0.5773502691896258
+LoRA,1.0,Diagnosis,Ductal carcinoma in situ (DCIS)&Solid papillary carcinoma in situ,1,1,0.3333333333333333,0.5773502691896258
+LoRA,1.0,Diagnosis,Encapsulated papillary carcinoma&Ductal carcinoma in situ (DCIS),1,1,0.3333333333333333,0.5773502691896258
+LoRA,1.0,Diagnosis,Fat necrosis,1,0,1.0,0.0
+LoRA,1.0,Diagnosis,Fibroadenoma,29,0,0.39080459770114945,0.1899162257684863
+LoRA,1.0,Diagnosis,Fibroadenoma&Phyllodes tumor,1,0,1.0,0.0
+LoRA,1.0,Diagnosis,Fibroadenosis,1,0,0.3333333333333333,0.5773502691896258
+LoRA,1.0,Diagnosis,Fibrocystic change,1,0,0.6666666666666666,0.5773502691896258
+LoRA,1.0,Diagnosis,Fibrosclerosis,10,0,0.4000000000000001,0.4
+LoRA,1.0,Diagnosis,Hamartoma,1,0,0.6666666666666666,0.5773502691896258
+LoRA,1.0,Diagnosis,Intraductal papilloma,7,0,0.4761904761904762,0.08247860988423225
+LoRA,1.0,Diagnosis,Intraductal papilloma&Usual ductal hyperplasia (UDH)&Adenosis,1,0,0.6666666666666666,0.5773502691896258
+LoRA,1.0,Diagnosis,Intramammary lymph node,1,0,0.0,0.0
+LoRA,1.0,Diagnosis,Invasive carcinoma of no special type (NST),54,54,0.17901234567901236,0.11905741680238216
+LoRA,1.0,Diagnosis,Invasive carcinoma of no special type (NST)&Apocrine carcinoma,1,1,0.0,0.0
+LoRA,1.0,Diagnosis,Invasive carcinoma of no special type (NST)&Ductal carcinoma in situ (DCIS),7,7,0.23809523809523805,0.2973808570665904
+LoRA,1.0,Diagnosis,Invasive carcinoma of no special type (NST)&Invasive micropapillary carcinoma,1,1,0.0,0.0
+LoRA,1.0,Diagnosis,Invasive carcinoma of no special type (NST)&Mucinous carcinoma,1,1,0.0,0.0
+LoRA,1.0,Diagnosis,Invasive carcinoma of no special type (NST)&Sebaceous carcinoma,1,1,0.0,0.0
+LoRA,1.0,Diagnosis,Invasive lobular carcinoma,12,12,0.08333333333333333,0.0
+LoRA,1.0,Diagnosis,Invasive lobular carcinoma&Lobular carcinoma in situ (LCIS),1,1,0.0,0.0
+LoRA,1.0,Diagnosis,Invasive micropapillary carcinoma,3,3,0.1111111111111111,0.19245008972987526
+LoRA,1.0,Diagnosis,Invasive papillary carcinoma&Encapsulated papillary carcinoma,1,1,0.6666666666666666,0.5773502691896258
+LoRA,1.0,Diagnosis,Lactating adenoma,1,0,0.0,0.0
+LoRA,1.0,Diagnosis,Lobular carcinoma in situ (LCIS),1,0,0.3333333333333333,0.5773502691896258
+LoRA,1.0,Diagnosis,Lymphoma,1,1,0.3333333333333333,0.5773502691896258
+LoRA,1.0,Diagnosis,Mastitis,2,0,0.8333333333333334,0.28867513459481287
+LoRA,1.0,Diagnosis,Metaplastic carcinoma,1,1,0.0,0.0
+LoRA,1.0,Diagnosis,Mucinous carcinoma,3,3,0.2222222222222222,0.19245008972987526
+LoRA,1.0,Diagnosis,Phyllodes tumor,2,0,0.16666666666666666,0.2886751345948129
+LoRA,1.0,Diagnosis,Pseudoangiomatous stromal hyperplasia (PASH),5,0,0.39999999999999997,0.34641016151377546
+LoRA,1.0,Diagnosis,Simple cyst,1,0,0.0,0.0
+LoRA,1.0,Diagnosis,Tubular carcinoma,1,1,0.0,0.0
+LoRA,1.0,Diagnosis,Tubular carcinoma&Cribriform carcinoma,1,1,0.6666666666666666,0.5773502691896258
+LoRA,1.0,Diagnosis,Usual ductal hyperplasia (UDH),2,0,0.8333333333333334,0.28867513459481287
+LoRA,1.0,Diagnosis,Usual ductal hyperplasia (UDH)&Fibrocystic change,1,0,0.3333333333333333,0.5773502691896258
+LoRA,1.0,Diagnosis,Usual ductal hyperplasia (UDH)&Fibrosclerosis,1,0,1.0,0.0
+LoRA,1.0,Diagnosis,Usual ductal hyperplasia (UDH)&Pseudoangiomatous stromal hyperplasia (PASH),1,0,0.0,0.0
+LoRA,1.0,Diagnosis,not applicable,55,0,0.32727272727272727,0.17907014185083828
+LoRA,1.0,pixel_count_tertile,high,79,24,0.41350210970464135,0.08428263441113158
+LoRA,1.0,pixel_count_tertile,low,113,60,0.2920353982300885,0.04598364975846574
+LoRA,1.0,pixel_count_tertile,mid,60,14,0.3111111111111111,0.15396007178390023
+LoRA,1.0,luminance_tertile,high,84,22,0.32936507936507936,0.12504723219514866
+LoRA,1.0,luminance_tertile,low,84,37,0.34920634920634924,0.05991932091484723
+LoRA,1.0,luminance_tertile,mid,84,39,0.3253968253968254,0.04180814981290771
+LoRA,1.0,contrast_tertile,high,84,27,0.38095238095238093,0.05455447255899809
+LoRA,1.0,contrast_tertile,low,84,44,0.2738095238095238,0.041239304942116126
+LoRA,1.0,contrast_tertile,mid,84,27,0.34920634920634913,0.13694788830743965
+CNN,0.01,BIRADS,2,30,0,0.3111111111111111,0.06938886664887108
+CNN,0.01,BIRADS,3,37,0,0.36936936936936937,0.17584884050399222
+CNN,0.01,BIRADS,4a,44,1,0.42424242424242425,0.08604406584545868
+CNN,0.01,BIRADS,4b,46,16,0.4710144927536232,0.033207070253303196
+CNN,0.01,BIRADS,4c,49,41,0.6190476190476191,0.1027188358540238
+CNN,0.01,BIRADS,5,46,40,0.7318840579710145,0.09050721736809274
+CNN,0.01,Verification,confirmed by biopsy,197,98,0.5431472081218275,0.025380710659898498
+CNN,0.01,Verification,confirmed by follow-up care,55,0,0.3696969696969697,0.12106051124507987
+CNN,0.01,Diagnosis,Atypical lobular hyperplasia (ALH),1,0,0.6666666666666666,0.5773502691896258
+CNN,0.01,Diagnosis,Benign mammary dysplasia,26,0,0.3846153846153846,0.11538461538461539
+CNN,0.01,Diagnosis,Benign mammary dysplasia&Usual ductal hyperplasia (UDH),1,0,0.0,0.0
+CNN,0.01,Diagnosis,Complex sclerosing lesion,1,0,0.6666666666666666,0.5773502691896258
+CNN,0.01,Diagnosis,Cribriform carcinoma,2,2,0.8333333333333334,0.28867513459481287
+CNN,0.01,Diagnosis,Ductal carcinoma in situ (DCIS),4,4,0.8333333333333334,0.14433756729740646
+CNN,0.01,Diagnosis,Ductal carcinoma in situ (DCIS)&Invasive carcinoma of no special type (NST),1,1,1.0,0.0
+CNN,0.01,Diagnosis,Ductal carcinoma in situ (DCIS)&Solid papillary carcinoma in situ,1,1,1.0,0.0
+CNN,0.01,Diagnosis,Encapsulated papillary carcinoma&Ductal carcinoma in situ (DCIS),1,1,1.0,0.0
+CNN,0.01,Diagnosis,Fat necrosis,1,0,0.0,0.0
+CNN,0.01,Diagnosis,Fibroadenoma,29,0,0.367816091954023,0.10534656770013426
+CNN,0.01,Diagnosis,Fibroadenoma&Phyllodes tumor,1,0,0.3333333333333333,0.5773502691896258
+CNN,0.01,Diagnosis,Fibroadenosis,1,0,0.6666666666666666,0.5773502691896258
+CNN,0.01,Diagnosis,Fibrocystic change,1,0,0.6666666666666666,0.5773502691896258
+CNN,0.01,Diagnosis,Fibrosclerosis,10,0,0.4000000000000001,0.264575131106459
+CNN,0.01,Diagnosis,Hamartoma,1,0,0.0,0.0
+CNN,0.01,Diagnosis,Intraductal papilloma,7,0,0.2857142857142857,0.24743582965269675
+CNN,0.01,Diagnosis,Intraductal papilloma&Usual ductal hyperplasia (UDH)&Adenosis,1,0,0.0,0.0
+CNN,0.01,Diagnosis,Intramammary lymph node,1,0,1.0,0.0
+CNN,0.01,Diagnosis,Invasive carcinoma of no special type (NST),54,54,0.7037037037037037,0.09622504486493767
+CNN,0.01,Diagnosis,Invasive carcinoma of no special type (NST)&Apocrine carcinoma,1,1,1.0,0.0
+CNN,0.01,Diagnosis,Invasive carcinoma of no special type (NST)&Ductal carcinoma in situ (DCIS),7,7,0.6666666666666666,0.2973808570665904
+CNN,0.01,Diagnosis,Invasive carcinoma of no special type (NST)&Invasive micropapillary carcinoma,1,1,0.3333333333333333,0.5773502691896258
+CNN,0.01,Diagnosis,Invasive carcinoma of no special type (NST)&Mucinous carcinoma,1,1,1.0,0.0
+CNN,0.01,Diagnosis,Invasive carcinoma of no special type (NST)&Sebaceous carcinoma,1,1,1.0,0.0
+CNN,0.01,Diagnosis,Invasive lobular carcinoma,12,12,0.75,0.14433756729740646
+CNN,0.01,Diagnosis,Invasive lobular carcinoma&Lobular carcinoma in situ (LCIS),1,1,0.6666666666666666,0.5773502691896258
+CNN,0.01,Diagnosis,Invasive micropapillary carcinoma,3,3,0.7777777777777777,0.1924500897298753
+CNN,0.01,Diagnosis,Invasive papillary carcinoma&Encapsulated papillary carcinoma,1,1,1.0,0.0
+CNN,0.01,Diagnosis,Lactating adenoma,1,0,0.0,0.0
+CNN,0.01,Diagnosis,Lobular carcinoma in situ (LCIS),1,0,0.6666666666666666,0.5773502691896258
+CNN,0.01,Diagnosis,Lymphoma,1,1,0.3333333333333333,0.5773502691896258
+CNN,0.01,Diagnosis,Mastitis,2,0,0.0,0.0
+CNN,0.01,Diagnosis,Metaplastic carcinoma,1,1,0.6666666666666666,0.5773502691896258
+CNN,0.01,Diagnosis,Mucinous carcinoma,3,3,0.5555555555555555,0.3849001794597505
+CNN,0.01,Diagnosis,Phyllodes tumor,2,0,0.16666666666666666,0.2886751345948129
+CNN,0.01,Diagnosis,Pseudoangiomatous stromal hyperplasia (PASH),5,0,0.26666666666666666,0.23094010767585033
+CNN,0.01,Diagnosis,Simple cyst,1,0,0.3333333333333333,0.5773502691896258
+CNN,0.01,Diagnosis,Tubular carcinoma,1,1,1.0,0.0
+CNN,0.01,Diagnosis,Tubular carcinoma&Cribriform carcinoma,1,1,1.0,0.0
+CNN,0.01,Diagnosis,Usual ductal hyperplasia (UDH),2,0,0.16666666666666666,0.2886751345948129
+CNN,0.01,Diagnosis,Usual ductal hyperplasia (UDH)&Fibrocystic change,1,0,0.6666666666666666,0.5773502691896258
+CNN,0.01,Diagnosis,Usual ductal hyperplasia (UDH)&Fibrosclerosis,1,0,0.3333333333333333,0.5773502691896258
+CNN,0.01,Diagnosis,Usual ductal hyperplasia (UDH)&Pseudoangiomatous stromal hyperplasia (PASH),1,0,0.6666666666666666,0.5773502691896258
+CNN,0.01,Diagnosis,not applicable,55,0,0.3696969696969697,0.12106051124507987
+CNN,0.01,pixel_count_tertile,high,79,24,0.5232067510548524,0.019335762425974002
+CNN,0.01,pixel_count_tertile,low,113,60,0.5486725663716814,0.01769911504424776
+CNN,0.01,pixel_count_tertile,mid,60,14,0.39999999999999997,0.033333333333333354
+CNN,0.01,luminance_tertile,high,84,22,0.5873015873015873,0.06556631603912029
+CNN,0.01,luminance_tertile,low,84,37,0.44841269841269843,0.024781738088882527
+CNN,0.01,luminance_tertile,mid,84,39,0.4801587301587302,0.018184824186332695
+CNN,0.01,contrast_tertile,high,84,27,0.49603174603174605,0.006873217490352696
+CNN,0.01,contrast_tertile,low,84,44,0.5238095238095237,0.011904761904761918
+CNN,0.01,contrast_tertile,mid,84,27,0.49603174603174605,0.027492869961410718
+CNN,0.1,BIRADS,2,30,0,0.45555555555555555,0.2589151155051343
+CNN,0.1,BIRADS,3,37,0,0.5585585585585585,0.29647716525953755
+CNN,0.1,BIRADS,4a,44,1,0.49242424242424243,0.27304274683242574
+CNN,0.1,BIRADS,4b,46,16,0.45652173913043476,0.09962121075990957
+CNN,0.1,BIRADS,4c,49,41,0.42857142857142855,0.10604392699401288
+CNN,0.1,BIRADS,5,46,40,0.4275362318840579,0.1197297945062196
+CNN,0.1,Verification,confirmed by biopsy,197,98,0.45177664974619286,0.04895254193397436
+CNN,0.1,Verification,confirmed by follow-up care,55,0,0.5212121212121212,0.29166568280038707
+CNN,0.1,Diagnosis,Atypical lobular hyperplasia (ALH),1,0,0.3333333333333333,0.5773502691896258
+CNN,0.1,Diagnosis,Benign mammary dysplasia,26,0,0.4743589743589744,0.38717099668055127
+CNN,0.1,Diagnosis,Benign mammary dysplasia&Usual ductal hyperplasia (UDH),1,0,0.6666666666666666,0.5773502691896258
+CNN,0.1,Diagnosis,Complex sclerosing lesion,1,0,0.6666666666666666,0.5773502691896258
+CNN,0.1,Diagnosis,Cribriform carcinoma,2,2,0.5,0.0
+CNN,0.1,Diagnosis,Ductal carcinoma in situ (DCIS),4,4,0.3333333333333333,0.38188130791298663
+CNN,0.1,Diagnosis,Ductal carcinoma in situ (DCIS)&Invasive carcinoma of no special type (NST),1,1,0.3333333333333333,0.5773502691896258
+CNN,0.1,Diagnosis,Ductal carcinoma in situ (DCIS)&Solid papillary carcinoma in situ,1,1,0.3333333333333333,0.5773502691896258
+CNN,0.1,Diagnosis,Encapsulated papillary carcinoma&Ductal carcinoma in situ (DCIS),1,1,0.6666666666666666,0.5773502691896258
+CNN,0.1,Diagnosis,Fat necrosis,1,0,0.6666666666666666,0.5773502691896258
+CNN,0.1,Diagnosis,Fibroadenoma,29,0,0.4597701149425288,0.3012722395880726
+CNN,0.1,Diagnosis,Fibroadenoma&Phyllodes tumor,1,0,1.0,0.0
+CNN,0.1,Diagnosis,Fibroadenosis,1,0,1.0,0.0
+CNN,0.1,Diagnosis,Fibrocystic change,1,0,1.0,0.0
+CNN,0.1,Diagnosis,Fibrosclerosis,10,0,0.5333333333333333,0.4509249752822894
+CNN,0.1,Diagnosis,Hamartoma,1,0,0.0,0.0
+CNN,0.1,Diagnosis,Intraductal papilloma,7,0,0.4761904761904762,0.08247860988423225
+CNN,0.1,Diagnosis,Intraductal papilloma&Usual ductal hyperplasia (UDH)&Adenosis,1,0,0.0,0.0
+CNN,0.1,Diagnosis,Intramammary lymph node,1,0,0.6666666666666666,0.5773502691896258
+CNN,0.1,Diagnosis,Invasive carcinoma of no special type (NST),54,54,0.3703703703703704,0.17665540766980478
+CNN,0.1,Diagnosis,Invasive carcinoma of no special type (NST)&Apocrine carcinoma,1,1,0.0,0.0
+CNN,0.1,Diagnosis,Invasive carcinoma of no special type (NST)&Ductal carcinoma in situ (DCIS),7,7,0.4285714285714286,0.28571428571428575
+CNN,0.1,Diagnosis,Invasive carcinoma of no special type (NST)&Invasive micropapillary carcinoma,1,1,0.3333333333333333,0.5773502691896258
+CNN,0.1,Diagnosis,Invasive carcinoma of no special type (NST)&Mucinous carcinoma,1,1,1.0,0.0
+CNN,0.1,Diagnosis,Invasive carcinoma of no special type (NST)&Sebaceous carcinoma,1,1,0.6666666666666666,0.5773502691896258
+CNN,0.1,Diagnosis,Invasive lobular carcinoma,12,12,0.5,0.16666666666666666
+CNN,0.1,Diagnosis,Invasive lobular carcinoma&Lobular carcinoma in situ (LCIS),1,1,0.3333333333333333,0.5773502691896258
+CNN,0.1,Diagnosis,Invasive micropapillary carcinoma,3,3,0.1111111111111111,0.19245008972987526
+CNN,0.1,Diagnosis,Invasive papillary carcinoma&Encapsulated papillary carcinoma,1,1,0.3333333333333333,0.5773502691896258
+CNN,0.1,Diagnosis,Lactating adenoma,1,0,0.6666666666666666,0.5773502691896258
+CNN,0.1,Diagnosis,Lobular carcinoma in situ (LCIS),1,0,1.0,0.0
+CNN,0.1,Diagnosis,Lymphoma,1,1,0.3333333333333333,0.5773502691896258
+CNN,0.1,Diagnosis,Mastitis,2,0,0.16666666666666666,0.2886751345948129
+CNN,0.1,Diagnosis,Metaplastic carcinoma,1,1,0.0,0.0
+CNN,0.1,Diagnosis,Mucinous carcinoma,3,3,0.4444444444444444,0.5091750772173156
+CNN,0.1,Diagnosis,Phyllodes tumor,2,0,0.5,0.0
+CNN,0.1,Diagnosis,Pseudoangiomatous stromal hyperplasia (PASH),5,0,0.6000000000000001,0.2
+CNN,0.1,Diagnosis,Simple cyst,1,0,0.3333333333333333,0.5773502691896258
+CNN,0.1,Diagnosis,Tubular carcinoma,1,1,1.0,0.0
+CNN,0.1,Diagnosis,Tubular carcinoma&Cribriform carcinoma,1,1,0.6666666666666666,0.5773502691896258
+CNN,0.1,Diagnosis,Usual ductal hyperplasia (UDH),2,0,0.5,0.0
+CNN,0.1,Diagnosis,Usual ductal hyperplasia (UDH)&Fibrocystic change,1,0,0.6666666666666666,0.5773502691896258
+CNN,0.1,Diagnosis,Usual ductal hyperplasia (UDH)&Fibrosclerosis,1,0,1.0,0.0
+CNN,0.1,Diagnosis,Usual ductal hyperplasia (UDH)&Pseudoangiomatous stromal hyperplasia (PASH),1,0,0.6666666666666666,0.5773502691896258
+CNN,0.1,Diagnosis,not applicable,55,0,0.5212121212121212,0.29166568280038707
+CNN,0.1,pixel_count_tertile,high,79,24,0.5021097046413502,0.16713335291424775
+CNN,0.1,pixel_count_tertile,low,113,60,0.448377581120944,0.0102185888352146
+CNN,0.1,pixel_count_tertile,mid,60,14,0.45555555555555555,0.18358568490953672
+CNN,0.1,luminance_tertile,high,84,22,0.5277777777777778,0.19355156187709843
+CNN,0.1,luminance_tertile,low,84,37,0.4246031746031746,0.018184824186332688
+CNN,0.1,luminance_tertile,mid,84,39,0.44841269841269843,0.0954857890120315
+CNN,0.1,contrast_tertile,high,84,27,0.4682539682539683,0.14400989929860358
+CNN,0.1,contrast_tertile,low,84,44,0.45634920634920634,0.05368154467646301
+CNN,0.1,contrast_tertile,mid,84,27,0.4761904761904762,0.140355072887519
+CNN,1.0,BIRADS,2,30,0,0.15555555555555556,0.10183501544346311
+CNN,1.0,BIRADS,3,37,0,0.22522522522522523,0.17995481401295657
+CNN,1.0,BIRADS,4a,44,1,0.2045454545454545,0.13636363636363635
+CNN,1.0,BIRADS,4b,46,16,0.3478260869565218,0.057516332849230224
+CNN,1.0,BIRADS,4c,49,41,0.5306122448979592,0.22725568827877643
+CNN,1.0,BIRADS,5,46,40,0.47826086956521735,0.22062807750200475
+CNN,1.0,Verification,confirmed by biopsy,197,98,0.3824027072758038,0.052834162422998286
+CNN,1.0,Verification,confirmed by follow-up care,55,0,0.19393939393939394,0.12376107791916446
+CNN,1.0,Diagnosis,Atypical lobular hyperplasia (ALH),1,0,0.6666666666666666,0.5773502691896258
+CNN,1.0,Diagnosis,Benign mammary dysplasia,26,0,0.15384615384615385,0.10175966581017656
+CNN,1.0,Diagnosis,Benign mammary dysplasia&Usual ductal hyperplasia (UDH),1,0,0.3333333333333333,0.5773502691896258
+CNN,1.0,Diagnosis,Complex sclerosing lesion,1,0,0.0,0.0
+CNN,1.0,Diagnosis,Cribriform carcinoma,2,2,0.8333333333333334,0.28867513459481287
+CNN,1.0,Diagnosis,Ductal carcinoma in situ (DCIS),4,4,0.6666666666666666,0.28867513459481287
+CNN,1.0,Diagnosis,Ductal carcinoma in situ (DCIS)&Invasive carcinoma of no special type (NST),1,1,1.0,0.0
+CNN,1.0,Diagnosis,Ductal carcinoma in situ (DCIS)&Solid papillary carcinoma in situ,1,1,0.6666666666666666,0.5773502691896258
+CNN,1.0,Diagnosis,Encapsulated papillary carcinoma&Ductal carcinoma in situ (DCIS),1,1,1.0,0.0
+CNN,1.0,Diagnosis,Fat necrosis,1,0,0.3333333333333333,0.5773502691896258
+CNN,1.0,Diagnosis,Fibroadenoma,29,0,0.13793103448275865,0.18246560765962697
+CNN,1.0,Diagnosis,Fibroadenoma&Phyllodes tumor,1,0,0.3333333333333333,0.5773502691896258
+CNN,1.0,Diagnosis,Fibroadenosis,1,0,0.0,0.0
+CNN,1.0,Diagnosis,Fibrocystic change,1,0,0.3333333333333333,0.5773502691896258
+CNN,1.0,Diagnosis,Fibrosclerosis,10,0,0.3666666666666667,0.15275252316519466
+CNN,1.0,Diagnosis,Hamartoma,1,0,0.3333333333333333,0.5773502691896258
+CNN,1.0,Diagnosis,Intraductal papilloma,7,0,0.19047619047619047,0.08247860988423225
+CNN,1.0,Diagnosis,Intraductal papilloma&Usual ductal hyperplasia (UDH)&Adenosis,1,0,0.3333333333333333,0.5773502691896258
+CNN,1.0,Diagnosis,Intramammary lymph node,1,0,0.0,0.0
+CNN,1.0,Diagnosis,Invasive carcinoma of no special type (NST),54,54,0.5061728395061729,0.3010802073643753
+CNN,1.0,Diagnosis,Invasive carcinoma of no special type (NST)&Apocrine carcinoma,1,1,0.3333333333333333,0.5773502691896258
+CNN,1.0,Diagnosis,Invasive carcinoma of no special type (NST)&Ductal carcinoma in situ (DCIS),7,7,0.6190476190476191,0.29738085706659034
+CNN,1.0,Diagnosis,Invasive carcinoma of no special type (NST)&Invasive micropapillary carcinoma,1,1,0.6666666666666666,0.5773502691896258
+CNN,1.0,Diagnosis,Invasive carcinoma of no special type (NST)&Mucinous carcinoma,1,1,1.0,0.0
+CNN,1.0,Diagnosis,Invasive carcinoma of no special type (NST)&Sebaceous carcinoma,1,1,0.6666666666666666,0.5773502691896258
+CNN,1.0,Diagnosis,Invasive lobular carcinoma,12,12,0.5555555555555555,0.19245008972987526
+CNN,1.0,Diagnosis,Invasive lobular carcinoma&Lobular carcinoma in situ (LCIS),1,1,0.6666666666666666,0.5773502691896258
+CNN,1.0,Diagnosis,Invasive micropapillary carcinoma,3,3,0.5555555555555555,0.3849001794597505
+CNN,1.0,Diagnosis,Invasive papillary carcinoma&Encapsulated papillary carcinoma,1,1,0.6666666666666666,0.5773502691896258
+CNN,1.0,Diagnosis,Lactating adenoma,1,0,0.3333333333333333,0.5773502691896258
+CNN,1.0,Diagnosis,Lobular carcinoma in situ (LCIS),1,0,0.3333333333333333,0.5773502691896258
+CNN,1.0,Diagnosis,Lymphoma,1,1,0.0,0.0
+CNN,1.0,Diagnosis,Mastitis,2,0,0.5,0.5
+CNN,1.0,Diagnosis,Metaplastic carcinoma,1,1,0.0,0.0
+CNN,1.0,Diagnosis,Mucinous carcinoma,3,3,0.6666666666666666,0.33333333333333337
+CNN,1.0,Diagnosis,Phyllodes tumor,2,0,0.0,0.0
+CNN,1.0,Diagnosis,Pseudoangiomatous stromal hyperplasia (PASH),5,0,0.46666666666666673,0.3055050463303894
+CNN,1.0,Diagnosis,Simple cyst,1,0,0.0,0.0
+CNN,1.0,Diagnosis,Tubular carcinoma,1,1,0.0,0.0
+CNN,1.0,Diagnosis,Tubular carcinoma&Cribriform carcinoma,1,1,1.0,0.0
+CNN,1.0,Diagnosis,Usual ductal hyperplasia (UDH),2,0,0.3333333333333333,0.2886751345948129
+CNN,1.0,Diagnosis,Usual ductal hyperplasia (UDH)&Fibrocystic change,1,0,0.3333333333333333,0.5773502691896258
+CNN,1.0,Diagnosis,Usual ductal hyperplasia (UDH)&Fibrosclerosis,1,0,0.6666666666666666,0.5773502691896258
+CNN,1.0,Diagnosis,Usual ductal hyperplasia (UDH)&Pseudoangiomatous stromal hyperplasia (PASH),1,0,0.0,0.0
+CNN,1.0,Diagnosis,not applicable,55,0,0.19393939393939394,0.12376107791916446
+CNN,1.0,pixel_count_tertile,high,79,24,0.3164556962025316,0.03349052292486823
+CNN,1.0,pixel_count_tertile,low,113,60,0.415929203539823,0.03857432693398826
+CNN,1.0,pixel_count_tertile,mid,60,14,0.2333333333333333,0.04409585518440983
+CNN,1.0,luminance_tertile,high,84,22,0.32936507936507936,0.048112522432468816
+CNN,1.0,luminance_tertile,low,84,37,0.3452380952380952,0.042923229469809386
+CNN,1.0,luminance_tertile,mid,84,39,0.34920634920634924,0.048112522432468816
+CNN,1.0,contrast_tertile,high,84,27,0.3412698412698412,0.04180814981290768
+CNN,1.0,contrast_tertile,low,84,44,0.40079365079365076,0.048112522432468816
+CNN,1.0,contrast_tertile,mid,84,27,0.2817460317460317,0.04180814981290771

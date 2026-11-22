@@ -20,3 +20,7 @@ deliverables/*
 .venv-paper/
 paper/build/
 slides/build/
+
+# Derived from raw patient images / the clinical workbook: regenerate locally, never publish
+figures/fig_failure_gallery.png
+tables/external_image_properties.csv

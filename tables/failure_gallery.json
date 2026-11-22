@@ -1,0 +1,125 @@
+{
+  "selection_rule": "D013 (5 FN + 5 FP at nominal 100%)",
+  "images": [
+    {
+      "image_id": "breast/case205",
+      "label": 1,
+      "error_type": "false_negative",
+      "methods_wrong": [
+        "LP",
+        "PFT",
+        "LoRA",
+        "CNN"
+      ],
+      "mean_wrong_direction_probability": 0.9272011521388777
+    },
+    {
+      "image_id": "breast/case087",
+      "label": 1,
+      "error_type": "false_negative",
+      "methods_wrong": [
+        "LP",
+        "PFT",
+        "LoRA",
+        "CNN"
+      ],
+      "mean_wrong_direction_probability": 0.9002282328825503
+    },
+    {
+      "image_id": "breast/case111",
+      "label": 1,
+      "error_type": "false_negative",
+      "methods_wrong": [
+        "LP",
+        "PFT",
+        "LoRA",
+        "CNN"
+      ],
+      "mean_wrong_direction_probability": 0.895886561498981
+    },
+    {
+      "image_id": "breast/case026",
+      "label": 1,
+      "error_type": "false_negative",
+      "methods_wrong": [
+        "LP",
+        "PFT",
+        "LoRA",
+        "CNN"
+      ],
+      "mean_wrong_direction_probability": 0.8870876160980092
+    },
+    {
+      "image_id": "breast/case072",
+      "label": 1,
+      "error_type": "false_negative",
+      "methods_wrong": [
+        "LP",
+        "PFT",
+        "LoRA",
+        "CNN"
+      ],
+      "mean_wrong_direction_probability": 0.8400675342944228
+    },
+    {
+      "image_id": "breast/case141",
+      "label": 0,
+      "error_type": "false_positive",
+      "methods_wrong": [
+        "LP",
+        "PFT",
+        "LoRA",
+        "CNN"
+      ],
+      "mean_wrong_direction_probability": 0.9628780879290099
+    },
+    {
+      "image_id": "breast/case201",
+      "label": 0,
+      "error_type": "false_positive",
+      "methods_wrong": [
+        "LP",
+        "PFT",
+        "LoRA",
+        "CNN"
+      ],
+      "mean_wrong_direction_probability": 0.9321442758051676
+    },
+    {
+      "image_id": "breast/case100",
+      "label": 0,
+      "error_type": "false_positive",
+      "methods_wrong": [
+        "LP",
+        "PFT",
+        "LoRA",
+        "CNN"
+      ],
+      "mean_wrong_direction_probability": 0.9174505521830754
+    },
+    {
+      "image_id": "breast/case129",
+      "label": 0,
+      "error_type": "false_positive",
+      "methods_wrong": [
+        "LP",
+        "PFT",
+        "LoRA",
+        "CNN"
+      ],
+      "mean_wrong_direction_probability": 0.8915095937713556
+    },
+    {
+      "image_id": "breast/case073",
+      "label": 0,
+      "error_type": "false_positive",
+      "methods_wrong": [
+        "LP",
+        "PFT",
+        "LoRA",
+        "CNN"
+      ],
+      "mean_wrong_direction_probability": 0.7679379116257262
+    }
+  ]
+}

@@ -76,8 +76,9 @@ def cost_performance(frame, folder):
         ax.errorbar(x, y, xerr=cell.charged_seconds.std(ddof=1).loc[FRACTIONS],
                     yerr=cell.roc_auc_internal.std(ddof=1).loc[FRACTIONS], label=method, capsize=2,
                     elinewidth=.8, markeredgecolor='white', markeredgewidth=.6, **STYLE[method])
-        ax.annotate(f'{int(100 * FRACTIONS[-1])}%', (x.iloc[-1], y.iloc[-1]), textcoords='offset points',
-                    xytext=(4, -2), fontsize=6, color=MUTED)
+    # Per-point fraction labels collided at the top right; one note states the ordering instead.
+    ax.text(.98, .04, 'Points per line, left to right:\n1%, 10%, 100% labels', transform=ax.transAxes,
+            ha='right', va='bottom', fontsize=6, color=MUTED)
     ax.set_xscale('log')
     ax.xaxis.set_major_formatter(ScalarFormatter())
     ax.xaxis.set_minor_formatter(NullFormatter())
@@ -105,16 +106,20 @@ def reliability(root, runs, folder, fraction=1.):
             if row == 0:
                 ax.set_title(method)
             if col == 0:
-                ax.set_ylabel(f'{COHORT_TITLE[cohort].split(" (")[0]}\nobserved malignant freq.')
+                ax.set_ylabel(COHORT_TITLE[cohort].split(' (')[0])
             if row == 1:
                 ax.set_xlabel('Predicted malignant probability')
             ax.set_xlim(0, 1)
             ax.set_ylim(0, 1)
             ax.set_xticks([0, .5, 1])
             ax.set_yticks([0, .5, 1])
-    axes[0, 0].legend(frameon=False, loc='upper left')
+    # Figure-level key so it never covers data; opacity encodes the seed in every panel.
+    key = [Line2D([], [], color=MUTED, marker='o', markersize=3, linewidth=1, alpha=a) for a in (1, .75, .5)]
+    fig.legend(key, ['seed 0', 'seed 1', 'seed 2'], loc='upper center', ncol=3, frameon=False,
+               bbox_to_anchor=(.5, .955))
     fig.suptitle(f'Reliability at nominal {int(100 * fraction)}% labels (10 equal-width bins, one line per seed)', y=1.0)
-    fig.tight_layout()
+    fig.supylabel('Observed malignant frequency', fontsize=7)
+    fig.tight_layout(rect=(0, 0, 1, .93))
     return save(fig, folder, 'fig_reliability')
 
 

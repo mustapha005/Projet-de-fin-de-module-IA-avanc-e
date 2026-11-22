@@ -1,0 +1,28 @@
+variable,category,n,LP,PFT,LoRA,CNN
+BIRADS,2,30,0.37,0.37,0.39,0.16
+BIRADS,3,37,0.26,0.17,0.33,0.23
+BIRADS,4a,44,0.26,0.37,0.39,0.20
+BIRADS,4b,46,0.35,0.51,0.42,0.35
+BIRADS,4c,49,0.59,0.33,0.32,0.53
+BIRADS,5,46,0.48,0.18,0.17,0.48
+Verification,confirmed by biopsy,197,0.43,0.34,0.34,0.38
+Verification,confirmed by follow-up care,55,0.26,0.26,0.33,0.19
+Diagnosis,other (n<5 each),47,0.41,0.35,0.37,0.46
+Diagnosis,Benign mammary dysplasia,26,0.45,0.59,0.62,0.15
+Diagnosis,Fibroadenoma,29,0.39,0.34,0.39,0.14
+Diagnosis,Fibrosclerosis,10,0.23,0.53,0.40,0.37
+Diagnosis,Intraductal papilloma,7,0.38,0.71,0.48,0.19
+Diagnosis,Invasive carcinoma of no special type (NST),54,0.51,0.19,0.18,0.51
+Diagnosis,Invasive carcinoma of no special type (NST)&Ductal carcinoma in situ (DCIS),7,0.48,0.24,0.24,0.62
+Diagnosis,Invasive lobular carcinoma,12,0.47,0.08,0.08,0.56
+Diagnosis,Pseudoangiomatous stromal hyperplasia (PASH),5,0.07,0.40,0.40,0.47
+Diagnosis,not applicable,55,0.26,0.26,0.33,0.19
+pixel_count_tertile,high,79,0.44,0.34,0.41,0.32
+pixel_count_tertile,low,113,0.42,0.33,0.29,0.42
+pixel_count_tertile,mid,60,0.27,0.30,0.31,0.23
+luminance_tertile,high,84,0.31,0.33,0.33,0.33
+luminance_tertile,low,84,0.42,0.35,0.35,0.35
+luminance_tertile,mid,84,0.45,0.29,0.33,0.35
+contrast_tertile,high,84,0.43,0.33,0.38,0.34
+contrast_tertile,low,84,0.42,0.27,0.27,0.40
+contrast_tertile,mid,84,0.33,0.37,0.35,0.28
