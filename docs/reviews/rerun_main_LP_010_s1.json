@@ -1,0 +1,20 @@
+{
+  "cell": "main_LP_010_s1",
+  "tolerance": 0.005,
+  "rerun_attempt": "data/cache/reruns/main_LP_010_s1/attempt_001",
+  "comparison": {
+    "internal": {
+      "logged_auc": 0.9062253743104807,
+      "rerun_auc": 0.9062253743104807,
+      "abs_difference": 0.0,
+      "within_tolerance": true
+    },
+    "external": {
+      "logged_auc": 0.6960641399416909,
+      "rerun_auc": 0.6960641399416909,
+      "abs_difference": 0.0,
+      "within_tolerance": true
+    }
+  },
+  "status": "PASS"
+}

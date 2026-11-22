@@ -214,7 +214,7 @@ def overlap_figure(table: pd.DataFrame, folder: Path) -> Path:
     ax.barh(view.methods_wrong, view.n_images, color=MUTED, height=.6)
     for y, value in enumerate(view.n_images):
         ax.text(value + .3, y, str(value), va='center', fontsize=6)
-    ax.set_xlabel('External images (majority error, nominal 100%), exact method set')
+    ax.set_xlabel('External images with majority error')
     ax.grid(axis='y', visible=False)
     fig.tight_layout()
     return save(fig, folder, 'fig_error_overlap')

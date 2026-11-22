@@ -1,0 +1,408 @@
+{
+  "H1": {
+    "clauses": {
+      "LP_not_worse_than_LoRA_at_1pct": "inconclusive",
+      "LoRA_beats_LP_at_100pct": "supported"
+    },
+    "verdict": "inconclusive",
+    "evidence": [
+      {
+        "kind": "auc",
+        "a": "LP",
+        "b": "LoRA",
+        "variant_a": "main",
+        "variant_b": "main",
+        "fraction": 0.01,
+        "cohort": "internal",
+        "per_seed": [
+          -0.01891252955082756,
+          0.027580772261623365,
+          0.0007880220646178104
+        ],
+        "mean": 0.003152088258471205,
+        "sample_sd": 0.02333663182814957,
+        "ci95": [
+          -0.05070265300761758,
+          0.05648148148148145
+        ],
+        "per_seed_ci95": [
+          [
+            -0.14584318360914103,
+            0.10642237982663498
+          ],
+          [
+            -0.027580772261623254,
+            0.08904649330181247
+          ],
+          [
+            -0.06936564223798265,
+            0.07407407407407407
+          ]
+        ],
+        "larger_method_sd": 0.1416475597790158,
+        "direction": "no_detectable_difference",
+        "interpretation": "Conditional on these trained seeds and image-level independence; no multiplicity adjustment."
+      },
+      {
+        "kind": "auc",
+        "a": "LoRA",
+        "b": "LP",
+        "variant_a": "main",
+        "variant_b": "main",
+        "fraction": 1.0,
+        "cohort": "internal",
+        "per_seed": [
+          0.10480693459416857,
+          0.10480693459416868,
+          0.06264775413711576
+        ],
+        "mean": 0.09075387444181766,
+        "sample_sd": 0.024340614185693478,
+        "ci95": [
+          0.038875755187811945,
+          0.15602836879432622
+        ],
+        "per_seed_ci95": [
+          [
+            0.039391252955082744,
+            0.1863672182821119
+          ],
+          [
+            0.045705279747832894,
+            0.17966903073286045
+          ],
+          [
+            0.008648542159180577,
+            0.131215524034673
+          ]
+        ],
+        "larger_method_sd": 0.01477585149513423,
+        "direction": "a_better",
+        "interpretation": "Conditional on these trained seeds and image-level independence; no multiplicity adjustment."
+      }
+    ]
+  },
+  "H2": {
+    "clauses": {
+      "ranking_preserved_externally": "inconclusive",
+      "gap_does_not_grow_with_trainable_parameters": "inconclusive"
+    },
+    "verdict": "inconclusive",
+    "trainable_order": [
+      "LP",
+      "LoRA",
+      "PFT"
+    ],
+    "ranking_pairs": [
+      {
+        "fraction": 0.01,
+        "a": "LP",
+        "b": "PFT",
+        "internal": "no_detectable_difference",
+        "external": "no_detectable_difference"
+      },
+      {
+        "fraction": 0.01,
+        "a": "LP",
+        "b": "LoRA",
+        "internal": "no_detectable_difference",
+        "external": "no_detectable_difference"
+      },
+      {
+        "fraction": 0.01,
+        "a": "PFT",
+        "b": "LoRA",
+        "internal": "no_detectable_difference",
+        "external": "no_detectable_difference"
+      },
+      {
+        "fraction": 0.1,
+        "a": "LP",
+        "b": "PFT",
+        "internal": "no_detectable_difference",
+        "external": "no_detectable_difference"
+      },
+      {
+        "fraction": 0.1,
+        "a": "LP",
+        "b": "LoRA",
+        "internal": "no_detectable_difference",
+        "external": "no_detectable_difference"
+      },
+      {
+        "fraction": 0.1,
+        "a": "PFT",
+        "b": "LoRA",
+        "internal": "no_detectable_difference",
+        "external": "b_better"
+      },
+      {
+        "fraction": 1.0,
+        "a": "LP",
+        "b": "PFT",
+        "internal": "b_better",
+        "external": "b_better"
+      },
+      {
+        "fraction": 1.0,
+        "a": "LP",
+        "b": "LoRA",
+        "internal": "b_better",
+        "external": "b_better"
+      },
+      {
+        "fraction": 1.0,
+        "a": "PFT",
+        "b": "LoRA",
+        "internal": "no_detectable_difference",
+        "external": "b_better"
+      }
+    ],
+    "gap_pairs": [
+      {
+        "fraction": 0.01,
+        "higher_trainable": "LoRA",
+        "lower_trainable": "LP",
+        "mean_gap_difference": -0.06084269696948804,
+        "ci95": [
+          -0.13192800599715498,
+          0.010275527243431412
+        ],
+        "direction": "no_detectable_difference"
+      },
+      {
+        "fraction": 0.01,
+        "higher_trainable": "PFT",
+        "lower_trainable": "LP",
+        "mean_gap_difference": 0.01970526833025023,
+        "ci95": [
+          -0.05140863338775484,
+          0.08902418071708129
+        ],
+        "direction": "no_detectable_difference"
+      },
+      {
+        "fraction": 0.01,
+        "higher_trainable": "PFT",
+        "lower_trainable": "LoRA",
+        "mean_gap_difference": 0.08054796529973828,
+        "ci95": [
+          0.01124265088840283,
+          0.15310985756147846
+        ],
+        "direction": "no_detectable_difference"
+      },
+      {
+        "fraction": 0.1,
+        "higher_trainable": "LoRA",
+        "lower_trainable": "LP",
+        "mean_gap_difference": -0.03971519118428949,
+        "ci95": [
+          -0.09212866322524003,
+          0.015104288826969388
+        ],
+        "direction": "no_detectable_difference"
+      },
+      {
+        "fraction": 0.1,
+        "higher_trainable": "PFT",
+        "lower_trainable": "LP",
+        "mean_gap_difference": 0.013988931976339733,
+        "ci95": [
+          -0.08795642700603619,
+          0.11230940773656795
+        ],
+        "direction": "no_detectable_difference"
+      },
+      {
+        "fraction": 0.1,
+        "higher_trainable": "PFT",
+        "lower_trainable": "LoRA",
+        "mean_gap_difference": 0.053704123160629225,
+        "ci95": [
+          -0.034151754711893696,
+          0.14101311144027157
+        ],
+        "direction": "no_detectable_difference"
+      },
+      {
+        "fraction": 1.0,
+        "higher_trainable": "LoRA",
+        "lower_trainable": "LP",
+        "mean_gap_difference": -0.077271127766858,
+        "ci95": [
+          -0.1608641203838589,
+          0.007251649649247015
+        ],
+        "direction": "no_detectable_difference"
+      },
+      {
+        "fraction": 1.0,
+        "higher_trainable": "PFT",
+        "lower_trainable": "LP",
+        "mean_gap_difference": -0.049982904954680864,
+        "ci95": [
+          -0.1334610442608163,
+          0.036610784822356655
+        ],
+        "direction": "no_detectable_difference"
+      },
+      {
+        "fraction": 1.0,
+        "higher_trainable": "PFT",
+        "lower_trainable": "LoRA",
+        "mean_gap_difference": 0.027288222812177132,
+        "ci95": [
+          -0.016520234210475125,
+          0.07053373709456356
+        ],
+        "direction": "no_detectable_difference"
+      }
+    ]
+  },
+  "H3": {
+    "cohort": "internal",
+    "verdict": "supported",
+    "pairs": [
+      {
+        "method": "LP",
+        "fraction": 0.01,
+        "mean_auc_difference": 0.3320199632256369,
+        "ci95": [
+          0.19606645652744942,
+          0.4604675597583399
+        ],
+        "larger_method_sd": 0.1416475597790158,
+        "direction": "a_better"
+      },
+      {
+        "method": "PFT",
+        "fraction": 0.01,
+        "mean_auc_difference": 0.35855003940110314,
+        "ci95": [
+          0.22453703703703703,
+          0.4841082216968742
+        ],
+        "larger_method_sd": 0.15310020185675097,
+        "direction": "a_better"
+      },
+      {
+        "method": "LoRA",
+        "fraction": 0.01,
+        "mean_auc_difference": 0.32886787496716574,
+        "ci95": [
+          0.1864657210401892,
+          0.457975439978986
+        ],
+        "larger_method_sd": 0.119782810009169,
+        "direction": "a_better"
+      },
+      {
+        "method": "LP",
+        "fraction": 0.1,
+        "mean_auc_difference": 0.4095087995797216,
+        "ci95": [
+          0.2758011557656948,
+          0.5353296558970317
+        ],
+        "larger_method_sd": 0.05332412031746935,
+        "direction": "a_better"
+      },
+      {
+        "method": "PFT",
+        "fraction": 0.1,
+        "mean_auc_difference": 0.3559232991857105,
+        "ci95": [
+          0.2369254005778828,
+          0.47234042553191463
+        ],
+        "larger_method_sd": 0.09209075480714611,
+        "direction": "a_better"
+      },
+      {
+        "method": "LoRA",
+        "fraction": 0.1,
+        "mean_auc_difference": 0.4294720252167061,
+        "ci95": [
+          0.30937746256895193,
+          0.5474192277383766
+        ],
+        "larger_method_sd": 0.058080665415054744,
+        "direction": "a_better"
+      }
+    ]
+  },
+  "H3_external_secondary": {
+    "cohort": "external",
+    "verdict": "inconclusive",
+    "pairs": [
+      {
+        "method": "LP",
+        "fraction": 0.01,
+        "mean_auc_difference": 0.09740259740259742,
+        "ci95": [
+          0.02030435550843717,
+          0.1763749006095944
+        ],
+        "larger_method_sd": 0.12236650893615193,
+        "direction": "no_detectable_difference"
+      },
+      {
+        "method": "PFT",
+        "fraction": 0.01,
+        "mean_auc_difference": 0.10422740524781343,
+        "ci95": [
+          0.030400764201784607,
+          0.17408146700238536
+        ],
+        "larger_method_sd": 0.13140683512757867,
+        "direction": "no_detectable_difference"
+      },
+      {
+        "method": "LoRA",
+        "fraction": 0.01,
+        "mean_auc_difference": 0.15509320611361424,
+        "ci95": [
+          0.08495450128103191,
+          0.22268751656506752
+        ],
+        "larger_method_sd": 0.08518898739224894,
+        "direction": "a_better"
+      },
+      {
+        "method": "LP",
+        "fraction": 0.1,
+        "mean_auc_difference": 0.10759563565686014,
+        "ci95": [
+          0.03298712342079688,
+          0.18087756206378652
+        ],
+        "larger_method_sd": 0.07890479872105119,
+        "direction": "a_better"
+      },
+      {
+        "method": "PFT",
+        "fraction": 0.1,
+        "mean_auc_difference": 0.04002120328650934,
+        "ci95": [
+          -0.05810832449863064,
+          0.13725815001325206
+        ],
+        "larger_method_sd": 0.07514227497288184,
+        "direction": "no_detectable_difference"
+      },
+      {
+        "method": "LoRA",
+        "fraction": 0.1,
+        "mean_auc_difference": 0.1672740524781341,
+        "ci95": [
+          0.0982360963866066,
+          0.23390979768530787
+        ],
+        "larger_method_sd": 0.07514227497288184,
+        "direction": "a_better"
+      }
+    ]
+  },
+  "rule": "Detectable only if |mean difference| exceeds the larger per-seed SD and the 95% class-stratified paired bootstrap CI excludes 0 in the same direction. Compound: any rejected clause rejects; all supported supports; else inconclusive."
+}

@@ -335,3 +335,42 @@ observation for the threats-to-validity text, not a deviation: the run is final 
 and will not be rerun (rerunning because of an outcome would be selection).
 
 Exact next step: unchanged from the 19:36 entry.
+
+### 2026-11-22 10:20–11:40 — Claude Code — grid complete, Phase 4 audit and analysis
+
+Grid `DONE` at 04:54 UTC (main 36/36, ablation 21/21, all first attempts, AC throughout).
+Main and new ablation audits PASS; 10 sanity flags investigated (low-label CNN below
+chance is genuine: checkpoint fidelity 9/9 exact on validation). Results committed
+(3a52c61, 790aa8c). `scripts/run_analysis.py` produced tables, figures and verdicts:
+H1 inconclusive, H2 inconclusive, H3 supported, H3-external inconclusive. Spot check
+(seed 20261122) 3/3. Figure layout fixes only. Full record:
+docs/reviews/AUDIT_2026-11-22_phase4_results.md.
+
+User instructions (2026-11-22): (1) do not start the final paper until the user approves;
+(2) the user will provide a GitHub repository URL; commits must be attributed to the team's
+GitHub accounts (mustapha005, toubani12, Aya Agrigah's account to be confirmed) and never
+list an AI assistant as collaborator or co-author. Existing history is not rewritten.
+
+Exact next step: Phase 7 checks that do not touch the article — `scripts/rerun_cell.py`
+(main_LP_010_s1, ±0.005), fresh-clone `make smoke`, draft FINAL_CHECKLIST.md; then wait for
+the user's go-ahead on the article (Results/Discussion/abstract, `paper/build.py --final`,
+`audit_numbers.py`) and slides; push once the repository URL and identities are confirmed.
+
+### 2026-11-22 11:55 — Claude Code — Phase 7 checks that do not depend on the article
+
+`scripts/rerun_cell.py --cell main_LP_010_s1` PASS (difference 0.0); new `--cold` mode
+re-extracts LP features from the images: bit-identical arrays, test AUC difference 0.0.
+Fresh local clone (b8d64c1) with only the archives and weights copied in: data rebuild
+byte-identical to the committed manifests and reports, 39 tests OK, smoke PASS
+(docs/reviews/fresh_clone_2026-11-22.md). Draft docs/FINAL_CHECKLIST.md: items 2–8, 10,
+12, 15, 17 pass; 1, 9, 13, 14, 16 wait for the article/slides; 11 (dataset and library
+licenses in the article) is open.
+
+Exact next step: wait for the user's approval to start the article. Then write Results,
+Discussion, Conclusion and the abstract from `paper/numbers.json` and `tables/` (state
+the observations in the Phase 4 audit: H3 driven by the scratch CNN failing at <=33
+images, LoRA 100% capped 3/3, ablation tuning advantage, rollout not informative), add
+the license sentences (item 11), run `paper/build.py --final` and `audit_numbers.py`,
+finish slides and QA_PREP answers 17–25, run `scripts/package.py`, and complete
+FINAL_CHECKLIST.md with rubric estimates. Push when the user sends the repository URL and
+confirms each member's GitHub identity. D013 still awaits user review.
