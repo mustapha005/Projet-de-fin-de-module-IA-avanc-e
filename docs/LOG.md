@@ -405,3 +405,12 @@ The article was not edited.
 
 Exact next step: wait for the user's approval to start the article, their review of D013,
 their decision on the two withheld files, and a statement of each member's contribution.
+
+### 2026-11-22 15:27 — Claude Code — first push verified
+
+Pushed main (0f30b5d, 23 commits) and protocol-frozen (befa5ba) without force. A fresh
+unauthenticated clone from GitHub has the same hashes, 36 main and 21 ablation results,
+21/21 protected hashes matching and 39 tests OK. The withheld files have no history there.
+
+Future work happens on main. Local master must not be pushed while the two files are withheld.
+Exact next step: unchanged from the previous entry.
