@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "purpose": "Sanity-flag investigation: reload selected checkpoints and re-predict VALIDATION only.",
+  "runs": {
+    "main_CNN_001_s0": {
+      "max_abs_probability_difference": 0.0,
+      "logged_validation_auc": 0.6342062193126023,
+      "recomputed_validation_auc": 0.6342062193126023,
+      "match": true
+    },
+    "main_CNN_001_s2": {
+      "max_abs_probability_difference": 0.0,
+      "logged_validation_auc": 0.5810147299509001,
+      "recomputed_validation_auc": 0.5810147299509001,
+      "match": true
+    },
+    "main_CNN_010_s0": {
+      "max_abs_probability_difference": 0.0,
+      "logged_validation_auc": 0.7193126022913257,
+      "recomputed_validation_auc": 0.7193126022913257,
+      "match": true
+    },
+    "main_CNN_010_s1": {
+      "max_abs_probability_difference": 0.0,
+      "logged_validation_auc": 0.5392798690671031,
+      "recomputed_validation_auc": 0.5392798690671031,
+      "match": true
+    },
+    "main_CNN_010_s2": {
+      "max_abs_probability_difference": 0.0,
+      "logged_validation_auc": 0.7258592471358428,
+      "recomputed_validation_auc": 0.7258592471358428,
+      "match": true
+    },
+    "main_CNN_100_s0": {
+      "max_abs_probability_difference": 0.0,
+      "logged_validation_auc": 0.8756137479541735,
+      "recomputed_validation_auc": 0.8756137479541735,
+      "match": true
+    },
+    "main_LoRA_001_s0": {
+      "max_abs_probability_difference": 0.0,
+      "logged_validation_auc": 0.7414075286415712,
+      "recomputed_validation_auc": 0.7414075286415712,
+      "match": true
+    },
+    "main_LP_001_s2": {
+      "max_abs_probability_difference": 0.0,
+      "logged_validation_auc": 0.6677577741407529,
+      "recomputed_validation_auc": 0.6677577741407529,
+      "match": true
+    },
+    "main_PFT_010_s0": {
+      "max_abs_probability_difference": 0.0,
+      "logged_validation_auc": 0.837152209492635,
+      "recomputed_validation_auc": 0.837152209492635,
+      "match": true
+    }
+  }
+}
