@@ -1,0 +1,761 @@
+% SDIA2026_SAN-1_GROUP_13 -- IEEE conference article (Overleaf: compile with pdfLaTeX).
+% Prose is hand-written. Every result value is a \val... macro from numbers.tex, which
+% scripts/make_latex.py generates from paper/numbers*.json; tables/ are generated too.
+% scripts/audit_latex.py refuses any literal result number in this file.
+\documentclass[conference,a4paper]{IEEEtran}
+\IEEEoverridecommandlockouts
+
+\usepackage{cite}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{url}
+\usepackage{xspace}
+\xspaceaddexceptions{\%}
+
+\input{numbers}
+
+\graphicspath{{figures/}}
+
+\begin{document}
+
+\title{Frugal Adaptation of a Self-Supervised Vision Transformer for
+Breast-Ultrasound Lesion Classification under a Fixed CPU Budget and
+Center Shift}
+
+% Add a fifth line with an email or ORCID inside each \IEEEauthorblockA if the
+% submission requires contact details.
+\author{
+\IEEEauthorblockN{Mustapha AARAB}
+\IEEEauthorblockA{\textit{Master SDIA} \\
+\textit{ENSET Mohammedia} \\
+Mohammedia, Morocco}
+\and
+\IEEEauthorblockN{Aya AGRIGAH}
+\IEEEauthorblockA{\textit{Master SDIA} \\
+\textit{ENSET Mohammedia} \\
+Mohammedia, Morocco}
+\and
+\IEEEauthorblockN{Badr Eddine TOUBANI}
+\IEEEauthorblockA{\textit{Master SDIA} \\
+\textit{ENSET Mohammedia} \\
+Mohammedia, Morocco}
+}
+
+\maketitle
+
+\begin{abstract}
+Foundation models are usually adapted on GPUs and judged on a single
+in-distribution test set. We ask a narrower and answerable question: under a
+fixed CPU budget, does the ranking of three adaptation strategies for a
+self-supervised vision transformer depend on how many labels are available, and
+does that ranking survive a change of acquisition center? On a deduplicated
+breast-ultrasound cohort we compare linear probing, partial fine-tuning and
+low-rank adaptation of DINOv2 ViT-S/14 against a ResNet-18 trained from scratch,
+at nominal 1, 10 and 100 percent of the training labels, with three seeds and a
+shared cap of \valProtocolCapMinutes minutes per run on four CPU threads of a
+commodity laptop. An independent cohort from another country serves as a sealed
+external test. Hypotheses, splits, search space and a noise-aware decision rule
+were committed to version control before any training run. Across \valRunsMain
+main and \valRunsAblation ablation runs, low-rank adaptation attains the best
+internal AUC at full labels (\valMainLoRAHundredAucInMean, SD
+\valMainLoRAHundredAucInSd) and the best external AUC
+(\valMainLoRAHundredAucOutMean, SD \valMainLoRAHundredAucOutSd), exceeding
+linear probing internally by 0.091. At \valDataSubsetOneN training images,
+however, no pair of adaptation strategies is distinguishable. At full labels
+every method loses accuracy on the external center, and no difference between
+those losses is detectable. The large advantage of the foundation model over the scratch
+baseline at low label counts is driven by the baseline failing to learn rather
+than by strong transfer. Two of our three pre-registered hypotheses remain
+inconclusive.
+\end{abstract}
+
+\begin{IEEEkeywords}
+foundation models, DINOv2, LoRA, linear probing, partial fine-tuning, breast
+ultrasound, domain shift, label efficiency, compute budget
+\end{IEEEkeywords}
+
+\section{Introduction}
+\label{sec:intro}
+
+Foundation models pretrained without labels promise transferable image
+representations, but three practical constraints shape whether a medical team
+can actually benefit from them: little labeled data, limited compute, and a
+deployment site whose images differ from the development data. Recent reviews of
+medical imaging foundation models list exactly these issues, namely compute
+cost, data scarcity and domain adaptation, as open problems \cite{niu2026review}.
+Which \emph{adaptation strategy} to use under these constraints is a concrete,
+answerable question. A frozen encoder with a linear probe is cheap and hard to
+overfit. Partial fine-tuning updates a few top layers. Low-rank adaptation
+(LoRA) inserts small trainable matrices throughout the network \cite{hu2021lora}.
+Each spends a different amount of computation and capacity to change the
+representation.
+
+Most comparisons of these strategies assume GPU training and report a single
+in-distribution test set. Here we fix a CPU-only per-run budget, vary the number
+of training labels, and test every model on an unseen acquisition center. We
+ask: on CPU, at an equal per-run compute cap, does the ranking of linear
+probing, partial fine-tuning and LoRA for a self-supervised vision transformer
+on breast-ultrasound lesion classification depend on the label fraction (1, 10
+or 100\%), and is that ranking preserved on an unseen acquisition center?
+
+We pre-registered three hypotheses before any training. \textbf{H1}: linear
+probing is not worse than LoRA at 1\% labels (internal AUC), and LoRA beats
+linear probing at 100\%. \textbf{H2}: the internal strategy ranking is preserved
+on the external center, and the internal-to-external AUC gap does not grow with
+the number of trainable parameters. \textbf{H3}: all three foundation-model
+strategies beat a ResNet-18 trained from scratch at 1\% and 10\% labels.
+
+Our contributions are: (i) a frozen, reproducible protocol that equalizes a
+wall-clock cap, epoch limit, augmentation and tuning budget across four methods
+on a commodity laptop CPU; (ii) a leakage-repaired split of a public
+breast-ultrasound dataset that combines perceptual hashing with a published
+duplicate list, and an external evaluation never used for any selection; (iii) a
+\valRunsMain-run main grid (four methods, three label fractions, three seeds)
+with paired bootstrap contrasts and verdicts under a decision rule fixed in
+advance; and (iv) ablations, a cost analysis and an external error typology that
+locate where the measured differences come from.
+
+\section{Related Work}
+\label{sec:related}
+
+\textbf{Adapting general-purpose self-supervised encoders.} DINOv2 learns visual
+features without labels that transfer well through frozen representations
+\cite{oquab2024dinov2}. In radiology, DINOv2 has been evaluated under several
+adaptation settings, including linear probing and parameter-efficient
+fine-tuning, with results that depend on the task and setting
+\cite{baharoon2023radiology}. Fine-tuning is not uniformly better than probing:
+updating the whole network can distort pretrained features and lose
+out-of-distribution accuracy even when in-distribution accuracy improves
+\cite{kumar2022distortion}. Updating only selected layers is a competitive
+middle ground for vision transformers \cite{ye2023partial}. These results
+motivate comparing \emph{how much} and \emph{where} to adapt, but none fixes a
+CPU budget or tests on a separate ultrasound center.
+
+\textbf{Parameter-efficient fine-tuning (PEFT) in medical imaging.} LoRA freezes
+the pretrained weights and learns low-rank updates \cite{hu2021lora}. For chest
+radiograph foundation models, LoRA has been reported to match or outperform full
+fine-tuning across label fractions with a small fraction of tunable parameters
+\cite{lian2024less}. A broad benchmark of PEFT algorithms on medical image
+datasets reported that PEFT is especially useful in low-data regimes
+\cite{dutt2024missed}. These studies measure label efficiency, but they use GPU
+compute and do not equalize wall-clock cost between strategies. LoRA's small
+trainable-parameter count does not imply a small backward-pass cost, because
+gradients must still flow through the frozen layers.
+
+\textbf{Breast ultrasound and center shift.} BUSI is a widely used public
+breast-ultrasound dataset from Egypt \cite{aldhabyani2020busi}. A published
+critique documented duplicated and near-duplicated images and conflicting labels
+in it \cite{pawlowska2023critique}. Splitting BUSI naively can therefore leak
+test images into training. BrEaST-Lesions\_USG is a curated Polish dataset with
+biopsy- or follow-up-verified benign and malignant lesions and BI-RADS metadata
+\cite{pawlowska2024breast,pawlowska2024tciadata}. Recent work evaluates breast
+ultrasound classifiers under cross-dataset shift with multiple seeds, including
+a self-supervised transformer \cite{ramollari2026shift}, and a
+patient-leakage-aware benchmark uses BUSI and BrEaST for external testing
+\cite{wang2026datasetshift}. Ultrasound-specific foundation models, namely USFM
+\cite{jiao2024usfm}, the generative BUSGen \cite{yu2026busgen}, compact TinyUSFM
+\cite{ma2026tinyusfm} and USF-MAE \cite{megahed2025usfmae}, are an alternative to
+a general-purpose encoder. USF-MAE's pretraining corpus includes BrEaST,
+however, so it could not provide an unseen external test here. Foundation models
+also lose accuracy under domain shift in mammography \cite{nguyen2026shift}, and
+calibration of frozen foundation models can differ from their discrimination
+\cite{poyrazer2026calibration,guo2017calibration}.
+
+\textbf{Where this study sits.} Closest to us are the DINOv2 adaptation
+comparison in radiology \cite{baharoon2023radiology}, PEFT label-fraction
+studies \cite{lian2024less,dutt2024missed}, and the ultrasound shift benchmarks
+\cite{ramollari2026shift,wang2026datasetshift}. We do not claim a better
+classifier. We contribute a controlled measurement: the same encoder, a common
+CPU wall-clock cap, a repaired data split, pre-registered hypotheses with a
+noise-aware decision rule, and a sealed external center. Because no
+noninferiority margin is justified for H1, a non-significant difference is
+reported as inconclusive rather than as ``not worse''
+\cite{lakens2017equivalence}. Reporting follows the CLAIM checklist where
+applicable \cite{tejani2024claim}.
+
+\section{Materials and Methods}
+\label{sec:methods}
+
+\subsection{Data}
+
+\textbf{Internal cohort (BUSI).} BUSI contains \valDataBusiBenignRaw benign,
+\valDataBusiMalignantRaw malignant and \valDataBusiNormalExcluded normal images
+\cite{aldhabyani2020busi}. We kept only benign versus malignant, because the
+external set has no normal class, and we ignored the lesion masks. The original
+host returned a browser challenge, so we used the public Kaggle mirror of the
+same release and retained the original attribution. Of the
+\valDataBusiBinaryRaw binary images, we removed near-duplicates \emph{before}
+splitting. Each image is a node in a graph. Two images are linked if their
+$8\times8$ perceptual hashes differ by at most \valDataBusiHamming bits, or if
+they form a duplicate pair in the published list of \valDataBusiPublishedPairs
+pairs \cite{pawlowska2023critique}. We keep one image per single-label connected
+component and quarantine every component whose images carry conflicting labels,
+including links to excluded normal images. A first pass using perceptual hashing
+alone passed its own check but left \valDataPhashOnlyCrossingPairs published
+duplicate pairs crossing splits. We rejected that split and archived it. The
+repaired pipeline removed \valDataBusiRemoved images
+(\valDataBusiConflictImages of them from \valDataBusiConflictComponents
+label-conflict components) and retained \valDataBusiRetained
+(\valDataBusiRetainedBenign benign, \valDataBusiRetainedMalignant malignant). An
+independent traversal of the published duplicate groups confirms that none
+crosses splits. BUSI has no patient identifiers, so the split is
+\emph{image-level}. Patient independence cannot be verified, and we treat it as
+a threat to validity \cite{ucar2026leakage}.
+
+\textbf{Splits and label fractions.} The retained images were split once,
+stratified 70/15/15 with seed \valProtocolSplitSeed, into \valDataBusiTrain
+training, \valDataBusiVal validation and \valDataBusiTest internal-test images.
+For each seed we shuffle each training class and take nested prefixes, so that
+the 1\% subset is contained in the 10\% subset and that in the full set. A floor
+of four images per class applies at 1\%, so the nominal 1\% subset has
+\valDataSubsetOneN images (\valDataSubsetOneActualPct\% of training) and the
+nominal 10\% subset has \valDataSubsetTenN (\valDataSubsetTenActualPct\%). Each
+seed draws its own subsets, so seed variance includes sampling variance.
+Validation is always the full validation split. Total labeled data therefore
+exceeds the nominal training fraction, and we do not call this a
+total-label-budget comparison.
+
+\textbf{External cohort (BrEaST).} BrEaST-Lesions\_USG contributes
+\valDataBreastTotal binary cases (\valDataBreastBenign benign,
+\valDataBreastMalignant malignant; \valDataBreastNormalExcluded normal cases
+excluded), labeled with the published \emph{Classification} field
+\cite{pawlowska2024breast,pawlowska2024tciadata}. It is used only for the final
+evaluation: never for tuning, early stopping or threshold choice. We found no
+cross-cohort exact or perceptual-hash near-duplicates. Its reference standard
+(biopsy or follow-up), scanners and case mix all differ from BUSI's. The
+internal-to-external gap therefore mixes acquisition, population and
+verification differences, and we make no causal claim about the center alone.
+
+\subsection{Backbone, preprocessing and augmentation}
+
+All three foundation-model methods use DINOv2 ViT-S/14
+(\texttt{facebook/dinov2-small}, revision \valBackboneRevisionShort) at
+\valProtocolImageSize $\times$ \valProtocolImageSize pixels in single precision
+\cite{oquab2024dinov2}. The image representation concatenates the
+final-normalized class token and the mean patch token, giving
+\valBackboneHiddenSize dimensions each. Each image is converted to luminance,
+replicated to three channels, resized on its shorter side and center-cropped,
+then normalized with the ImageNet mean and standard deviation. Training uses one
+augmentation distribution for every method: random resized cropping (scale
+0.8--1.0), horizontal flipping, rotation within $\pm 10$ degrees and
+brightness and contrast jitter of 0.1, seeded per run seed, image and view. We
+use no test-time augmentation.
+
+\subsection{Methods compared}
+
+\textbf{LP:} an L2-regularized logistic regression with balanced class weights
+on frozen features. Features for \valProtocolLpViews augmented views per
+training image are extracted once and cached, and the cold extraction cost is
+charged to the run's budget even when the cache is reused. \textbf{PFT:} the
+last two transformer blocks, the final layer norm and a linear head are trained,
+and earlier blocks run without gradients. \textbf{LoRA:} rank-8 adapters
+($\alpha = 16$, dropout 0.1) on the query, key and value projections of all 12
+blocks, plus a linear head. The installed implementation has separate query, key
+and value projections rather than one fused matrix. \textbf{CNN:} ResNet-18
+\cite{he2015resnet} trained from random initialization, the simple supervised
+baseline. PFT, LoRA and CNN share AdamW, weighted cross-entropy, batch size
+$\min(32, N)$, one warm-up epoch followed by cosine decay, at most
+\valProtocolMaxEpochs epochs, and early stopping on validation AUC with patience
+\valProtocolPatience.
+
+\subsection{Compute budget and hardware}
+
+``Fixed compute budget'' means that every run gets the same epoch limit and the
+same wall-clock cap, $T_{\max}$ = \valProtocolCapSeconds~s
+(\valProtocolCapMinutes~min), on one reference machine: an \valHwCpu laptop
+(\valHwPhysicalCores physical and \valHwLogicalCores logical cores,
+\valHwRamGib~GiB RAM, Python \valHwPython), with \valProtocolThreads intra-op
+threads and no accelerator. $T_{\max}$ was set before freezing the protocol from
+a benchmark of every method and fraction: the larger of ten full-data epochs of
+the slowest neural method and 1.25 times the cold linear-probe cost. The budget
+covers model loading, preprocessing, feature extraction, optimization,
+validation and checkpointing. A parent process enforces the deadline. A run that
+hits the cap keeps its best complete checkpoint, and updates after the cutoff
+are discarded. For every run we log trainable parameters, charged and actual
+wall-clock time, time to the best checkpoint, process CPU time, peak resident
+memory, inference time per image, and whether the cap was hit.
+
+\subsection{Hyperparameter search, thresholds and the frozen protocol}
+
+Each method has an equal search budget at seed 0 and the nominal 10\% fraction,
+selected by validation AUC: for LP the inverse regularization strength
+$C \in \{0.01, 0.1, 1, 10, 100\}$ (\valProtocolSearchLP configurations); for PFT
+and LoRA the learning rate in $\{1\mathrm{e}{-4}, 3\mathrm{e}{-4},
+1\mathrm{e}{-3}\}$ crossed with weight decay in $\{0.01, 0.05\}$; for the CNN
+the learning rate in $\{3\mathrm{e}{-4}, 1\mathrm{e}{-3}, 3\mathrm{e}{-3}\}$
+crossed with weight decay in $\{1\mathrm{e}{-4}, 1\mathrm{e}{-2}\}$
+(\valProtocolSearchCNN each). Ties go to the earlier configuration. The search
+selected $C$ = \valTuningLPC for LP (validation AUC \valTuningLPValAuc), and
+learning rate \valTuningLoRALr with weight decay \valTuningLoRAWeightDecay for
+PFT, LoRA and the CNN (validation AUC \valTuningPFTValAuc,
+\valTuningLoRAValAuc and \valTuningCNNValAuc respectively). The selected
+configuration is applied unchanged to every fraction and seed, and every final
+run starts from initialization. The decision threshold maximizes macro-F1 on
+validation and is applied unchanged to both test sets. Splits, seeds, search,
+stopping rule, threshold policy, statistics, $T_{\max}$ and the reference
+machine were committed under a \texttt{protocol-frozen} version-control tag
+before any tuning or final run. Each test cohort is evaluated once per final
+run, on the selected checkpoint.
+
+\subsection{Metrics and statistics}
+
+The primary metric is the area under the receiver operating characteristic curve
+(AUC) on each test set. Secondary metrics are macro-F1, the gap
+$\mathrm{AUC}_{\mathrm{in}} - \mathrm{AUC}_{\mathrm{out}}$, 15-bin expected
+calibration error (ECE), trainable parameters, CPU time and peak RAM. We report
+mean $\pm$ sample standard deviation (SD) over seeds 0, 1 and 2. Uncertainty
+comes from \valProtocolBootstrapResamples class-stratified bootstrap resamples
+of the test images (seed \valProtocolBootstrapSeed). Within each resample the
+same images pair methods and seeds, and the statistic is the mean of the three
+per-seed values. \textbf{Decision rule:} a difference counts only if the
+absolute mean difference exceeds the larger of the two methods' seed SDs
+\emph{and} the 95\% paired-bootstrap interval of the difference excludes zero in
+the same direction. Otherwise we report ``no detectable difference''. A
+hypothesis is \emph{rejected} if any clause is contradicted by a detectable
+difference, \emph{supported} only if every clause is supported by detectable
+differences, and \emph{inconclusive} otherwise. These intervals are conditional
+on the trained seeds and on image-level independence. There is no multiplicity
+correction, so all planned contrasts are shown.
+
+\subsection{Ablations and error analysis}
+
+Using the selected hyperparameters without retuning, we vary one component at a
+time. \textbf{Where to adapt:} LoRA on the last two blocks only, at all three
+fractions, which is directly comparable to PFT. \textbf{LoRA rank:} $r \in
+\{4, 16\}$, with $\alpha$ fixed at 16, so rank and scaling change together.
+\textbf{PFT depth:} last four blocks. \textbf{Augmentation:} LoRA without
+augmentation. All ablations except where to adapt run at 10\%, each with three
+seeds. On the external set, errors at the frozen threshold are stratified by
+BI-RADS, verification method, diagnosis, image size, luminance and contrast. We
+compare errors shared by all methods with method-specific ones, and we inspected
+ten deterministically chosen failures with attention rollout and Grad-CAM. These
+visualizations are exploratory and cannot establish causal shortcut use.
+
+\section{Results}
+\label{sec:results}
+
+\begin{table*}[!t]
+\caption{Main grid: mean $\pm$ SD over three seeds, with 95\% class-stratified
+paired bootstrap intervals of the mean. ``in'' is the internal (BUSI) test set,
+``out'' the external (BrEaST) cohort. Gap is
+$\mathrm{AUC}_{\mathrm{in}} - \mathrm{AUC}_{\mathrm{out}}$.}
+\label{tab:main}
+\centering
+\input{tables/main_results}
+\end{table*}
+
+\subsection{Completion and compute}
+
+All \valRunsMain main runs and all \valRunsAblation ablation runs completed on
+the first attempt, with no failed or discarded run and with the reference laptop
+on mains power throughout. The main grid consumed \valComputeMainChargedHours
+charged hours, corresponding to \valComputeMainCpuHours CPU hours across
+\valProtocolThreads threads. \valRunsCapHits of the \valRunsMain main runs
+reached the wall-clock cap: all three LoRA runs at 100\% labels
+(\valCostLoRAHundredCapHit), one PFT run at 100\% (seed 2) and one CNN run at
+100\% (seed 1). No ablation run hit the cap. Every reported metric was
+recomputed from the stored per-image prediction files during an independent
+audit, and all values matched.
+
+\subsection{Main grid}
+
+Table~\ref{tab:main} reports the full grid and Fig.~\ref{fig:learning} shows the
+learning curves. Three patterns are visible. First, at the full training set the
+two methods that change the representation are ahead of the frozen one:
+internally LoRA reaches \valMainLoRAHundredAucIn and PFT
+\valMainPFTHundredAucIn, against \valMainLPHundredAucIn for LP. Second, linear
+probing saturates early; its internal AUC is \valMainLPTenAucIn at 10\% labels
+and \valMainLPHundredAucIn with the full set, so the last
+\valDataBusiTrain-image training set buys it nothing. Third, at full labels every
+method scores well below its internal value on the external cohort, with gaps
+ranging from \valMainLoRAHundredGapMean for LoRA to \valMainLPHundredGapMean for
+LP. (At 1\% and 10\% labels the CNN's gap is negative only because its internal
+score is below chance.)
+
+At the smallest label budget the picture is different. All three
+foundation-model methods land between \valMainLoRAOneAucInMean and
+\valMainPFTOneAucInMean internally with seed SDs above 0.1, larger than any
+difference between them. The scratch CNN is at \valMainCNNOneAucIn
+internally, that is, below chance, and at \valMainCNNTenAucIn with 10\% of the
+labels.
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\columnwidth]{fig_learning_curve.png}
+\caption{AUC against the number of training images, internal and external test
+sets, mean $\pm$ SD over three seeds. The dotted line marks chance.}
+\label{fig:learning}
+\end{figure}
+
+\begin{table*}[!t]
+\caption{Pre-registered contrasts. A difference is detectable only if the
+absolute mean difference exceeds the larger per-seed SD \emph{and} the 95\%
+interval excludes zero in the same direction. ``gap'' contrasts compare
+$\mathrm{AUC}_{\mathrm{in}} - \mathrm{AUC}_{\mathrm{out}}$ between methods.}
+\label{tab:contrasts}
+\centering
+\input{tables/contrasts}
+\end{table*}
+
+\subsection{H1: does the ranking depend on the label fraction?}
+
+The two clauses of H1 behave differently (Table~\ref{tab:contrasts}). At 1\%
+labels, linear probing and LoRA differ by +0.003 internally, with a 95\%
+interval of $[-0.051, +0.056]$ and a per-seed SD of 0.142. The difference is far
+smaller than the noise, so it is not detectable. Because we pre-registered no
+noninferiority margin, this cannot be read as evidence that the two are
+equivalent; the clause is \valVerdictHOneLPNotWorseThanLoRAAtOnePct. At 100\%
+labels, LoRA exceeds linear probing internally by 0.091, with an interval of
+$[-0.156, -0.039]$ on the LP minus LoRA difference and a much smaller SD, so
+that clause is \valVerdictHOneLoRABeatsLPAtHundredPct. Under our compound rule,
+H1 as a whole is \textbf{\valVerdictHOne}.
+
+\subsection{H2: is the ranking preserved under center shift?}
+
+At 100\% labels the internal ordering LoRA, PFT, LP does reappear externally:
+linear probing is detectably worse than PFT ($-0.126$) and than LoRA ($-0.168$)
+on the external cohort, as it is internally. LoRA is detectably better than PFT
+externally at 10\% ($-0.127$) and at 100\% ($-0.042$), but the corresponding
+internal differences are not detectable, so the two orderings are not the same
+statement. At 1\% labels no pair of adaptation strategies is separable in either
+cohort. The ranking clause is therefore
+\valVerdictHTwoRankingPreservedExternally.
+
+The second clause concerns the gap. None of the three gap contrasts at 100\%
+labels is detectable (Table~\ref{tab:contrasts}). The point estimates run
+against the clause's worry rather than with it: LP, with \valParamsLP trainable
+parameters, has the largest gap (\valMainLPHundredGapMean), while LoRA, with
+\valParamsLoRA, has the smallest (\valMainLoRAHundredGapMean). Since no contrast
+passes the rule, the clause is
+\valVerdictHTwoGapDoesNotGrowWithTrainableParameters and H2 overall is
+\textbf{\valVerdictHTwo}.
+
+\subsection{H3: do the foundation-model strategies beat a scratch CNN?}
+
+All six internal contrasts at 1\% and 10\% labels are detectable and in the
+predicted direction, with differences between +0.329 and +0.429
+(Table~\ref{tab:contrasts}). H3 is \textbf{\valVerdictHThree}. The secondary
+external version is weaker: only three of the six contrasts pass the rule, so it
+is \valVerdictHThreeExternal.
+
+This verdict needs a caveat that the number alone hides. The margin is produced
+mostly by the baseline failing rather than by the foundation model succeeding.
+At 1\% and 10\% labels the scratch ResNet-18 scores below chance internally
+(\valMainCNNOneAucIn and \valMainCNNTenAucIn), and two of its runs produce
+nearly constant probabilities. We checked this for an implementation fault:
+reloading each selected checkpoint through the evaluation path reproduces the
+logged validation probabilities exactly, and the same code reaches
+\valMainCNNHundredAucIn internally with the full training set. Validation AUC at
+selection was above chance for every one of those runs, yet the resulting test
+AUC is below it, which is what selecting a barely-better-than-random model on a
+\valDataBusiVal-image validation set can produce. We read H3 as a statement
+about training a network
+from scratch on \valDataSubsetOneN to \valDataSubsetTenN images, not as evidence
+of strong transfer.
+
+\begin{table*}[!t]
+\caption{Cost at the fixed budget, mean $\pm$ SD over three seeds. Charged time
+includes the cold feature-extraction cost for LP. ``Cap hit'' counts runs
+stopped by the \valProtocolCapSeconds~s deadline.}
+\label{tab:cost}
+\centering
+\input{tables/cost}
+\end{table*}
+
+\subsection{Cost}
+
+Table~\ref{tab:cost} and Fig.~\ref{fig:cost} show what each method bought with
+the budget. Linear probing reached an internal AUC of
+\valMainLPHundredAucInMean using \valCostLPHundredTime~s of the
+\valProtocolCapSeconds~s available, while LoRA used the entire budget
+(\valCostLoRAHundredTime~s) for \valMainLoRAHundredAucInMean and completed only
+\valCostLoRAHundredEpochs epochs in that time, against
+\valCostPFTHundredEpochs for PFT.
+
+Trainable-parameter counts are a poor proxy for cost here. LoRA trains
+\valParamsLoRA parameters against \valParamsPFT for PFT, yet it is the slower
+and far heavier of the two: peak resident memory is \valCostLoRAHundredRss~GiB
+for LoRA and \valCostPFTHundredRss~GiB for PFT, because gradients still flow
+through all 12 blocks. Inference cost inverts the training picture: the three
+foundation-model methods all pay the transformer forward pass
+(\valCostLPHundredInference~ms per image for LP), while the ResNet-18, which has
+the most trainable parameters but is a smaller and cheaper network overall,
+predicts in \valCostCNNHundredInference~ms.
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\columnwidth]{fig_cost_performance.png}
+\caption{Internal AUC against charged wall-clock time per run, log scale, mean
+$\pm$ SD over three seeds.}
+\label{fig:cost}
+\end{figure}
+
+\subsection{Ablations}
+
+Table~\ref{tab:ablations} and Fig.~\ref{fig:ablations} summarize the ablations.
+No ablation changed internal AUC detectably. Four changes were detectable on the
+external cohort, and all of them are degradations of LoRA: restricting the
+adapters to the last two blocks costs $-0.188$ at 10\% labels and $-0.042$ at
+100\%, and changing the rank costs $-0.197$ at rank 4 and $-0.204$ at rank 16.
+Removing augmentation ($-0.080$) and deepening PFT to four blocks ($+0.025$)
+were not detectable.
+
+Two qualifications limit how far these comparisons can be pushed, and both were
+declared before the runs. The hyperparameters were tuned for the main
+configuration and reused without retuning, so every ablation is compared against
+a configuration that had a tuning advantage. The rank ablation holds $\alpha$
+fixed at 16 while varying $r$, so it changes the adapter scaling $\alpha / r$
+together with the rank and cannot isolate the two.
+
+\begin{table*}[!t]
+\caption{Ablations at the same budget, mean $\pm$ SD over three seeds. Each
+variant is contrasted with its own main counterpart on the external cohort under
+the pre-registered rule.}
+\label{tab:ablations}
+\centering
+\input{tables/ablations}
+\end{table*}
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\columnwidth]{fig_ablations.png}
+\caption{Ablations at 10\% labels. Filled markers are internal AUC, open markers
+external, mean $\pm$ SD over three seeds.}
+\label{fig:ablations}
+\end{figure}
+
+\subsection{External error typology}
+
+At full labels, \valDataBreastTotal external images divide into 75 that no
+method misclassifies in a majority of seeds and 14 that all four get wrong
+(Fig.~\ref{fig:overlap}). Method-specific errors are substantial: 27 images are
+wrong only for LP and 31 only for the CNN, while 17 are wrong for PFT and LoRA
+together, which is consistent with those two sharing an adapted representation.
+
+Stratifying by BI-RADS exposes a difference in \emph{kind}, not only in rate
+(Table~\ref{tab:strata}). On BI-RADS 5 lesions, which are almost all malignant,
+LP and the CNN are wrong on 0.48 of images while PFT and LoRA are wrong on 0.18
+and 0.17. The ordering reverses on clearly benign findings: on BI-RADS 2 the CNN
+errs on 0.16 against 0.37 to 0.39 for the three foundation-model methods. The
+per-diagnosis table in the released results shows the same split, with LP and
+the CNN wrong on 0.51 of invasive carcinomas of no special type against 0.19 and
+0.18 for PFT and LoRA, and PFT and LoRA wrong on 0.59 and 0.62 of benign mammary
+dysplasia cases against 0.15 for the CNN. Adaptation therefore does not simply
+reduce error; at a threshold fixed on internal validation it trades missed
+malignancies for false alarms on benign tissue.
+
+We also inspected attention rollout maps for ten deterministically chosen
+failures. The maps of the three foundation-model methods are almost identical to
+one another, which is expected since all three start from the same pretrained
+encoder and change at most a small fraction of its weights, and they are
+dominated by a few background tokens. They
+therefore carry no information about what adaptation changed, and we draw no
+conclusion from them.
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\columnwidth]{fig_error_overlap.png}
+\caption{External images at 100\% labels grouped by which methods misclassify
+them in a majority of seeds.}
+\label{fig:overlap}
+\end{figure}
+
+\begin{table}[!t]
+\caption{External error rate at 100\% labels by BI-RADS category and
+verification route, mean $\pm$ SD over three seeds. ``Malig.'' is the number of
+malignant cases in the stratum.}
+\label{tab:strata}
+\centering
+\input{tables/error_strata}
+\end{table}
+
+\subsection{Calibration}
+
+Calibration is worse than discrimination throughout, and it degrades under the
+center shift for every method (Table~\ref{tab:main}, Fig.~\ref{fig:reliability}).
+At 100\% labels the best-calibrated internal model is PFT
+(\valMainPFTHundredEceIn), but the lowest external ECE belongs to the scratch
+CNN (\valMainCNNHundredEceOut), ahead of LoRA (\valMainLoRAHundredEceOut) and
+far ahead of LP (\valMainLPHundredEceOut); every method's external ECE is worse
+than its internal one. Ranking quality and calibration therefore do not order
+the methods the same way. At 1\% labels all four methods are badly calibrated in
+both cohorts (Table~\ref{tab:main}). Since
+the decision threshold is chosen on internal validation and reused unchanged,
+these numbers set a practical limit: a model may rank external cases acceptably
+and still place its operating point badly.
+
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=\textwidth]{fig_reliability.png}
+\caption{Reliability at 100\% labels, ten equal-width probability bins, one line
+per seed. The diagonal is perfect calibration.}
+\label{fig:reliability}
+\end{figure*}
+
+\subsection{Hypothesis summary}
+
+Table~\ref{tab:hypotheses} collects the verdicts. One of three hypotheses is
+supported, none is rejected, and the rest are inconclusive, which under our rule
+means the measurement was too noisy to decide rather than that the effects are
+absent.
+
+\begin{table}[!t]
+\caption{Pre-registered hypotheses and verdicts under the frozen decision rule.
+H3$^{*}$ is the secondary external version of H3.}
+\label{tab:hypotheses}
+\centering
+\input{tables/hypotheses}
+\end{table}
+
+\section{Discussion}
+\label{sec:discussion}
+
+\textbf{How much adaptation helps depends on having labels at all.} The headline
+of our grid is not that one strategy wins but that the question only becomes
+answerable once there are enough labels. With the full training set the
+measurement is clean: changing the representation, by LoRA or by partial
+fine-tuning, is detectably better than a frozen encoder, both internally and on
+another center, and linear probing has already stopped improving by 10\% labels.
+With \valDataSubsetOneN training images, the seed-to-seed SD is larger than any
+difference between strategies, and nothing is separable. For a team with a
+handful of labeled scans, our data give no reason to prefer an expensive
+adaptation method to a linear probe, and no reason to believe the two are
+equivalent either. That is an honest answer to a practical question, but it is a
+negative one, and it is a property of this sample size as much as of the methods.
+
+\textbf{The budget binds exactly where the result is most interesting.} All
+three LoRA runs at full labels were stopped by the deadline after
+\valCostLoRAHundredEpochs epochs. Its reported \valMainLoRAHundredAucInMean is
+therefore a lower bound on what LoRA would reach with more time. This cuts two
+ways. It strengthens the LoRA-over-LP conclusion, since LoRA wins despite being
+truncated. It weakens any claim about LoRA against PFT at full labels, because
+PFT stopped early on two of three seeds and was not competing under the same
+effective constraint. A budget-matched comparison is not the same as a
+convergence-matched one, and at 100\% labels ours is the former.
+
+\textbf{Center shift costs more than the choice of method.} The gap between
+cohorts at full labels (\valMainLoRAHundredGapMean to \valMainLPHundredGapMean)
+is larger than most of the differences we were testing between methods. No
+method's gap is detectably smaller than another's, so we cannot recommend one
+adaptation strategy as more robust. We can say that the point estimates do not
+support the expectation, from work on feature distortion
+\cite{kumar2022distortion}, that adapting more parameters costs more
+out-of-distribution accuracy: here the frozen-feature method has the largest gap
+and the best external AUC belongs to the method that changes the representation
+most widely. Our setting differs from that literature in two ways that could
+explain this, namely a very small adapted capacity relative to full fine-tuning,
+and a shift that mixes scanner, population and verification rather than a
+synthetic corruption.
+
+\textbf{Comparison with PEFT label-efficiency reports.} Studies reporting that
+PEFT is particularly valuable in low-data regimes
+\cite{lian2024less,dutt2024missed} are not contradicted by our result, but we
+cannot confirm them at our smallest budget. Their low-label settings are
+typically orders of magnitude larger than \valDataSubsetOneN images, and they do
+not equalize wall-clock cost. Our measurement adds the observation that under an
+equal CPU budget the advantage of LoRA is visible only once the label count is
+large enough for the seed noise to shrink.
+
+\textbf{What the error typology suggests.} The BI-RADS strata show that
+adaptation changes which cases fail, not just how many. LP and the scratch CNN
+miss malignant, high-BI-RADS lesions; the adapted models catch those and instead
+over-call benign mammary dysplasia. In a screening context those two
+error profiles have very different consequences, and a single AUC hides the
+difference. We report the strata descriptively: they were defined before the
+results, but they involve many small groups without multiplicity control, so
+they are a hypothesis-generating observation rather than a tested claim.
+
+\subsection{Limitations and threats to validity}
+
+The external set is small (\valDataBreastTotal cases) and the internal test set
+smaller still (\valDataBusiTest images), so intervals are wide and small
+differences are undetectable by design. The split is image-level: BUSI has no
+patient identifiers, so related frames of one patient may still fall in
+different splits despite deduplication, which would make internal estimates
+optimistic. The center comparison is confounded by scanner, population and
+reference standard. The nominal 1\% fraction is really
+\valDataSubsetOneActualPct\% of the training data because of the four-per-class
+floor, and validation always uses the full validation split, so the low-label
+settings consume more labels than their name suggests. We use a single
+general-purpose backbone and a binary task without normal images. BUSI images
+can carry calipers and text overlays, a known shortcut risk.
+
+The budget is a wall-clock cap on one shared laptop. Concurrent machine load
+changed epoch durations: the capped PFT run at 100\% labels had a visibly longer
+median epoch than the other two seeds of the same cell at comparable recorded
+CPU load, and the available power log cannot detect thermal throttling.
+A capped run's epoch count therefore depends on machine state. Training itself
+was deterministic: a restarted tuning run reproduced its validation AUCs exactly
+for every shared epoch, and an independent retraining of one cell, including
+cold feature extraction, reproduced its test AUCs to the logged digits. A CPU
+ranking need not transfer to GPU practice, where LoRA's backward cost is
+relatively cheaper.
+
+Two departures from ``each test set is read once'' should be stated plainly.
+Both happened after all final runs were complete and neither influenced any
+selection: one cell was retrained and re-evaluated twice in scratch directories
+as a reproducibility check, and the saliency inspection ran forward and gradient
+passes over ten external images. Finally, hypothesis verdicts are exploratory
+and carry no multiplicity control, and the ablations are compared against a
+configuration that was tuned while they were not.
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+Under an equal CPU budget of \valProtocolCapMinutes minutes per run, the ranking
+of adaptation strategies for a self-supervised vision transformer does depend on
+the label fraction, but only at the top of the range. With the full training set
+of \valDataBusiTrain images, low-rank adaptation and partial fine-tuning are
+detectably better than a linear probe on frozen features, internally and on an
+unseen center, and LoRA reaches \valMainLoRAHundredAucIn internally and
+\valMainLoRAHundredAucOut externally while using the entire budget. With
+\valDataSubsetOneN labeled images no pair of strategies can be told apart, and
+our pre-registered rule returns inconclusive rather than equivalence. The
+ranking is only partly preserved under the center shift: at full labels every
+method loses between \valMainLoRAHundredGapMean and \valMainLPHundredGapMean AUC
+on the external cohort, and no method's loss is detectably smaller than
+another's. The
+one clearly supported hypothesis, that frozen or lightly adapted foundation
+features beat a scratch ResNet-18 at low label counts, holds because the
+baseline does not learn from so few images.
+
+For practice on commodity hardware our measurement suggests a simple division: a
+linear probe is the rational default while labels are scarce or compute is the
+binding constraint, and low-rank adaptation is worth its cost only once the
+training set is large enough for its advantage to exceed seed noise. For
+research, the gap between cohorts remains the dominant term, and closing it is a
+more valuable target than further separating these adaptation strategies.
+
+\section*{Use of AI Assistants}
+
+The authors used AI coding assistants, OpenAI Codex and Anthropic Claude Code,
+to implement the data pipeline, training and evaluation code, statistical
+analysis, figure generation and document build, and to draft and revise text.
+Every reference was opened and checked against its source, and every number
+reported here is produced by code from logged result files rather than typed by
+hand. The authors reviewed the protocol, code and manuscript and remain
+responsible for the work.
+
+\section*{Data, Code and License Availability}
+
+Code, the frozen protocol, configurations, logs and result records are provided
+as \texttt{SDIA2026\_SAN-1\_GROUP\_13\_code.zip}. Images and model weights are
+not redistributed. The preparation scripts fetch BUSI
+\cite{aldhabyani2020busi} from a public mirror that states CC0; the original
+publication is CC BY 4.0 and we retain its attribution, since a mirror's
+metadata cannot alter the original terms. BrEaST-Lesions\_USG
+\cite{pawlowska2024breast,pawlowska2024tciadata} is distributed by The Cancer
+Imaging Archive under CC BY 4.0, which requires citing both the dataset
+(DOI 10.7937/9WKK-Q141) and its descriptor. DINOv2 weights are Apache-2.0
+\cite{oquab2024dinov2}. The main libraries are PyTorch, torchvision,
+scikit-learn, NumPy, SciPy and pandas (BSD-3-Clause), Transformers and PEFT
+(Apache-2.0), Pillow (MIT-CMU), ImageHash (BSD-2-Clause) and Matplotlib (a
+PSF-based license); exact versions and license evidence with checksums are in
+the released repository.
+
+\bibliographystyle{IEEEtran}
+\bibliography{refs}
+
+\end{document}

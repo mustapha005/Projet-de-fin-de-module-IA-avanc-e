@@ -24,7 +24,8 @@ including headroom. The `protocol-frozen` tag controls permission to start tunin
 and final runs. All 36 main runs and 21 ablations are complete and audited:
 H1 and H2 are inconclusive, H3 is supported on the internal test and inconclusive
 on the external test ([tables/hypotheses.md](tables/hypotheses.md)). The article
-and slides are unfinished drafts.
+is written in LaTeX under [paper/latex/](paper/latex/) and passes its offline
+audits; its page count still needs an Overleaf compile. The slides are a draft.
 See [docs/LOG.md](docs/LOG.md) for the current checkpoint and next action.
 
 ## Environment and commands
@@ -55,6 +56,17 @@ table, figure, H1–H3 verdict and `paper/numbers.json` from `results/`. The art
 and slides use a separate environment (`.venv-paper`, `requirements-paper.lock`):
 `.venv-paper/Scripts/python.exe paper/build.py [--final]`, then
 `scripts/audit_numbers.py` and `slides/build_slides.py [--final]`.
+The article is an Overleaf-ready IEEE LaTeX project in [paper/latex/](paper/latex/)
+(see its README). Regenerate its numbers, tables and figures, then audit it, with:
+
+```powershell
+.\.venv\Scripts\python.exe scripts/make_latex.py
+.\.venv\Scripts\python.exe scripts/audit_latex.py --final
+.\.venv\Scripts\python.exe scripts/handcheck_article_numbers.py
+```
+
+Prose lives only in `paper/latex/main.tex`; every measured value is a generated
+macro, and the audit refuses a hand-typed result number.
 The eventual main reproduction command is `make reproduce`; it is **not ready**.
 The full projection and its assumptions are in `docs/benchmark/compute_projection.json`.
 

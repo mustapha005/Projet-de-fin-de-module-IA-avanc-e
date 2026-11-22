@@ -414,3 +414,47 @@ unauthenticated clone from GitHub has the same hashes, 36 main and 21 ablation r
 
 Future work happens on main. Local master must not be pushed while the two files are withheld.
 Exact next step: unchanged from the previous entry.
+
+### 2026-11-22 17:30 - Claude Code - article written in LaTeX for Overleaf
+
+The user approved starting the paper and asked for LaTeX/Overleaf. Wrote the Abstract,
+Results, Discussion and Conclusion, and converted the existing Introduction, Related Work
+and Methods from `paper/article.md`. Sources in `paper/latex/` (D015); `paper/article.md`
+and `paper/build.py` are superseded for the article and kept as the earlier record.
+
+Integrity machinery, because no LaTeX toolchain exists here to catch mistakes:
+* `scripts/make_latex.py` generates `numbers.tex` (377 macros, one per value from
+  `paper/numbers*.json`), the six tables from `tables/*.csv`, copies the five figures, and
+  escapes the 26 diacritics in `refs.bib` so the project is ASCII. An unmapped character
+  is an error, never dropped silently.
+* `scripts/audit_latex.py --final` PASS: ASCII and brace/environment balance, 25/25
+  references cited and defined, 17 labels resolve, 5 figures and 7 inputs exist, 96 value
+  macros all defined, abstract 241 words, and 142 prose numbers with 0 lacking a
+  generated source (`docs/reviews/latex_audit.json`).
+* `scripts/handcheck_article_numbers.py` PASS: 12 printed values recomputed independently
+  of `src/analysis`, AUCs with scikit-learn from the raw prediction CSVs, 0 mismatches
+  (`docs/reviews/article_handcheck.json`). It also confirms the five capped runs by name:
+  LoRA 100% s0/s1/s2, PFT 100% s2, CNN 100% s1.
+
+Errors found while proofreading against the logged data, and fixed before commit:
+* The calibration paragraph credited LoRA with the best external ECE. The scratch CNN has
+  it (0.171 against LoRA 0.190). The number was generated and so passed the number audit;
+  only the claim attached to it was wrong. This is the failure mode the number audit
+  cannot catch.
+* "the much larger CNN": ResNet-18 has the most *trainable* parameters but fewer total
+  (11.2M) than the ViT-S backbone (22.3M). Reworded.
+* Three claims that held only at full labels ("every method loses accuracy externally")
+  were scoped; the CNN's gap is negative at 1% and 10% because its internal score is
+  below chance.
+* "over-call benign dysplasia and fibroadenoma": on fibroadenoma the adapted models are
+  no worse than LP. Narrowed to dysplasia.
+* Removed three numbers that had no generated source (CNN selection-time validation AUC
+  range, PFT epoch durations, an ECE threshold) rather than inventing a source for them.
+
+Checklist now: 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 15, 17 pass; 13 partial (page count needs
+Overleaf); 3 kept as a disclosed-exceptions warning; 14 and 16 open.
+
+Exact next step: the user compiles `paper/latex/` on Overleaf and reports the page count
+(target 8-12 excluding references) and any compile error. Then slides (`--final`),
+QA_PREP answers 17-25, `scripts/package.py`, and the DOCX decision in D015. D013 still
+awaits user review, as does the question of whether the two withheld files stay withheld.
