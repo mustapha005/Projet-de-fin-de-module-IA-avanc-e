@@ -1,0 +1,31 @@
+{
+  "checkpoint_sha256": "cff6fb5c0e2946c933e16cb43be41f1da6b3e3ac769d8f7d84ff042d2fd87edf",
+  "threshold": 0.23826873302459717,
+  "frozen_commit": "befa5ba4c7dc44472629f86e0ae46f138ec8027c",
+  "cohorts": {
+    "internal": {
+      "predictions_file": "internal_predictions.csv",
+      "predictions_sha256": "7bd096bafc8c98e69b8376940cce0ba73b137c0e92ea0e07529972a302411ec4",
+      "n_images": 74,
+      "inference_seconds": 11.427222300000722,
+      "inference_seconds_per_image": 0.1544219229729827,
+      "metrics": {
+        "roc_auc": 0.7249802994483845,
+        "macro_f1": 0.6145833333333333,
+        "ece15": 0.12667206110986504
+      }
+    },
+    "external": {
+      "predictions_file": "external_predictions.csv",
+      "predictions_sha256": "fe8066bc622ebee55387049b02aa2c943f052b0f8b035aace63c86fb8cc2869c",
+      "n_images": 252,
+      "inference_seconds": 34.75124810000125,
+      "inference_seconds_per_image": 0.13790177817460814,
+      "metrics": {
+        "roc_auc": 0.5245163000265041,
+        "macro_f1": 0.4464514293841559,
+        "ece15": 0.14704448067479664
+      }
+    }
+  }
+}
